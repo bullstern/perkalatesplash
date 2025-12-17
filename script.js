@@ -126,9 +126,6 @@ async function submitWaitlist(form, type) {
         if (response.ok && data.success) {
             showMessage(container, 'Successfully joined! We\'ll be in touch soon.');
             form.reset();
-            // Reset to step 1
-            currentStep = 1;
-            goToStep(form, 1);
         } else if (response.status === 409) {
             showMessage(container, 'You\'re already on the waitlist!', true);
         } else {

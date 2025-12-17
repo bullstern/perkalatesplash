@@ -2,11 +2,15 @@
 -- Adds support for simplified consumer and brand waitlist forms
 
 -- Option 1: Single table with type field (recommended based on existing constraint)
--- Add type and company_name columns to existing waitlist table
+-- Add all columns needed for simplified single-step form
 ALTER TABLE waitlist 
 ADD COLUMN IF NOT EXISTS type VARCHAR(20) DEFAULT 'consumer' CHECK (type IN ('consumer', 'brand')),
 ADD COLUMN IF NOT EXISTS name VARCHAR(255) NULL,
-ADD COLUMN IF NOT EXISTS company_name VARCHAR(255) NULL;
+ADD COLUMN IF NOT EXISTS company_name VARCHAR(255) NULL,
+ADD COLUMN IF NOT EXISTS phone VARCHAR(20) NULL,
+ADD COLUMN IF NOT EXISTS zip_code VARCHAR(10) NULL,
+ADD COLUMN IF NOT EXISTS favorite_brand VARCHAR(50) NULL,
+ADD COLUMN IF NOT EXISTS brand_type VARCHAR(50) NULL;
 
 -- Update unique constraint to allow same email for different types
 -- Remove old constraint if exists (backup first if needed)
