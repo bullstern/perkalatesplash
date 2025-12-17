@@ -174,8 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize progress
-    updateProgress(1);
 });
 
 // CTA button click handler
