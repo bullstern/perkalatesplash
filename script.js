@@ -13,8 +13,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Single-Step Waitlist Form Handler
-let currentStep = 1;
-const totalSteps = 1;
 
 function showMessage(container, message, isError = false) {
     const messageEl = container.querySelector('.form-message');
@@ -28,15 +26,6 @@ function showMessage(container, message, isError = false) {
             messageEl.style.display = 'none';
         }, 5000);
     }
-}
-
-function updateProgress(step) {
-    const progressFill = document.getElementById('progress-fill');
-    const currentStepEl = document.getElementById('current-step');
-    const progress = (step / totalSteps) * 100;
-    
-    if (progressFill) progressFill.style.width = `${progress}%`;
-    if (currentStepEl) currentStepEl.textContent = step;
 }
 
 function validateStep(form, step) {
@@ -59,42 +48,6 @@ function validateStep(form, step) {
     return isValid;
 }
 
-function goToStep(form, step) {
-    // Single step form - no navigation needed
-    currentStep = step;
-    updateProgress(step);
-}
-
-function populateConfirmationSummary(form) {
-    const type = form.dataset.type;
-    
-    if (type === 'consumer') {
-        const firstName = form.querySelector('input[name="first_name"]')?.value || '';
-        const lastName = form.querySelector('input[name="last_name"]')?.value || '';
-        const name = `${firstName} ${lastName}`.trim() || '-';
-        const email = form.querySelector('input[name="email"]')?.value || '-';
-        const zip = form.querySelector('input[name="zip_code"]')?.value || '-';
-        const favoriteBrand = form.querySelector('select[name="favorite_brand"]')?.value || '';
-        const brandDisplay = favoriteBrand ? favoriteBrand.charAt(0).toUpperCase() + favoriteBrand.slice(1).replace('-', ' ') : 'Not specified';
-        
-        document.getElementById('consumer-summary-name').textContent = name;
-        document.getElementById('consumer-summary-email').textContent = email;
-        document.getElementById('consumer-summary-zip').textContent = zip;
-        document.getElementById('consumer-summary-brand').textContent = brandDisplay;
-    } else if (type === 'brand') {
-        const companyName = form.querySelector('input[name="company_name"]')?.value || '-';
-        const email = form.querySelector('input[name="email"]')?.value || '-';
-        const zip = form.querySelector('input[name="zip_code"]')?.value || '-';
-        const brandType = form.querySelector('select[name="brand_type"]')?.value || '';
-        const typeDisplay = brandType ? brandType.charAt(0).toUpperCase() + brandType.slice(1).replace('-', ' ') : 'Not specified';
-        
-        document.getElementById('brand-summary-company').textContent = companyName;
-        document.getElementById('brand-summary-email').textContent = email;
-        document.getElementById('brand-summary-zip').textContent = zip;
-        document.getElementById('brand-summary-type').textContent = typeDisplay;
-    }
-}
-
 function switchTab(tabType) {
     // Update tabs
     document.querySelectorAll('.waitlist-tab').forEach(tab => {
@@ -109,8 +62,6 @@ function switchTab(tabType) {
     const activeForm = document.getElementById(`${tabType}-form`);
     if (activeForm) {
         activeForm.classList.add('active');
-        // Reset to step 1 when switching tabs
-        currentStep = 1;
     }
 }
 
