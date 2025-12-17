@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unify all your loyalty programs and payment methods. Access exclusive cross-brand rewards, VIP perks, and early drops—all in one wallet.">
+    <title>Perkalate - One Wallet for Every Brand Reward | Unified Loyalty Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-circle shape-1"></div>
+                <div class="shape shape-square shape-2"></div>
+                <div class="shape shape-circle shape-3"></div>
+                <div class="shape shape-triangle shape-4"></div>
+                <div class="shape shape-circle shape-5"></div>
+                <div class="shape shape-square shape-6"></div>
+                <div class="shape shape-circle shape-7"></div>
+                <div class="shape shape-triangle shape-8"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="logo">
+                <div class="logo-circle">
+                    <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="58" fill="none" stroke="url(#gradient)" stroke-width="3"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <text x="60" y="75" font-size="64" font-weight="bold" fill="white" text-anchor="middle" font-family="Inter, sans-serif">P</text>
+                    </svg>
+                </div>
+                <h2 class="logo-text">PERKALATE</h2>
+            </div>
+            
+            <h1 class="hero-title">
+                Stop Juggling Apps.<br>
+                <span class="gradient-text">Start Maximizing Every Reward.</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Connect all your loyalty programs and payment methods into one unified wallet.<br>
+                Unlock exclusive cross-brand perks, VIP access, and rewards you'll actually use.
+            </p>
+            
+            <button class="cta-button">
+                Get Early Access
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <p class="trust-signal">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display: inline; vertical-align: middle; margin-right: 6px;">
+                    <path d="M8 0L10.5 5.5L16 6.5L12 10.5L13 16L8 13L3 16L4 10.5L0 6.5L5.5 5.5L8 0Z" fill="#f59e0b"/>
+                </svg>
+                Trusted by 50,000+ members across 100+ premium brands
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Premium Brand Partners</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$2.4M+</div>
+                    <div class="stat-label">In Rewards Redeemed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section class="app-preview">
+        <div class="container">
+            <div class="preview-layout">
+                <!-- Copy Box - Left Side -->
+                <div class="preview-copy-box">
+                    <div class="glow-box">
+                        <span class="box-number">1</span>
+                        <h3>Connect Accounts & Payment Methods</h3>
+                        <p class="box-subtitle">Link Your Favorite Brands</p>
+                        <p class="box-description">Connect your memberships, cards, and favorite brands into one verified identity.</p>
+                        
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>Starbucks, Nike, AMC & more</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>Automatic sync & updates</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>Secure verification</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Device Visual - Right Side -->
+                <div class="preview-device-box">
+                    <div class="device-glow"></div>
+                    <div class="static-phone-display isometric-phone">
+                        <!-- Placeholder for your actual app screenshot -->
+                        <img src="phone-connected-accounts.png" alt="Connected Accounts Screen" class="phone-screenshot" />
+                        <!-- If image not available, fallback to CSS mockup -->
+                        <div class="screenshot-placeholder">
+                            <div class="placeholder-screen">
+                                <div class="placeholder-header">Connected Accounts</div>
+                                <p class="placeholder-sublabel">CONNECTED BRANDS (9)</p>
+                                <div class="placeholder-grid">
+                                    <!-- Row 1: Starbucks, AMC, Nike -->
+                                    <div class="placeholder-tile logo-slot" data-logo-name="starbucks">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 512 512">
+                                                <circle fill="#036635" cx="256" cy="256" r="256"/>
+                                                <path fill="#fff" d="M256 130c-70 0-126 56-126 126s56 126 126 126 126-56 126-126-56-126-126-126zm0 229a103 103 0 1 1 0-206 103 103 0 0 1 0 206z"/>
+                                                <circle fill="#fff" cx="256" cy="256" r="80"/>
+                                                <path fill="#036635" d="M256 176a80 80 0 1 1 0 160 80 80 0 0 1 0-160z"/>
+                                            </svg>
+                                        </div>
+                                        <img alt="Starbucks logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="placeholder-tile logo-slot" data-logo-name="amc">
+                                        <div class="logo-fallback">
+                                        <svg viewBox="0 0 512 512">
+                                            <circle fill="#df0014" cx="256" cy="256" r="256"/>
+                                            <text x="50%" y="54%" text-anchor="middle" fill="#fff" font-size="120" font-family="Arial, Helvetica, sans-serif" font-weight="bold" dy=".3em">AMC</text>
+                                        </svg>
+                                        </div>
+                                        <img alt="AMC logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="placeholder-tile logo-slot" data-logo-name="nike">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 640 480">
+                                                <path fill="#111" d="M499.5 232.8c-26.4 13.7-54.6 25.2-84.1 34.4-115.5 34.2-238.7 31.5-384.8-8.1 155.6 51.7 272.6 70.5 361.8 56.1 44.2-7.7 85.8-24 121.5-52.9 24.2-19.8 36.9-35.3 45.9-54.6-17.6 12.3-38.4 23.3-60.3 32.1z"/>
+                                            </svg>
+                                        </div>
+                                        <img alt="Nike logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+
+                                    <!-- Row 2: Sweetgreen, Sephora, Target -->
+                                    <div class="placeholder-tile logo-slot" data-logo-name="sweetgreen">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 256 256">
+                                                <text x="50%" y="54%" text-anchor="middle" fill="#036635" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="bold" dy=".3em">sweetgreen</text>
+                                            </svg>
+                                        </div>
+                                        <img alt="Sweetgreen logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="placeholder-tile logo-slot" data-logo-name="sephora">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 256 256">
+                                                <path fill="#111" d="M128 42c-21 77 67 98 38 172A66 66 0 0 1 128 214c-29-46 36-86-26-144 2-10 14-34 26-28z"/>
+                                            </svg>
+                                        </div>
+                                        <img alt="Sephora logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="placeholder-tile logo-slot" data-logo-name="target">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 256 256">
+                                                <circle fill="#ee2223" cx="128" cy="128" r="126"/>
+                                                <circle fill="#fff" cx="128" cy="128" r="90"/>
+                                                <circle fill="#ee2223" cx="128" cy="128" r="43"/>
+                                            </svg>
+                                        </div>
+                                        <img alt="Target logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+
+                                    <!-- Row 3: Delta, ClassPass, Chipotle -->
+                                    <div class="placeholder-tile logo-slot" data-logo-name="delta">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 256 256">
+                                                <polygon fill="#C8102E" points="128,36 224,220 32,220"/>
+                                                <polygon fill="#003366" points="128,36 160,220 224,220"/>
+                                            </svg>
+                                        </div>
+                                        <img alt="Delta logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="placeholder-tile logo-slot" data-logo-name="classpass">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 256 256">
+                                                <text x="50%" y="54%" text-anchor="middle" fill="#111" font-size="54" font-family="Arial, Helvetica, sans-serif" font-weight="bold" dy=".3em">ClassPass</text>
+                                            </svg>
+                                        </div>
+                                        <img alt="ClassPass logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                                    <div class="placeholder-tile logo-slot" data-logo-name="chipotle">
+                                        <div class="logo-fallback">
+                                            <svg viewBox="0 0 256 256">
+                                                <circle fill="#A6192E" cx="128" cy="128" r="126"/>
+                                                <ellipse cx="128" cy="132" rx="42" ry="68" fill="#6B2A1F"/>
+                                                <path d="M128 68 Q124 88 120 112 Q116 136 128 168 Q140 136 136 112 Q132 88 128 68" fill="#fff"/>
+                                            </svg>
+                                        </div>
+                                        <img alt="Chipotle logo" class="brand-logo-img" loading="lazy">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Second App Preview -->
+    <section class="app-preview app-preview-alt">
+        <div class="container">
+            <div class="preview-layout">
+                <!-- Device Visual - Left Side -->
+                <div class="preview-device-box">
+                    <div class="device-glow"></div>
+                    <div class="static-phone-display isometric-phone isometric-phone-left">
+                        <img src="phone-rewards.png" alt="Your Rewards Screen" class="phone-screenshot" />
+                        <div class="screenshot-placeholder">
+                            <div class="placeholder-screen">
+                                <div class="placeholder-header">Your Rewards</div>
+                                <div class="reward-placeholder-list">
+                                    <div class="reward-placeholder green-reward">
+                                        Free Drink at Starbucks
+                                        <span class="reward-meta">Any handcrafted beverage</span>
+                                    </div>
+                                    <div class="reward-placeholder orange-reward">
+                                        20% Off Nike
+                                        <span class="reward-meta">Online & in-store</span>
+                                    </div>
+                                    <div class="reward-placeholder red-reward">
+                                        AMC Early Screening
+                                        <span class="reward-meta">VIP access to new releases</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Copy Box - Right Side -->
+                <div class="preview-copy-box">
+                    <div class="glow-box">
+                        <span class="box-number">2</span>
+                        <h3>Receive Cross-Brand Rewards</h3>
+                        <p class="box-subtitle">Exclusive Perks from Every Brand</p>
+                        <p class="box-description">Get diverse rewards like free items, discounts, VIP access, and exclusive from every connected brand—all delivered to your Perkalate wallet.</p>
+                        
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>VIP early access</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>Exclusive discounts</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>Birthday rewards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Third App Preview -->
+    <section class="app-preview">
+        <div class="container">
+            <div class="preview-layout">
+                <!-- Copy Box - Left Side -->
+                <div class="preview-copy-box">
+                    <div class="glow-box">
+                        <span class="box-number">3</span>
+                        <h3>Easily Redeem Online or In-Store</h3>
+                        <p class="box-subtitle">Use Your Rewards Anywhere</p>
+                        <p class="box-description">Redeem rewards with a tap online or show your QR code. Your loyalty pass works everywhere—all your favorite brands are.</p>
+                        
+                        <div class="feature-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>One-tap redemption</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>QR code scanning</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✓</span>
+                                <span>Works online & in-store</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Device Visual - Right Side -->
+                <div class="preview-device-box">
+                    <div class="device-glow"></div>
+                    <div class="static-phone-display isometric-phone">
+                        <img src="phone-qr.png" alt="QR Code Redemption Screen" class="phone-screenshot" />
+                        <div class="screenshot-placeholder">
+                            <div class="placeholder-screen">
+                                <div class="placeholder-header">Claim Reward</div>
+                                <div class="qr-placeholder">
+                                    <div class="qr-placeholder-box">
+                                        <div class="qr-placeholder-title">15% Off Nike Order</div>
+                                        <div class="qr-placeholder-code"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">One Wallet. Infinite Possibilities.</h2>
+            <p class="section-subtitle">Everything you need to maximize rewards—without the hassle</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="url(#gradient1)"/>
+                            <path d="M24 14V34M14 24H34" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </div>
+                    <h3>Unify Every Loyalty Program</h3>
+                    <p>Link all your memberships and payment methods into one secure, verified identity. No more app-switching or forgotten passwords.</p>
+                    <ul class="feature-list">
+                        <li>100+ brands including Starbucks, Nike, Sephora & more</li>
+                        <li>Automatic synchronization across all accounts</li>
+                        <li>Bank-level security with verified identity</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="url(#gradient2)"/>
+                            <path d="M24 12L26.5 19.5H34L28 24L30.5 31.5L24 27L17.5 31.5L20 24L14 19.5H21.5L24 12Z" fill="white"/>
+                        </svg>
+                        <defs>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </div>
+                    <h3>Unlock Cross-Brand Rewards</h3>
+                    <p>Get exclusive perks that work across your entire network. Earn rewards at Starbucks, redeem at Nike. That's the power of unified loyalty.</p>
+                    <ul class="feature-list">
+                        <li>VIP early access to drops & exclusive events</li>
+                        <li>Cross-brand discounts up to 30% off</li>
+                        <li>Personalized rewards based on your preferences</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="url(#gradient3)"/>
+                            <rect x="16" y="20" width="16" height="12" rx="2" fill="white"/>
+                            <rect x="20" y="16" width="8" height="4" rx="1" fill="white"/>
+                        </svg>
+                        <defs>
+                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </div>
+                    <h3>Redeem Anywhere, Instantly</h3>
+                    <p>One tap online or scan your QR code in-store. Your Perkalate Pass is accepted everywhere your favorite brands are.</p>
+                    <ul class="feature-list">
+                        <li>Instant redemption—no codes to type</li>
+                        <li>Works seamlessly online & in physical stores</li>
+                        <li>Apple Wallet & Google Pay integration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Get Perked Up in 3 Steps</h2>
+            <p class="section-subtitle">From sign-up to rewards in under 5 minutes</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connect Your Accounts</h3>
+                        <p>Securely link loyalty programs and payment methods in seconds. Bank-level encryption protects your data while syncing rewards across all brands.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="mock-brands">
+                            <div class="brand-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.182c5.423 0 9.818 4.395 9.818 9.818 0 5.423-4.395 9.818-9.818 9.818-5.423 0-9.818-4.395-9.818-9.818 0-5.423 4.395-9.818 9.818-9.818z"/>
+                                </svg>
+                            </div>
+                            <div class="brand-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="24">
+                                    <path d="M24 7.8L6.442 15.276c-1.456.616-2.679.925-3.668.925-1.12 0-1.933-.392-2.437-1.177-.317-.504-.41-1.143-.28-1.918.13-.775.476-1.6 1.036-2.478.467-.71 1.168-1.486 2.103-2.327.935-.84 2.014-1.611 3.237-2.312 1.223-.7 2.502-1.245 3.836-1.633 1.334-.387 2.558-.58 3.668-.58.934 0 1.708.205 2.32.616.612.41.919 1.04.919 1.888 0 .775-.13 1.645-.392 2.61-.262.965-.672 1.943-1.232 2.935-.56.992-1.232 1.918-2.016 2.778-.784.86-1.68 1.578-2.686 2.154l8.266-3.405L24 7.8z"/>
+                                </svg>
+                            </div>
+                            <div class="brand-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                    <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step step-reverse">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Discover Personalized Rewards</h3>
+                        <p>Your dashboard instantly displays all available perks, VIP offers, and exclusive deals—personalized to your spending habits and preferences.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="mock-rewards">
+                            <div class="reward-item">
+                                <span class="reward-icon">🎁</span>
+                                <span>Free Drink Reward</span>
+                                <span class="reward-value">$5.50</span>
+                            </div>
+                            <div class="reward-item">
+                                <span class="reward-icon">✨</span>
+                                <span>20% Off Purchase</span>
+                                <span class="reward-value">Expires 7d</span>
+                            </div>
+                            <div class="reward-item">
+                                <span class="reward-icon">⭐</span>
+                                <span>VIP Early Access</span>
+                                <span class="reward-value">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Redeem With One Tap</h3>
+                        <p>Activate rewards instantly online or scan your universal QR code in-store. No searching for barcodes or loyalty cards—it just works.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="mock-qr">
+                            <div class="qr-code">
+                                <div class="qr-grid">
+                                    <div></div><div></div><div></div><div></div>
+                                    <div></div><div></div><div></div><div></div>
+                                    <div></div><div></div><div></div><div></div>
+                                    <div></div><div></div><div></div><div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Benefits Section -->
+    <section class="visual-benefits">
+        <div class="container">
+            <div class="benefit-grid">
+                <div class="benefit-visual">
+                    <div class="stat-card purple">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-value">$2.4M+</div>
+                            <div class="stat-desc">Rewards Unlocked</div>
+                        </div>
+                    </div>
+                    <div class="stat-card pink">
+                        <div class="stat-icon">🎁</div>
+                        <div class="stat-content">
+                            <div class="stat-value">100+</div>
+                            <div class="stat-desc">Brand Partners</div>
+                        </div>
+                    </div>
+                    <div class="stat-card blue">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-content">
+                            <div class="stat-value">50K+</div>
+                            <div class="stat-desc">Active Members</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-text">
+                    <h2>Real Rewards.<br>Real Savings.<br>Real Simple.</h2>
+                    <p>Join thousands who've already discovered the easiest way to maximize every reward, from every brand, all in one place.</p>
+                    <button class="cta-button">
+                        Start Saving Now
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title">Trusted by 50,000+ Members</h2>
+            <p class="section-subtitle">Access rewards from 100+ premium brands including:</p>
+            
+            <div class="brand-logos-grid">
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="starbucks">
+                        <div class="logo-fallback">
+                            <svg viewBox="0 0 512 512" width="48" height="48"><circle fill="#036635" cx="256" cy="256" r="256"/><path fill="#fff" d="M256 130c-70 0-126 56-126 126s56 126 126 126 126-56 126-126-56-126-126-126zm0 229a103 103 0 1 1 0-206 103 103 0 0 1 0 206z"/><circle fill="#fff" cx="256" cy="256" r="80"/><path fill="#036635" d="M256 176a80 80 0 1 1 0 160 80 80 0 0 1 0-160z"/></svg>
+                        </div>
+                        <img alt="Starbucks logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>Starbucks</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="nike">
+                        <div class="logo-fallback">
+                            <svg viewBox="0 0 640 480" width="56" height="42"><path fill="#111" d="M499.5 232.8c-26.4 13.7-54.6 25.2-84.1 34.4-115.5 34.2-238.7 31.5-384.8-8.1 155.6 51.7 272.6 70.5 361.8 56.1 44.2-7.7 85.8-24 121.5-52.9 24.2-19.8 36.9-35.3 45.9-54.6-17.6 12.3-38.4 23.3-60.3 32.1z"/></svg>
+                        </div>
+                        <img alt="Nike logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>Nike</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="sephora">
+                        <div class="logo-fallback">
+                            <svg viewBox="0 0 256 256" width="48" height="48"><path fill="#111" d="M128 42c-21 77 67 98 38 172A66 66 0 0 1 128 214c-29-46 36-86-26-144 2-10 14-34 26-28z"/></svg>
+                        </div>
+                        <img alt="Sephora logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>Sephora</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="delta">
+                        <div class="logo-fallback">
+                            <svg viewBox="0 0 256 256" width="48" height="48"><polygon fill="#C8102E" points="128,36 224,220 32,220"/><polygon fill="#003366" points="128,36 160,220 224,220"/></svg>
+                        </div>
+                        <img alt="Delta logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>Delta</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="amc">
+                        <div class="logo-fallback">
+                            <svg viewBox="0 0 512 512" width="48" height="48"><circle fill="#df0014" cx="256" cy="256" r="256"/><text x="50%" y="54%" text-anchor="middle" fill="#fff" font-size="120" font-family="Arial, Helvetica, sans-serif" font-weight="bold" dy=".3em">AMC</text></svg>
+                        </div>
+                        <img alt="AMC logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>AMC</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="marriott">
+                        <div class="logo-fallback">
+                            <span class="brand-text-logo">Marriott</span>
+                        </div>
+                        <img alt="Marriott Bonvoy logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>Marriott Bonvoy</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="target">
+                        <div class="logo-fallback">
+                            <svg viewBox="0 0 256 256" width="48" height="48"><circle fill="#ee2223" cx="128" cy="128" r="126"/><circle fill="#fff" cx="128" cy="128" r="90"/><circle fill="#ee2223" cx="128" cy="128" r="43"/></svg>
+                        </div>
+                        <img alt="Target logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>Target</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="sweetgreen">
+                        <div class="logo-fallback">
+                            <span class="brand-text-logo">sweetgreen</span>
+                        </div>
+                        <img alt="Sweetgreen logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>sweetgreen</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="classpass">
+                        <div class="logo-fallback">
+                            <span class="brand-text-logo">ClassPass</span>
+                        </div>
+                        <img alt="ClassPass logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>ClassPass</span>
+                </div>
+                <div class="brand-item">
+                    <div class="logo-slot" data-logo-name="tmobile">
+                        <div class="logo-fallback">
+                            <span class="brand-text-logo">T-Mobile</span>
+                        </div>
+                        <img alt="T-Mobile logo" class="brand-logo-img" loading="lazy">
+                    </div>
+                    <span>T-Mobile</span>
+                </div>
+            </div>
+            
+            <p class="brands-more">+ 90 more premium brands</p>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Loved by Thousands</h2>
+            <p class="section-subtitle">See what members are saying about Perkalate</p>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Finally, all my rewards in one place! I've saved over $500 in just 3 months using perks I didn't even know I had."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <div class="author-name">Sarah M.</div>
+                            <div class="author-title">Frequent Shopper</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The cross-brand rewards are a game changer. Got early access to Nike drops just for being a Starbucks gold member. Wild!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div>
+                            <div class="author-name">James D.</div>
+                            <div class="author-title">Sneaker Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"No more juggling 10 different apps. Perkalate made loyalty programs actually worth using. Best decision ever."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EP</div>
+                        <div>
+                            <div class="author-name">Emily P.</div>
+                            <div class="author-title">Business Traveler</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Step Waitlist Form Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="waitlist-modal">
+                <!-- Tab Selector -->
+                <div class="waitlist-tabs">
+                    <button class="waitlist-tab active" data-tab="consumer">
+                        <span>Consumer</span>
+                    </button>
+                    <button class="waitlist-tab" data-tab="brand">
+                        <span>Brand</span>
+                    </button>
+                </div>
+
+                <!-- Form Container -->
+                <div class="waitlist-form-container">
+                    <div class="waitlist-header">
+                        <h2>Join the Perkalate Waitlist</h2>
+                    </div>
+
+                    <!-- Consumer Form -->
+                    <form class="multi-step-form active" data-type="consumer" id="consumer-form">
+                        <!-- Single Step: All Fields -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-fields">
+                                <div class="form-field">
+                                    <label>First Name <span class="required">*</span></label>
+                                    <input type="text" name="first_name" placeholder="Enter your first name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Last Name <span class="required">*</span></label>
+                                    <input type="text" name="last_name" placeholder="Enter your last name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Email Address <span class="required">*</span></label>
+                                    <input type="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Phone Number <span class="optional">(Optional)</span></label>
+                                    <input type="tel" name="phone" placeholder="+1 (555) 000-0000">
+                                </div>
+                                <div class="form-field">
+                                    <label>Zip/Postal Code <span class="required">*</span></label>
+                                    <input type="text" name="zip_code" placeholder="12345" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>What's your favorite brand? <span class="optional">(Optional)</span></label>
+                                    <select name="favorite_brand">
+                                        <option value="">Select a brand...</option>
+                                        <option value="starbucks">Starbucks</option>
+                                        <option value="nike">Nike</option>
+                                        <option value="amc">AMC Theatres</option>
+                                        <option value="sephora">Sephora</option>
+                                        <option value="target">Target</option>
+                                        <option value="delta">Delta</option>
+                                        <option value="sweetgreen">Sweetgreen</option>
+                                        <option value="classpass">ClassPass</option>
+                                        <option value="chipotle">Chipotle</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="step-button submit-button">Submit</button>
+                        </div>
+                    </form>
+
+                    <!-- Brand Form -->
+                    <form class="multi-step-form" data-type="brand" id="brand-form">
+                        <!-- Single Step: All Fields -->
+                        <div class="form-step active" data-step="1">
+                            <div class="form-fields">
+                                <div class="form-field">
+                                    <label>Company Name <span class="required">*</span></label>
+                                    <input type="text" name="company_name" placeholder="Enter your company name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Email Address <span class="required">*</span></label>
+                                    <input type="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Phone Number <span class="optional">(Optional)</span></label>
+                                    <input type="tel" name="phone" placeholder="+1 (555) 000-0000">
+                                </div>
+                                <div class="form-field">
+                                    <label>Zip/Postal Code <span class="required">*</span></label>
+                                    <input type="text" name="zip_code" placeholder="12345" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>What type of brand are you? <span class="optional">(Optional)</span></label>
+                                    <select name="brand_type">
+                                        <option value="">Select an industry...</option>
+                                        <option value="retail">Retail</option>
+                                        <option value="food-beverage">Food & Beverage</option>
+                                        <option value="travel">Travel & Hospitality</option>
+                                        <option value="entertainment">Entertainment</option>
+                                        <option value="fitness">Fitness & Wellness</option>
+                                        <option value="fashion">Fashion & Apparel</option>
+                                        <option value="beauty">Beauty & Cosmetics</option>
+                                        <option value="technology">Technology</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="step-button submit-button">Submit</button>
+                        </div>
+                    </form>
+
+                    <div class="form-message"></div>
+                    <p class="privacy-note">By joining, you agree to receive updates about Perkalate. Unsubscribe anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>PERKALATE</h3>
+                    <p>Every reward, every brand, one wallet.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">How it Works</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Brands</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Security</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Perkalate. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

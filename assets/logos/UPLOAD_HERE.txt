@@ -1,0 +1,27 @@
+UPLOAD YOUR BRAND LOGO FILES HERE
+====================================
+
+To get pixel-perfect logos on the phone mockup, please upload logo files here:
+
+Required files:
+- starbucks.svg or starbucks.png
+- amc.svg or amc.png  
+- sephora.svg or sephora.png
+- amazon.svg or amazon.png
+- target.svg or target.png
+- malbon-golf.svg or malbon-golf.png
+- amex.svg or amex.png
+- chase.svg or chase.png
+- delta.svg or delta.png
+- classpass.svg or classpass.png
+- chipotle.svg or chipotle.png
+- shop.svg or shop.png
+
+✅ Nike already provided - looks perfect!
+
+Once uploaded, update the HTML to reference the files like:
+<img src="assets/logos/starbucks.svg" alt="Starbucks" class="brand-logo-img">
+
+This will ensure 100% accuracy with no distortion.
+
+
