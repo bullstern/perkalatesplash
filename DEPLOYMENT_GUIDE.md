@@ -1,4 +1,5 @@
 # Deployment Guide: Getting Changes to perkalate.com
+/2/
 
 ## Current Status
 
