@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { firstName, lastName, email, _trap, cfToken } = req.body || {};
+  const { firstName, lastName, email, phone, zip, programs, _trap, cfToken } = req.body || {};
 
   // Honeypot — bots fill this field, humans don't see it
   if (_trap) {
@@ -49,6 +49,9 @@ export default async function handler(req, res) {
       email: emailClean,
       name: `${firstClean} ${lastClean}`,
       type: 'consumer',
+      phone: phone || null,
+      zip_code: zip || null,
+      favorite_brand: programs || null,
     }),
   });
 
