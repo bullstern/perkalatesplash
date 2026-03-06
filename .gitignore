@@ -37,3 +37,5 @@ Temporary Items
 .env.local
 
 
+.vercel
+.env*.local
