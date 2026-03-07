@@ -654,12 +654,6 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  // Pill multi-select
-  document.getElementById('mfPills').addEventListener('click', function(e) {
-    const pill = e.target.closest('.mf-pill');
-    if (pill) pill.classList.toggle('selected');
-  });
-
   // Modal form submit
   document.getElementById('modalForm').addEventListener('submit', async function(e) {
     e.preventDefault();
