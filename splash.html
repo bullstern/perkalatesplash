@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Perkalate — Every reward, one place.</title>
-  <meta name="description" content="Perkalate connects all your loyalty programs
+  <meta name="description" content="Perkalate connects all your loyalty programs — airlines, coffee, groceries, hotels, and more. One app. Every point. Join the waitlist.">
+
   <!-- Open Graph / iMessage / social preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://perkalate.com/">
@@ -17,9 +18,13 @@
 
   <!-- Twitter / X card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@perkalate">
   <meta name="twitter:title" content="Perkalate — Every reward, one place.">
   <meta name="twitter:description" content="Connect every loyalty program you already belong to. One app. Every point.">
-  <meta name="twitter:image" content="https://perkalate.com/og-image.png"> — airlines, coffee, groceries, hotels, and more. One app. Every point. Join the waitlist.">
+  <meta name="twitter:image" content="https://perkalate.com/og-image.png">
+
+  <!-- iMessage / Apple -->
+  <link rel="apple-touch-icon" href="/images/perkalate-logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -148,10 +153,12 @@
     }
     .phone-home {
       position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      width:100%; height:100%;
-      object-fit:cover;
-      object-position: top;
+      top:0; left:0;
+      width:390px;
+      height:844px;
+      border:0;
+      transform-origin: top left;
+      transform: scale(.2);
       pointer-events:none;
       filter: saturate(1.05) contrast(1.04);
     }
@@ -262,12 +269,12 @@
 
     /* Form */
     .wl-form {
-      display: flex; flex-direction: column; gap: 10px;
+      display: flex; gap: 8px;
       width: 100%;
       background: var(--w07);
       border: 1px solid var(--w12);
-      border-radius: 20px;
-      padding: 18px;
+      border-radius: 100px;
+      padding: 5px 5px 5px 20px;
       backdrop-filter: blur(16px);
       transition: border-color .25s, box-shadow .25s;
       margin-bottom: 14px;
@@ -276,32 +283,22 @@
       border-color: rgba(124,58,237,.75);
       box-shadow: 0 0 0 3px rgba(124,58,237,.18);
     }
-    .wl-row { display: flex; gap: 10px; }
     .wl-input {
       flex:1; min-width:0;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px;
-      outline:none;
+      background:none; border:none; outline:none;
       font-family:inherit; font-size:15px; color:var(--white);
-      padding: 13px 16px;
-      transition: border-color .2s;
       caret-color: var(--accent);
     }
-    .wl-input:focus { border-color: rgba(124,58,237,.7); }
     .wl-input::placeholder { color: var(--w45); }
-    .wl-trap { display: none !important; }
-    .wl-error { font-size:13px; color:#f87171; text-align:center; display:none; }
-    .wl-error.show { display:block; }
     .wl-btn {
-      width: 100%;
+      flex-shrink: 0;
       background: linear-gradient(135deg, #9333ea, #7c3aed, #6d28d9);
-      color: var(--white); border: none; border-radius: 13px;
-      padding: 14px 22px;
-      font-family: inherit; font-size: 15px; font-weight: 700;
-      cursor: pointer;
+      color: var(--white); border: none; border-radius: 100px;
+      padding: 12px 22px;
+      font-family: inherit; font-size: 14px; font-weight: 700;
+      cursor: pointer; white-space: nowrap;
       box-shadow: 0 4px 20px rgba(147,51,234,.65), 0 0 0 1px rgba(167,139,250,0.3);
-      transition: transform .15s, box-shadow .2s, opacity .2s;
+      transition: transform .15s, box-shadow .2s;
       animation: ctaPulse 2.8s ease-in-out infinite;
     }
     @keyframes ctaPulse {
@@ -310,7 +307,6 @@
     }
     .wl-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(147,51,234,.8); animation: none; }
     .wl-btn:active { transform: translateY(0); }
-    .wl-btn:disabled { opacity:.55; cursor:default; transform:none; animation:none; }
 
     .success {
       display:none; width:100%; padding:16px 24px;
@@ -365,179 +361,35 @@
     .bi img { width: 30px; height: 30px; object-fit: contain; border-radius: 5px; }
 
     /* ── Responsive: ensure it all fits ── */
-    @media (max-width: 768px) {
-      .page { padding-left: 4px; padding-right: 4px; overflow: visible; }
-      /* Scene: 300px + 36px padding so orbitals aren't clipped at edges */
-      .scene {
-        width: min(300px, 84vw); height: min(300px, 84vw);
-        overflow: visible;
-        padding: 36px; box-sizing: content-box;
-      }
-      .phone { width: min(124px, 33vw); height: min(220px, 59vw); }
-      .phone-home { transform: none; }
+    @media (max-width: 430px) {
+      .page { padding-left: 16px; padding-right: 16px; }
+      .scene { width: min(236px, 66vw); height: min(236px, 66vw); }
+      .phone { width: min(88px, 24vw); height: min(156px, 42vw); }
+      .phone-home { transform: scale(.173); }
       .orbiter { width: 52px; height: 52px; top: -26px; left: -26px; border-radius: 14px; }
       .orbiter img { width: 34px; height: 34px; }
-      /* Orbit radius sized to scene */
       @keyframes oCW {
-        from{transform:rotate(0deg) translateX(min(110px,30vw));}
-        to{transform:rotate(360deg) translateX(min(110px,30vw));}
+        from{transform:rotate(0deg) translateX(min(104px,29vw));}
+        to{transform:rotate(360deg) translateX(min(104px,29vw));}
       }
       h1 { font-size: 40px; }
       .logo span { font-size: 22px; }
       .logo img { width: 36px; height: 36px; }
-      /* Mobile form - stack everything cleanly */
-      .wl-form {
-        padding: 16px;
-        gap: 10px;
-        max-width: 100%;
-      }
-      .wl-row {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .wl-input {
-        font-size: 16px; /* prevents iOS zoom on focus */
-        padding: 14px 16px;
-      }
-      .wl-btn {
-        padding: 14px 20px;
-        font-size: 15px;
-      }
+      .wl-form { padding-left: 14px; }
+      .wl-btn { padding: 11px 16px; font-size: 13px; }
       .brand-track { gap: 8px; }
       .bi { width: 36px; height: 36px; border-radius: 10px; }
       .bi img { width: 24px; height: 24px; }
     }
 
     @media (max-height: 700px) {
-      .scene { width: 270px; height: 270px; }
+      .scene { width: 210px; height: 210px; }
       h1 { font-size: 30px; }
       .sub { font-size: 13px; }
     }
     @media (max-height: 600px) {
       .brand-icons { display: none; }
-      .scene { width: 220px; height: 220px; }
-    }
-
-    /* ── Waitlist Modal ── */
-    .modal-backdrop {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 1000;
-      background: rgba(0,0,0,.65);
-      backdrop-filter: blur(6px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .25s;
-      /* iOS Safari fix */
-      -webkit-overflow-scrolling: touch;
-    }
-    .modal-backdrop.open { opacity: 1; pointer-events: all; }
-    .modal {
-      background: #0f0b1e;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 24px;
-      padding: 36px 32px 28px;
-      width: 100%; max-width: 480px;
-      margin: auto;
-      box-shadow: 0 32px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(124,58,237,.2);
-      transform: translateY(20px) scale(.97);
-      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
-      position: relative;
-      max-height: 86vh; overflow-y: auto;
-    }
-    .modal-backdrop.open .modal { transform: translateY(0) scale(1); }
-    .modal-close {
-      position: absolute; top: 16px; right: 18px;
-      background: none; border: none; cursor: pointer;
-      color: var(--w45); font-size: 22px; line-height: 1;
-      transition: color .15s;
-    }
-    .modal-close:hover { color: var(--white); }
-    .modal-logo {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 20px;
-    }
-    .modal-logo img { width: 32px; height: 32px; border-radius: 8px; }
-    .modal-logo span { font-size: 16px; font-weight: 800; letter-spacing: -.3px; }
-    .modal h2 {
-      font-size: 24px; font-weight: 800; letter-spacing: -.5px;
-      margin-bottom: 6px; color: var(--white);
-    }
-    .modal-sub {
-      font-size: 14px; color: var(--w60); margin-bottom: 24px; line-height: 1.5;
-    }
-    .mf-row { display: flex; gap: 10px; margin-bottom: 10px; }
-    .mf-field { display: flex; flex-direction: column; flex: 1; gap: 6px; }
-    .mf-label { font-size: 12px; font-weight: 600; color: var(--w60); letter-spacing: .4px; text-transform: uppercase; }
-    .mf-input {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px;
-      outline: none; color: var(--white);
-      font-family: inherit; font-size: 15px;
-      padding: 13px 16px;
-      transition: border-color .2s;
-      width: 100%;
-    }
-    .mf-input:focus { border-color: rgba(124,58,237,.75); }
-    .mf-input::placeholder { color: var(--w45); }
-    .mf-section { margin-bottom: 10px; }
-    .mf-pills {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;
-    }
-    .mf-pill {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 100px;
-      padding: 7px 14px;
-      font-size: 13px; font-weight: 500; color: var(--w70);
-      cursor: pointer; transition: all .15s;
-      user-select: none;
-    }
-    .mf-pill:hover { border-color: rgba(124,58,237,.5); color: var(--white); }
-    .mf-pill.selected {
-      background: rgba(124,58,237,.25);
-      border-color: rgba(124,58,237,.8);
-      color: var(--white); font-weight: 600;
-    }
-    .mf-optional { font-size: 11px; color: var(--w45); margin-left: 6px; }
-    .mf-error { font-size: 13px; color: #f87171; margin: 8px 0 0; display: none; }
-    .mf-error.show { display: block; }
-    .mf-submit {
-      width: 100%; margin-top: 20px;
-      background: linear-gradient(135deg, #9333ea, #7c3aed, #6d28d9);
-      color: var(--white); border: none; border-radius: 14px;
-      padding: 16px; font-family: inherit; font-size: 16px; font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 4px 24px rgba(147,51,234,.5);
-      transition: transform .15s, opacity .2s;
-    }
-    .mf-submit:hover { transform: translateY(-1px); }
-    .mf-submit:disabled { opacity: .55; cursor: default; transform: none; }
-    .mf-fine { font-size: 12px; color: var(--w35); text-align: center; margin-top: 12px; line-height: 1.5; }
-    /* Modal success */
-    .modal-success { display: none; text-align: center; padding: 16px 0; }
-    .modal-success.show { display: block; }
-    .modal-form-wrap.hide { display: none; }
-    .ms-icon { font-size: 52px; margin-bottom: 16px; }
-    .ms-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-    .ms-sub { font-size: 15px; color: var(--w60); line-height: 1.6; margin-bottom: 24px; }
-    .ms-share {
-      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
-    }
-    .ms-share-btn {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 100px; padding: 10px 20px;
-      font-family: inherit; font-size: 14px; font-weight: 600;
-      color: var(--white); cursor: pointer; transition: background .15s;
-    }
-    .ms-share-btn:hover { background: rgba(255,255,255,0.16); }
-    @media (max-width: 480px) {
-      .modal { padding: 28px 20px 24px; border-radius: 20px; }
-      .mf-row { flex-direction: column; gap: 10px; }
-      .modal h2 { font-size: 20px; }
+      .scene { width: 172px; height: 172px; }
     }
   </style>
 </head>
@@ -558,7 +410,7 @@
 
     <div class="phone">
       <div class="ps">
-        <img class="phone-home" src="phone-preview.jpg" alt="Perkalate app preview" loading="lazy">
+        <iframe class="phone-home" src="home.html" title="Perkalate app preview" loading="lazy"></iframe>
       </div>
     </div>
 
@@ -574,6 +426,13 @@
 
   <!-- Headline + sub -->
   <div class="mid">
+    <div class="proof">
+      <div class="avatars">
+        <div class="av">A</div><div class="av">J</div><div class="av">M</div><div class="av">K</div>
+      </div>
+      <span class="proof-txt"><strong>2,400+</strong> on the waitlist</span>
+      <div class="ldot"></div>
+    </div>
     <h1>Every <span class="accent">reward</span>,<br>one place.</h1>
     <p class="sub">Connect every loyalty program you already belong to — airlines, coffee, groceries, hotels, and more.</p>
   </div>
@@ -581,18 +440,11 @@
   <!-- Form + brand icons -->
   <div class="bottom">
     <form class="wl-form" id="wlForm" novalidate>
-      <div class="wl-row">
-        <input class="wl-input" type="text" id="wlFirst" name="firstName" placeholder="First name" required autocomplete="given-name">
-        <input class="wl-input" type="text" id="wlLast" name="lastName" placeholder="Last name" required autocomplete="family-name">
-      </div>
-      <input class="wl-input" type="email" id="wlEmail" name="email" placeholder="Email address" required autocomplete="email" inputmode="email">
-      <!-- Honeypot: hidden from humans, bots fill it -->
-      <input class="wl-trap" type="text" name="_trap" autocomplete="off" tabindex="-1">
-      <div class="wl-error" id="wlError"></div>
-      <button class="wl-btn" type="submit" id="wlBtn">Join Waitlist →</button>
+      <input class="wl-input" type="email" placeholder="Your email — we'll save you a spot" required autocomplete="email" inputmode="email">
+      <button class="wl-btn" type="submit">Join Waitlist</button>
     </form>
     <div class="success" id="successMsg">🎉 You're on the list! We'll be in touch.</div>
-
+    <a class="signin" href="home.html">Already have access? <em>Sign in →</em></a>
 
     <!-- Brand logo icons — scrolling marquee (different from orbital brands) -->
     <div class="brand-rail">
@@ -633,265 +485,13 @@
 
 </main>
 
-
-<!-- Waitlist Modal -->
-<div class="modal-backdrop" id="wlModal" role="dialog" aria-modal="true" aria-label="Join Waitlist">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-    <div class="modal-logo">
-      <img src="images/perkalate-logo.jpg" alt="Perkalate">
-      <span>Perkalate</span>
-    </div>
-
-    <!-- Form -->
-    <div class="modal-form-wrap" id="modalFormWrap">
-      <h2>Get early access 🎉</h2>
-      <p class="modal-sub">One app for every reward you've ever earned.</p>
-
-      <form id="modalForm" novalidate>
-        <!-- Honeypot -->
-        <input type="text" name="_trap" style="display:none!important" tabindex="-1" autocomplete="off">
-
-        <div class="mf-row">
-          <div class="mf-field">
-            <label class="mf-label">First Name</label>
-            <input class="mf-input" type="text" id="mfFirst" placeholder="Jane" required autocomplete="given-name">
-          </div>
-          <div class="mf-field">
-            <label class="mf-label">Last Name</label>
-            <input class="mf-input" type="text" id="mfLast" placeholder="Smith" required autocomplete="family-name">
-          </div>
-        </div>
-
-        <div class="mf-section">
-          <div class="mf-field">
-            <label class="mf-label">Email</label>
-            <input class="mf-input" type="email" id="mfEmail" placeholder="jane@example.com" required autocomplete="email" inputmode="email">
-          </div>
-        </div>
-
-        <div class="mf-section">
-          <div class="mf-field">
-            <label class="mf-label">Phone <span class="mf-optional">(optional — for early access invite)</span></label>
-            <input class="mf-input" type="tel" id="mfPhone" placeholder="+1 (555) 000-0000" autocomplete="tel" inputmode="tel">
-          </div>
-        </div>
-
-
-
-        <div class="mf-section">
-          <div class="mf-field">
-            <label class="mf-label">Zip Code <span class="mf-optional">(optional)</span></label>
-            <input class="mf-input" type="text" id="mfZip" placeholder="90210" inputmode="numeric" maxlength="5">
-          </div>
-        </div>
-
-        <div class="mf-error" id="mfError"></div>
-        <button class="mf-submit" type="submit" id="mfSubmit">Save My Spot →</button>
-        <p class="mf-fine">No spam. No credit card. We'll email you when you're off the waitlist.</p>
-      </form>
-    </div>
-
-    <!-- Success -->
-    <div class="modal-success" id="modalSuccess">
-      <div class="ms-icon">🎉</div>
-      <div class="ms-title">You're on the list!</div>
-      <p class="ms-sub">We'll reach out when your spot opens up.<br>Share with friends to move up faster.</p>
-      <div class="ms-share">
-        <button class="ms-share-btn" onclick="shareTwitter()">𝕏 Share on X</button>
-        <button class="ms-share-btn" onclick="shareInstagram()">📸 Share to IG Story</button>
-        <button class="ms-share-btn" onclick="copyLink()">🔗 Copy Link</button>
-      </div>
-      <canvas id="igCard" width="1080" height="1920" style="display:none"></canvas>
-    </div>
-  </div>
-</div>
-
-
 <script>
-  // Open modal when inline form submits or CTA is clicked
-  function openModal() {
-    document.getElementById('wlModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => document.getElementById('mfFirst').focus(), 100);
-  }
-  function closeModal() {
-    document.getElementById('wlModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // Inline form → open modal
   document.getElementById('wlForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    // Pre-fill email if they typed one
-    const emailVal = document.getElementById('wlEmail').value.trim();
-    if (emailVal) document.getElementById('mfEmail').value = emailVal;
-    openModal();
+    if (!this.querySelector('input').value) return;
+    this.style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
   });
-
-  // Close handlers
-  document.getElementById('modalClose').addEventListener('click', closeModal);
-  document.getElementById('wlModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeModal();
-  });
-
-  // Modal form submit
-  document.getElementById('modalForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn   = document.getElementById('mfSubmit');
-    const errEl = document.getElementById('mfError');
-    const first = document.getElementById('mfFirst').value.trim();
-    const last  = document.getElementById('mfLast').value.trim();
-    const email = document.getElementById('mfEmail').value.trim();
-    const phone = document.getElementById('mfPhone').value.trim();
-    const zip   = document.getElementById('mfZip').value.trim();
-    const trap  = this.querySelector('[name="_trap"]').value;
-    const programs = [...document.querySelectorAll('.mf-pill.selected')].map(p => p.dataset.val);
-
-    errEl.classList.remove('show');
-
-    if (!first || !last || !email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      errEl.textContent = 'Please fill in your name and a valid email.';
-      errEl.classList.add('show');
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Saving your spot…';
-
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: first, lastName: last, email,
-          phone: phone || null,
-          zip: zip || null,
-          programs: programs.length ? programs.join(', ') : null,
-          _trap: trap,
-        }),
-      });
-      const data = await res.json();
-      if (res.ok && data.ok) {
-        document.getElementById('modalFormWrap').classList.add('hide');
-        document.getElementById('modalSuccess').classList.add('show');
-      } else {
-        errEl.textContent = data.error || 'Something went wrong. Try again.';
-        errEl.classList.add('show');
-        btn.disabled = false;
-        btn.textContent = 'Save My Spot →';
-      }
-    } catch {
-      errEl.textContent = 'Network error. Please try again.';
-      errEl.classList.add('show');
-      btn.disabled = false;
-      btn.textContent = 'Save My Spot →';
-    }
-  });
-
-  // Share helpers
-  function shareTwitter() {
-    window.open('https://x.com/intent/tweet?text=' + encodeURIComponent("Just joined the @perkalate waitlist — one app for all your loyalty rewards 🎁\n\nperkalate.com"), '_blank');
-  }
-  function shareInstagram() {
-    const c = document.getElementById('igCard');
-    const ctx = c.getContext('2d');
-    const w = 1080, h = 1920;
-
-    // Background gradient
-    const bg = ctx.createLinearGradient(0, 0, w, h);
-    bg.addColorStop(0, '#0f0520');
-    bg.addColorStop(0.5, '#1a0a3e');
-    bg.addColorStop(1, '#0a0014');
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, w, h);
-
-    // Radial glow center
-    const glow = ctx.createRadialGradient(w/2, h*0.4, 0, w/2, h*0.4, 500);
-    glow.addColorStop(0, 'rgba(147, 51, 234, 0.3)');
-    glow.addColorStop(1, 'rgba(147, 51, 234, 0)');
-    ctx.fillStyle = glow;
-    ctx.fillRect(0, 0, w, h);
-
-    // Perkalate logo text
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
-    ctx.font = '600 36px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('Ⓟ  Perkalate', w/2, 320);
-
-    // Main text
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '800 82px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('I just joined', w/2, 700);
-    ctx.fillText('the waitlist 🎁', w/2, 800);
-
-    // Tagline
-    ctx.fillStyle = 'rgba(255,255,255,0.5)';
-    ctx.font = '500 38px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.fillText('Every reward, one place.', w/2, 920);
-
-    // Decorative brand icons (emoji stand-ins)
-    const brands = ['☕', '✈️', '🛒', '🏨', '💳', '🎯', '🍔', '⛽'];
-    ctx.font = '64px serif';
-    brands.forEach((emoji, i) => {
-      const angle = (i / brands.length) * Math.PI * 2 - Math.PI/2;
-      const rx = 320, ry = 280;
-      const cx = w/2 + Math.cos(angle) * rx;
-      const cy = 1250 + Math.sin(angle) * ry;
-      ctx.globalAlpha = 0.6;
-      ctx.fillText(emoji, cx, cy);
-    });
-    ctx.globalAlpha = 1;
-
-    // CTA
-    ctx.fillStyle = '#9333ea';
-    const btnW = 520, btnH = 80, btnX = (w - btnW)/2, btnY = 1580;
-    ctx.beginPath();
-    ctx.roundRect(btnX, btnY, btnW, btnH, 40);
-    ctx.fill();
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '700 34px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.fillText('perkalate.com', w/2, btnY + 52);
-
-    // Convert to image and download/share
-    c.toBlob(function(blob) {
-      const file = new File([blob], 'perkalate-waitlist.png', { type: 'image/png' });
-
-      // Try Web Share API (works on iOS Safari)
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        navigator.share({
-          files: [file],
-          title: 'Perkalate Waitlist',
-          text: 'I just joined the Perkalate waitlist! 🎁 perkalate.com'
-        }).catch(() => {});
-      } else {
-        // Fallback: download the image
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'perkalate-waitlist.png';
-        a.click();
-        URL.revokeObjectURL(url);
-        // Update button text
-        const btn = event.target;
-        btn.textContent = '✓ Image saved!';
-        setTimeout(() => btn.textContent = '📸 Share to IG Story', 2500);
-      }
-    }, 'image/png');
-  }
-
-  function copyLink() {
-    navigator.clipboard.writeText('https://perkalate.com').then(() => {
-      const btn = event.target;
-      btn.textContent = '✓ Copied!';
-      setTimeout(() => btn.textContent = '🔗 Copy Link', 2000);
-    });
-  }
 </script>
-
 </body>
 </html>
