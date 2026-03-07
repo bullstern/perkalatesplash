@@ -684,8 +684,10 @@
       <p class="ms-sub">We'll reach out when your spot opens up.<br>Share with friends to move up faster.</p>
       <div class="ms-share">
         <button class="ms-share-btn" onclick="shareTwitter()">𝕏 Share on X</button>
+        <button class="ms-share-btn" onclick="shareInstagram()">📸 Share to IG Story</button>
         <button class="ms-share-btn" onclick="copyLink()">🔗 Copy Link</button>
       </div>
+      <canvas id="igCard" width="1080" height="1920" style="display:none"></canvas>
     </div>
   </div>
 </div>
@@ -779,6 +781,94 @@
   function shareTwitter() {
     window.open('https://x.com/intent/tweet?text=' + encodeURIComponent("Just joined the @perkalate waitlist — one app for all your loyalty rewards 🎁\n\nperkalate.com"), '_blank');
   }
+  function shareInstagram() {
+    const c = document.getElementById('igCard');
+    const ctx = c.getContext('2d');
+    const w = 1080, h = 1920;
+
+    // Background gradient
+    const bg = ctx.createLinearGradient(0, 0, w, h);
+    bg.addColorStop(0, '#0f0520');
+    bg.addColorStop(0.5, '#1a0a3e');
+    bg.addColorStop(1, '#0a0014');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    // Radial glow center
+    const glow = ctx.createRadialGradient(w/2, h*0.4, 0, w/2, h*0.4, 500);
+    glow.addColorStop(0, 'rgba(147, 51, 234, 0.3)');
+    glow.addColorStop(1, 'rgba(147, 51, 234, 0)');
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, w, h);
+
+    // Perkalate logo text
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.font = '600 36px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Ⓟ  Perkalate', w/2, 320);
+
+    // Main text
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '800 82px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('I just joined', w/2, 700);
+    ctx.fillText('the waitlist 🎁', w/2, 800);
+
+    // Tagline
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '500 38px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.fillText('Every reward, one place.', w/2, 920);
+
+    // Decorative brand icons (emoji stand-ins)
+    const brands = ['☕', '✈️', '🛒', '🏨', '💳', '🎯', '🍔', '⛽'];
+    ctx.font = '64px serif';
+    brands.forEach((emoji, i) => {
+      const angle = (i / brands.length) * Math.PI * 2 - Math.PI/2;
+      const rx = 320, ry = 280;
+      const cx = w/2 + Math.cos(angle) * rx;
+      const cy = 1250 + Math.sin(angle) * ry;
+      ctx.globalAlpha = 0.6;
+      ctx.fillText(emoji, cx, cy);
+    });
+    ctx.globalAlpha = 1;
+
+    // CTA
+    ctx.fillStyle = '#9333ea';
+    const btnW = 520, btnH = 80, btnX = (w - btnW)/2, btnY = 1580;
+    ctx.beginPath();
+    ctx.roundRect(btnX, btnY, btnW, btnH, 40);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = '700 34px -apple-system, BlinkMacSystemFont, sans-serif';
+    ctx.fillText('perkalate.com', w/2, btnY + 52);
+
+    // Convert to image and download/share
+    c.toBlob(function(blob) {
+      const file = new File([blob], 'perkalate-waitlist.png', { type: 'image/png' });
+
+      // Try Web Share API (works on iOS Safari)
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({
+          files: [file],
+          title: 'Perkalate Waitlist',
+          text: 'I just joined the Perkalate waitlist! 🎁 perkalate.com'
+        }).catch(() => {});
+      } else {
+        // Fallback: download the image
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'perkalate-waitlist.png';
+        a.click();
+        URL.revokeObjectURL(url);
+        // Update button text
+        const btn = event.target;
+        btn.textContent = '✓ Image saved!';
+        setTimeout(() => btn.textContent = '📸 Share to IG Story', 2500);
+      }
+    }, 'image/png');
+  }
+
   function copyLink() {
     navigator.clipboard.writeText('https://perkalate.com').then(() => {
       const btn = event.target;
