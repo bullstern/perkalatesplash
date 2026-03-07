@@ -624,6 +624,79 @@
 
 </main>
 
+
+<!-- Waitlist Modal -->
+<div class="modal-backdrop" id="wlModal" role="dialog" aria-modal="true" aria-label="Join Waitlist">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div class="modal-logo">
+      <img src="images/perkalate-logo.jpg" alt="Perkalate">
+      <span>Perkalate</span>
+    </div>
+
+    <!-- Form -->
+    <div class="modal-form-wrap" id="modalFormWrap">
+      <h2>Get early access 🎉</h2>
+      <p class="modal-sub">One app for every reward you've ever earned.</p>
+
+      <form id="modalForm" novalidate>
+        <!-- Honeypot -->
+        <input type="text" name="_trap" style="display:none!important" tabindex="-1" autocomplete="off">
+
+        <div class="mf-row">
+          <div class="mf-field">
+            <label class="mf-label">First Name</label>
+            <input class="mf-input" type="text" id="mfFirst" placeholder="Jane" required autocomplete="given-name">
+          </div>
+          <div class="mf-field">
+            <label class="mf-label">Last Name</label>
+            <input class="mf-input" type="text" id="mfLast" placeholder="Smith" required autocomplete="family-name">
+          </div>
+        </div>
+
+        <div class="mf-section">
+          <div class="mf-field">
+            <label class="mf-label">Email</label>
+            <input class="mf-input" type="email" id="mfEmail" placeholder="jane@example.com" required autocomplete="email" inputmode="email">
+          </div>
+        </div>
+
+        <div class="mf-section">
+          <div class="mf-field">
+            <label class="mf-label">Phone <span class="mf-optional">(optional — for early access invite)</span></label>
+            <input class="mf-input" type="tel" id="mfPhone" placeholder="+1 (555) 000-0000" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+
+
+
+        <div class="mf-section">
+          <div class="mf-field">
+            <label class="mf-label">Zip Code <span class="mf-optional">(optional)</span></label>
+            <input class="mf-input" type="text" id="mfZip" placeholder="90210" inputmode="numeric" maxlength="5">
+          </div>
+        </div>
+
+        <div class="mf-error" id="mfError"></div>
+        <button class="mf-submit" type="submit" id="mfSubmit">Save My Spot →</button>
+        <p class="mf-fine">No spam. No credit card. We'll email you when you're off the waitlist.</p>
+      </form>
+    </div>
+
+    <!-- Success -->
+    <div class="modal-success" id="modalSuccess">
+      <div class="ms-icon">🎉</div>
+      <div class="ms-title">You're on the list!</div>
+      <p class="ms-sub">We'll reach out when your spot opens up.<br>Share with friends to move up faster.</p>
+      <div class="ms-share">
+        <button class="ms-share-btn" onclick="shareTwitter()">𝕏 Share on X</button>
+        <button class="ms-share-btn" onclick="copyLink()">🔗 Copy Link</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
   // Open modal when inline form submits or CTA is clicked
   function openModal() {
@@ -720,77 +793,6 @@
     });
   }
 </script>
-
-<!-- Waitlist Modal -->
-<div class="modal-backdrop" id="wlModal" role="dialog" aria-modal="true" aria-label="Join Waitlist">
-  <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-    <div class="modal-logo">
-      <img src="images/perkalate-logo.jpg" alt="Perkalate">
-      <span>Perkalate</span>
-    </div>
-
-    <!-- Form -->
-    <div class="modal-form-wrap" id="modalFormWrap">
-      <h2>Get early access 🎉</h2>
-      <p class="modal-sub">One app for every reward you've ever earned.</p>
-
-      <form id="modalForm" novalidate>
-        <!-- Honeypot -->
-        <input type="text" name="_trap" style="display:none!important" tabindex="-1" autocomplete="off">
-
-        <div class="mf-row">
-          <div class="mf-field">
-            <label class="mf-label">First Name</label>
-            <input class="mf-input" type="text" id="mfFirst" placeholder="Jane" required autocomplete="given-name">
-          </div>
-          <div class="mf-field">
-            <label class="mf-label">Last Name</label>
-            <input class="mf-input" type="text" id="mfLast" placeholder="Smith" required autocomplete="family-name">
-          </div>
-        </div>
-
-        <div class="mf-section">
-          <div class="mf-field">
-            <label class="mf-label">Email</label>
-            <input class="mf-input" type="email" id="mfEmail" placeholder="jane@example.com" required autocomplete="email" inputmode="email">
-          </div>
-        </div>
-
-        <div class="mf-section">
-          <div class="mf-field">
-            <label class="mf-label">Phone <span class="mf-optional">(optional — for early access invite)</span></label>
-            <input class="mf-input" type="tel" id="mfPhone" placeholder="+1 (555) 000-0000" autocomplete="tel" inputmode="tel">
-          </div>
-        </div>
-
-
-
-        <div class="mf-section">
-          <div class="mf-field">
-            <label class="mf-label">Zip Code <span class="mf-optional">(optional)</span></label>
-            <input class="mf-input" type="text" id="mfZip" placeholder="90210" inputmode="numeric" maxlength="5">
-          </div>
-        </div>
-
-        <div class="mf-error" id="mfError"></div>
-        <button class="mf-submit" type="submit" id="mfSubmit">Save My Spot →</button>
-        <p class="mf-fine">No spam. No credit card. We'll email you when you're off the waitlist.</p>
-      </form>
-    </div>
-
-    <!-- Success -->
-    <div class="modal-success" id="modalSuccess">
-      <div class="ms-icon">🎉</div>
-      <div class="ms-title">You're on the list!</div>
-      <p class="ms-sub">We'll reach out when your spot opens up.<br>Share with friends to move up faster.</p>
-      <div class="ms-share">
-        <button class="ms-share-btn" onclick="shareTwitter()">𝕏 Share on X</button>
-        <button class="ms-share-btn" onclick="copyLink()">🔗 Copy Link</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
