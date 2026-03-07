@@ -370,29 +370,23 @@
       h1 { font-size: 40px; }
       .logo span { font-size: 22px; }
       .logo img { width: 36px; height: 36px; }
-      /* Compact form on mobile - name fields hidden, just email + button */
-      .wl-row { display: none; }
+      /* Mobile form - stack everything cleanly */
       .wl-form {
-        padding: 10px;
-        gap: 8px;
-        flex-direction: row;
-        align-items: center;
-        border-radius: 100px;
-        background: rgba(255,255,255,0.08);
+        padding: 16px;
+        gap: 10px;
+        max-width: 100%;
       }
-      #wlEmail {
-        flex: 1;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 10px 12px;
-        font-size: 14px;
+      .wl-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .wl-input {
+        font-size: 16px; /* prevents iOS zoom on focus */
+        padding: 14px 16px;
       }
       .wl-btn {
-        padding: 10px 18px;
-        font-size: 13px;
-        border-radius: 100px;
-        width: auto;
+        padding: 14px 20px;
+        font-size: 15px;
       }
       .brand-track { gap: 8px; }
       .bi { width: 36px; height: 36px; border-radius: 10px; }
