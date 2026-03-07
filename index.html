@@ -351,15 +351,21 @@
 
     /* ── Responsive: ensure it all fits ── */
     @media (max-width: 430px) {
-      .page { padding-left: 4px; padding-right: 4px; }
-      .scene { width: min(330px, 90vw); height: min(330px, 90vw); }
+      .page { padding-left: 4px; padding-right: 4px; overflow: visible; }
+      /* Scene: 300px + 36px padding so orbitals aren't clipped at edges */
+      .scene {
+        width: min(300px, 84vw); height: min(300px, 84vw);
+        overflow: visible;
+        padding: 36px; box-sizing: content-box;
+      }
       .phone { width: min(124px, 33vw); height: min(220px, 59vw); }
       .phone-home { transform: none; }
       .orbiter { width: 52px; height: 52px; top: -26px; left: -26px; border-radius: 14px; }
       .orbiter img { width: 34px; height: 34px; }
+      /* Orbit radius sized to scene */
       @keyframes oCW {
-        from{transform:rotate(0deg) translateX(min(104px,29vw));}
-        to{transform:rotate(360deg) translateX(min(104px,29vw));}
+        from{transform:rotate(0deg) translateX(min(110px,30vw));}
+        to{transform:rotate(360deg) translateX(min(110px,30vw));}
       }
       h1 { font-size: 40px; }
       .logo span { font-size: 22px; }
