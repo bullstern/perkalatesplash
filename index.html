@@ -354,7 +354,7 @@
       .page { padding-left: 4px; padding-right: 4px; }
       .scene { width: min(330px, 90vw); height: min(330px, 90vw); }
       .phone { width: min(124px, 33vw); height: min(220px, 59vw); }
-      .phone-home { transform: scale(.173); }
+      .phone-home { transform: none; }
       .orbiter { width: 52px; height: 52px; top: -26px; left: -26px; border-radius: 14px; }
       .orbiter img { width: 34px; height: 34px; }
       @keyframes oCW {
@@ -364,9 +364,30 @@
       h1 { font-size: 40px; }
       .logo span { font-size: 22px; }
       .logo img { width: 36px; height: 36px; }
-      .wl-row { flex-direction: column; }
-      .wl-form { padding: 14px; }
-      .wl-btn { padding: 13px 16px; font-size: 14px; }
+      /* Compact form on mobile - name fields hidden, just email + button */
+      .wl-row { display: none; }
+      .wl-form {
+        padding: 10px;
+        gap: 8px;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 100px;
+        background: rgba(255,255,255,0.08);
+      }
+      #wlEmail {
+        flex: 1;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+      .wl-btn {
+        padding: 10px 18px;
+        font-size: 13px;
+        border-radius: 100px;
+        width: auto;
+      }
       .brand-track { gap: 8px; }
       .bi { width: 36px; height: 36px; border-radius: 10px; }
       .bi img { width: 24px; height: 24px; }
