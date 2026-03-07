@@ -517,6 +517,80 @@
       .mf-row { flex-direction: column; gap: 10px; }
       .modal h2 { font-size: 20px; }
     }
+
+    /* ── RESPONSIVE: Tablet ── */
+    @media (min-width: 600px) and (max-width: 899px) {
+      .page { max-width: 580px; }
+      .scene { width: 300px; height: 300px; }
+      h1 { font-size: 52px; }
+      .sub { font-size: 16px; }
+    }
+
+    /* ── RESPONSIVE: Desktop ── */
+    @media (min-width: 900px) {
+      body { overflow: hidden; }
+      .page {
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        padding: 40px 80px;
+        text-align: left;
+      }
+      .logo {
+        position: fixed;
+        top: 28px; left: 40px;
+        padding-top: 0;
+      }
+      .scene-col {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .scene {
+        width: 380px; height: 380px;
+      }
+      .mid {
+        text-align: left;
+      }
+      .bottom {
+        align-items: flex-start;
+      }
+      .content-col {
+        flex: 0 0 420px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      h1 { font-size: 58px; }
+      .sub { font-size: 17px; max-width: 400px; }
+      .wl-form { width: 400px; }
+      .brand-rail { width: 420px; }
+      @keyframes oCW {
+        from { transform: rotate(0deg) translateX(170px); }
+        to   { transform: rotate(360deg) translateX(170px); }
+      }
+      @keyframes oCCW {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(-360deg); }
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .page { gap: 120px; padding: 40px 120px; }
+      .scene { width: 440px; height: 440px; }
+      h1 { font-size: 68px; }
+      .content-col { flex: 0 0 480px; }
+      .wl-form { width: 460px; }
+      .brand-rail { width: 480px; }
+      @keyframes oCW {
+        from { transform: rotate(0deg) translateX(200px); }
+        to   { transform: rotate(360deg) translateX(200px); }
+      }
+    }
   </style>
 </head>
 <body>
@@ -550,6 +624,7 @@
     <div class="orbit-track t8"><div class="orbiter"><img src="https://www.google.com/s2/favicons?domain=americanexpress.com&sz=64"    alt="" onerror="this.parentElement.innerHTML='H'"></div></div>
   </div>
 
+  <div class="content-col">
   <!-- Headline + sub -->
   <div class="mid">
     <h1>Every <span class="accent">reward</span>,<br>one place.</h1>
@@ -603,7 +678,8 @@
         <div class="bi"><img src="https://www.google.com/s2/favicons?domain=wholefoodsmarket.com&sz=64" alt="Whole Foods"></div>
       </div>
     </div>
-  </div>
+  </div><!-- /.bottom -->
+  </div><!-- /.content-col -->
 
 </main>
 
