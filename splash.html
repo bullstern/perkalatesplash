@@ -486,11 +486,37 @@
 </main>
 
 <script>
-  document.getElementById('wlForm').addEventListener('submit', function(e) {
+  document.getElementById('wlForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    if (!this.querySelector('input').value) return;
-    this.style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
+    const emailInput = this.querySelector('input[type="email"]');
+    const btn = this.querySelector('button');
+    const email = (emailInput.value || '').trim();
+    if (!email) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Saving your spot…';
+
+    try {
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: '', lastName: '', email }),
+      });
+
+      if (res.ok || res.status === 409) {
+        this.style.display = 'none';
+        const success = document.getElementById('successMsg');
+        if (success) success.style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Join Waitlist';
+        alert('Something went wrong — please try again.');
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Join Waitlist';
+      alert('Connection error — please try again.');
+    }
   });
 </script>
 </body>
