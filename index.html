@@ -518,6 +518,11 @@
       .modal h2 { font-size: 20px; }
     }
 
+
+    /* ── RESPONSIVE: Mobile (default single-column) ── */
+    .scene-col { display: contents; }
+    .content-col { display: contents; }
+
     /* ── RESPONSIVE: Tablet ── */
     @media (min-width: 600px) and (max-width: 899px) {
       .page { max-width: 580px; }
@@ -529,6 +534,8 @@
     /* ── RESPONSIVE: Desktop ── */
     @media (min-width: 900px) {
       body { overflow: hidden; }
+      .scene-col { display: flex; }
+      .content-col { display: flex; }
       .page {
         max-width: 100%;
         flex-direction: row;
