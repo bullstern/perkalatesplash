@@ -411,13 +411,17 @@
 
     /* ── Waitlist Modal ── */
     .modal-backdrop {
-      position: fixed; inset: 0; z-index: 1000;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 1000;
       background: rgba(0,0,0,.65);
       backdrop-filter: blur(6px);
       display: flex; align-items: center; justify-content: center;
-      padding: 16px;
+      padding: 20px;
       opacity: 0; pointer-events: none;
       transition: opacity .25s;
+      /* iOS Safari fix */
+      -webkit-overflow-scrolling: touch;
     }
     .modal-backdrop.open { opacity: 1; pointer-events: all; }
     .modal {
@@ -426,11 +430,12 @@
       border-radius: 24px;
       padding: 36px 32px 28px;
       width: 100%; max-width: 480px;
+      margin: auto;
       box-shadow: 0 32px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(124,58,237,.2);
       transform: translateY(20px) scale(.97);
       transition: transform .3s cubic-bezier(.34,1.56,.64,1);
       position: relative;
-      max-height: 90vh; overflow-y: auto;
+      max-height: 86vh; overflow-y: auto;
     }
     .modal-backdrop.open .modal { transform: translateY(0) scale(1); }
     .modal-close {
