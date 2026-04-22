@@ -11,50 +11,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:          #120a24;
-      --surface:     #1a1033;
-      --p1:          #7c3aed;
-      --p2:          #5b21b6;
-      --accent:      #a78bfa;
-      --soft:        #d8ccff;
-      --white:       #ffffff;
-      --text:        rgba(255,255,255,0.88);
-      --muted:       rgba(255,255,255,0.62);
-      --faint:       rgba(255,255,255,0.38);
-      --line:        rgba(255,255,255,0.10);
-      --line-strong: rgba(255,255,255,0.18);
+      --bg: #120a24; --surface: #1a1033;
+      --p1: #7c3aed; --p2: #5b21b6;
+      --accent: #a78bfa; --soft: #d8ccff; --white: #ffffff;
+      --text: rgba(255,255,255,0.88); --muted: rgba(255,255,255,0.62);
+      --faint: rgba(255,255,255,0.38);
+      --line: rgba(255,255,255,0.10); --line-strong: rgba(255,255,255,0.18);
     }
-
     html, body {
-      background: var(--bg);
-      color: var(--text);
+      background: var(--bg); color: var(--text);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 16px; line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
-
     body::before {
-      content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background:
         radial-gradient(ellipse 95% 55% at 50% -8%, rgba(139,92,246,0.32) 0%, transparent 68%),
         radial-gradient(ellipse 65% 38% at 12% 85%, rgba(91,33,182,0.18) 0%, transparent 62%),
         radial-gradient(ellipse 55% 38% at 88% 90%, rgba(167,139,250,0.12) 0%, transparent 62%);
     }
-
     .page { position: relative; z-index: 1; }
-
-    /* Header */
     .site-header {
-      border-bottom: 1px solid var(--line);
-      padding: 20px 24px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      background: rgba(18,10,36,0.72);
-      position: sticky; top: 0; z-index: 10;
+      border-bottom: 1px solid var(--line); padding: 20px 24px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(18,10,36,0.72); position: sticky; top: 0; z-index: 10;
     }
     .site-header .inner {
       max-width: 820px; margin: 0 auto;
@@ -64,139 +46,52 @@
       font-weight: 800; font-size: 20px; letter-spacing: -0.01em;
       color: var(--white); text-decoration: none;
       background: linear-gradient(135deg, #ffffff 0%, var(--soft) 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
     .header-link {
       color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
       transition: color 0.15s;
     }
     .header-link:hover { color: var(--white); }
-
-    /* Content */
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 64px 24px 96px;
-    }
-
+    main { max-width: 760px; margin: 0 auto; padding: 64px 24px 96px; }
     h1 {
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--white);
+      font-size: clamp(32px, 5vw, 48px); line-height: 1.15;
+      font-weight: 800; letter-spacing: -0.02em; color: var(--white);
       margin-bottom: 12px;
       background: linear-gradient(135deg, #ffffff 0%, var(--soft) 70%, var(--accent) 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     }
-
-    .meta {
-      color: var(--faint);
-      font-size: 14px;
-      margin-bottom: 40px;
-    }
-    .meta p { margin: 0; }
+    .meta { color: var(--faint); font-size: 14px; margin-bottom: 40px; }
     .meta strong { color: var(--muted); font-weight: 600; }
-
     h2 {
-      font-size: 26px; line-height: 1.25;
-      font-weight: 700; color: var(--white);
-      letter-spacing: -0.015em;
-      margin: 56px 0 16px;
+      font-size: 26px; line-height: 1.25; font-weight: 700;
+      color: var(--white); letter-spacing: -0.015em; margin: 56px 0 16px;
     }
-    h3 {
-      font-size: 19px; line-height: 1.3;
-      font-weight: 600; color: var(--white);
-      margin: 32px 0 12px;
-    }
-    h4 {
-      font-size: 16px; line-height: 1.4;
-      font-weight: 600; color: var(--soft);
-      margin: 24px 0 10px;
-    }
+    h3 { font-size: 19px; line-height: 1.3; font-weight: 600; color: var(--white); margin: 32px 0 12px; }
+    h4 { font-size: 16px; line-height: 1.4; font-weight: 600; color: var(--soft); margin: 24px 0 10px; }
     p { margin: 0 0 16px; color: var(--text); }
     strong { color: var(--white); font-weight: 600; }
     em { color: var(--soft); font-style: italic; }
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 0.92em;
-      background: rgba(167,139,250,0.12);
-      color: var(--soft);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
     a {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      text-decoration-thickness: 1px;
+      color: var(--accent); text-decoration: underline;
+      text-underline-offset: 3px; text-decoration-thickness: 1px;
       text-decoration-color: rgba(167,139,250,0.4);
       transition: text-decoration-color 0.15s;
     }
     a:hover { text-decoration-color: var(--accent); }
-
-    ul {
-      margin: 0 0 20px;
-      padding-left: 24px;
-    }
-    ul li {
-      margin-bottom: 8px;
-      color: var(--text);
-    }
+    ul { margin: 0 0 20px; padding-left: 24px; }
+    ul li { margin-bottom: 8px; color: var(--text); }
     ul li::marker { color: var(--accent); }
-
-    hr {
-      border: 0;
-      height: 1px;
-      background: var(--line);
-      margin: 48px 0;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      font-size: 14.5px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    th, td {
-      padding: 12px 16px;
-      text-align: left;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-    }
-    th {
-      background: rgba(124,58,237,0.14);
-      color: var(--white);
-      font-weight: 600;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: rgba(255,255,255,0.02); }
-
-    /* Footer */
+    hr { border: 0; height: 1px; background: var(--line); margin: 48px 0; }
     .site-footer {
-      border-top: 1px solid var(--line);
-      padding: 32px 24px;
-      text-align: center;
-      color: var(--faint);
-      font-size: 13px;
+      border-top: 1px solid var(--line); padding: 32px 24px;
+      text-align: center; color: var(--faint); font-size: 13px;
     }
     .site-footer a { color: var(--muted); margin: 0 10px; }
-
     @media (max-width: 640px) {
       main { padding: 40px 20px 64px; }
       h2 { font-size: 22px; margin: 40px 0 12px; }
       h3 { font-size: 17px; }
-      table { font-size: 13px; }
-      th, td { padding: 10px 12px; }
     }
   </style>
 </head>
@@ -208,170 +103,265 @@
         <a href="/" class="header-link">← Back to home</a>
       </div>
     </header>
-
     <main>
       <h1>Privacy Policy</h1>
       <div class="meta">
-        <p><strong>Last modified:</strong> April 21, 2026 · <strong>Effective date:</strong> April 21, 2026</p>
+        <p><strong>Last modified:</strong> April 22, 2026</p>
       </div>
-
-      <h3>Introduction</h3>
-<p>Perkalate Inc. ("Perkalate," "we," "us," or "our") respects your privacy and is committed to protecting it through our compliance with this policy.</p>
-<p>This policy describes:</p>
+      <h2>Introduction</h2>
+<p>Perkalate Inc. ("<strong>Perkalate</strong>" or "<strong>We</strong>") respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes:</p>
 <ul>
-<li>The types of information we may collect or that you may provide when you visit perkalate.com, join our waitlist, download, install, create an account on, access, or use the Perkalate mobile application or the Perkalate brand partner dashboard (collectively, the "<strong>App</strong>").</li>
+<li>The types of information we may collect or that you may provide when you download, install, create an account on, access, or use Perkalate or our website (collectively, the "<strong>App</strong>").</li>
+</ul>
+<ul>
 <li>Our practices for collecting, using, maintaining, protecting, and disclosing that information.</li>
 </ul>
-<p>This policy applies to information we collect in this App, on perkalate.com, and in email, text, and other electronic communications sent through or in connection with this App.</p>
-<p>This policy <strong>does not</strong> apply to information that:</p>
+<p>This policy applies only to information we collect in this App and in email, text, and other electronic communications sent through or in connection with this App.</p>
+<p>This policy DOES NOT apply to information that:</p>
 <ul>
 <li>We collect offline or through websites you may access through this App.</li>
+</ul>
+<ul>
 <li>You provide to or is collected by any third party, including other apps, websites, or content that may link to or be accessible from or through this App (see <em>Third-Party Information Collection</em>).</li>
 </ul>
-<p>Other third parties or third-party services linked or accessed through the App may have their own privacy policies, which we encourage you to read before providing information on or through them.</p>
+<p>Other third parties or third party services linked or accessed through our the App may have their own privacy policies, which we encourage you to read before providing information on or through them.</p>
 <p>Please read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, do not download, create an account, or use this App. By downloading, creating an account, or using this App, you agree to this privacy policy. This policy may change from time to time (see <em>Changes to Our Privacy Policy</em>). Your continued use of this App after we revise this policy means you accept those changes, so please check the policy periodically for updates.</p>
-<hr>
-<h3>Children Under the Age of 16</h3>
-<p>The App is not intended for children under 16 years of age. No one under age 16 may provide any information to the App. We do not knowingly collect personal information from children under 16. If you are under 16, do not use or provide any information on this App or through any of its features, create an account on the App, or provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use. If we learn we have collected or received personal information from a child under 16 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under 16, please contact us at <strong>privacy@perkalate.com</strong>.</p>
+<h2>Children Under the Age of 16</h2>
+<p>The App is not intended for children under 16 years of age. No one under age 16 may provide any information from children under 16. We do not knowingly collect personal information from children under 16. If you are under 16, do not use or provide any information on this App or through any of its features, create an account on the App, or provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use. If we learn we have collected or received personal information from a child under 16 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under 16, please contact us at <a href="mailto:support@perkalate.com">support@perkalate.com</a></p>
 <p>Residents of certain states under 13, 16, or 18 years of age may have additional rights regarding the collection and sale of their personal information. Please see <em>Your State Privacy Rights</em> for more information.</p>
-<hr>
-<h3>Information We Collect and How We Collect It</h3>
+<h2>Information We Collect and How We Collect It</h2>
 <p>We collect information from and about users of our App:</p>
 <ul>
 <li>Directly from you when you provide it to us.</li>
-<li>Automatically when you use the App.</li>
-<li>Through third-party services that you directly link to the App.</li>
 </ul>
-<h4>Information You Provide to Us</h4>
-<p>When you visit perkalate.com, join the waitlist, create an account, or use this App, we may ask you to provide information:</p>
 <ul>
-<li>By which you may be personally identified, such as name, email address, telephone number, financial account information (via third-party service providers), loyalty or award program credentials, or any other identifier by which you may be contacted online or offline ("<strong>personal information</strong>").</li>
-<li>That is about you but individually does not identify you, such as purchase and transaction histories, loyalty program membership and point balances, reward redemption history, third-party application data you provide us, or products or services purchased through us or through the services that you allow us to access.</li>
+<li>Automatically when you use the App.</li>
+</ul>
+<ul>
+<li>Through third party services that you directly link to the App.</li>
+</ul>
+<p>We retain personal information for as long as needed or permitted in context of the purpose for which it was collected and consistent with applicable law.</p>
+<p><em>Information You Provide to Us</em></p>
+<p>When you download, create an account, or use this App, we may ask you provide information:</p>
+<ul>
+<li>By which you may be personally identified, such as name, email address, telephone number, financial account information (via third party service providers) loyalty or award program credentials, any other identifier by which you may be contacted online or offline ("<strong>personal information</strong>").</li>
+</ul>
+<ul>
+<li>That is about you but individually does not identify you, such as purchase and transaction histories, loyalty program membership and point balances, loyalty program transactions, reward redemption histories, third party application data you provide us, or products or services purchased through us or through the services that you allow us to access.</li>
 </ul>
 <p>This information includes:</p>
 <ul>
-<li>Information that you provide by filling in forms in the App or on perkalate.com. This includes information provided at the time of joining our waitlist, creating an account on the App, when you connect a loyalty program to the App, when you connect another platform to the App, and any time you link any financial accounts to the App. We may also ask you for information when you enter a contest or promotion sponsored by us, and when you report a problem with the App.</li>
-<li>Records and copies of your correspondence (including email addresses and phone numbers), if you contact us.</li>
-<li>Your responses to surveys that we might ask you to complete for research purposes.</li>
-<li>Details of redemptions, offer claims, and loyalty activity you carry out through the App.</li>
+<li>Information that you provide by filling in forms in the App. This includes information provided at the time of creating an account on the App, when you connect a loyalty program to the App, when you connect another platform to the App, and any time you link any financial accounts to the App. We may also ask you for information when you enter a contest or promotion sponsored by us, and when you report a problem with the App.</li>
 </ul>
-<h4>Information We Collect Through Automatic Data Collection Technologies</h4>
-<p>As you navigate through and interact with the App, we may use automatic data collection technologies to collect certain information about your device and your browsing and usage activity and patterns, including:</p>
 <ul>
-<li><strong>Usage Details.</strong> When you access and use the App, we may automatically collect details of your access to, use of, and interaction with the App; App traffic data; and other communication data and the resources that you access and use on or through the App.</li>
-<li><strong>Device Information.</strong> We may collect information about your mobile device and internet connection, including the device's unique device identifier, IP address, operating system, browser type, and mobile network information.</li>
-<li><strong>Location Information.</strong> With your permission, the App may collect limited real-time information about the location of your device in order to surface nearby offers. We do not store or retain precise location information.</li>
+<li>Records and copies of your correspondence (including email addresses and phone numbers), if you contact us.</li>
 </ul>
-<p>If you do not want us to collect this information, do not download the App, delete it from your device, remove our access to those loyalty programs or services you have linked to the App, and remove our ability to access location information through your mobile device settings. For more information, see <em>Your Choices About Our Collection, Use, and Disclosure of Your Information</em>.</p>
+<ul>
+<li>Your responses to surveys that we might ask you to complete for research purposes.</li>
+</ul>
+<ul>
+<li>Details of transactions you carry out through the App and of the fulfillment of your orders. You may be required to provide financial information before placing an order through the App.</li>
+</ul>
+<ul>
+<li>Your search queries on the App.</li>
+</ul>
+<p>With respect to your financial account information:</p>
+<p>&lt;!-- --&gt;</p>
+<ul>
+<li>We have partnered with Plaid to securely collect certain financial account information relating to your purchases and other financial transactions.</li>
+</ul>
+<ul>
+<li>We will never have access or the ability to view entire card or account numbers.</li>
+</ul>
+<ul>
+<li>We will never initiate a financial transaction on your behalf.</li>
+</ul>
+<p><em>Information We Collect Through Automatic Data Collection Technologies</em></p>
+<p>As you navigate through and interact with our App, including when you download, access, or use the App, we may use automatic data collection technologies to collect certain information about your device and your browsing and usage activity and patterns, including:</p>
+<ul>
+<li><strong>Usage Details.</strong> When you access and use the App, we may automatically collect certain details of: your access to, use of and interaction with the App; App traffic data; and other communication data and the resources that you access and use on or through the App.</li>
+</ul>
+<ul>
+<li><strong>Device Information.</strong> We may collect information about your mobile device and internet connection, including the device's unique device identifier, IP address, operating system, browser type, mobile network information, and the device's telephone number.</li>
+</ul>
+<ul>
+<li><strong>Stored Information and Files.</strong> The App also may access metadata and other information associated with other files stored on your device. This may include, for example, photographs, audio and video clips, personal contacts, and address book information.</li>
+</ul>
+<ul>
+<li><strong>Location Information.</strong> With your permission, the App collects limited real-time information about the location of your device. No location information is stored or retained.</li>
+</ul>
+<p>If you do not want us to collect this information do not download the App, delete it from your device, remove our access to those loyalty programs or services you have linked to the App, and remove our ability to access location information through your mobile device settings. For more information, see <em>Your Choices About Our Collection, Use, and Disclosure of Your Information</em>.</p>
+<p>Please note that opting out of the App's collection of location information will disable its location-based features. Further, if you remove the App’s access to access to loyalty programs or services, we will be limited in our ability to provide you with offers or other opportunities relating to those loyalty programs or services.</p>
+<p>We also may use these technologies to collect information about your activities over time and across third-party websites, apps, or other online services (behavioral tracking). See <em>Your Choices About Our Collection, Use, and Disclosure of Your Information</em> for information on how you can opt out of behavioral tracking on or through this App and how we respond to browser signals and other mechanisms that enable consumers to exercise choice about behavioral tracking.</p>
 <p>The technologies we use for automatic information collection may include:</p>
 <ul>
-<li><strong>Cookies (or mobile cookies).</strong> A cookie is a small file placed on your device. You may be able to refuse to accept mobile cookies by activating the appropriate setting on your device. However, if you select this setting you may be unable to access certain parts of the App.</li>
-<li><strong>Web Beacons.</strong> The App and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit Perkalate, for example, to count users who have visited those pages or opened an email and for other related app statistics.</li>
-<li><strong>Session Replay.</strong> The App contains technology (rrweb) that allows us to review your interactions with the App. Session replay captures mouse movements, click targets, scroll positions, and page navigation. We mask all personal information, text inputs, passwords, and sensitive form fields before transmission. We do not log keystrokes.</li>
+<li><strong>Cookies (or mobile cookies).</strong> A cookie is a small file placed on your smartphone. It may be possible to refuse to accept mobile cookies by activating the appropriate setting on your smartphone. However, if you select this setting you may be unable to access certain parts of our App.</li>
 </ul>
-<h4>Third-Party Information Collection</h4>
+<ul>
+<li><strong>Web Beacons.</strong> The App and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit Perkalate, for example, to count users who have visited those pages \[or opened an email\] and for other related app statistics (for example, recording the popularity of certain app content and verifying system and server integrity).\]</li>
+</ul>
+<ul>
+<li><strong>Session Replay</strong>. The App contains technology that allows us to review your interactions with the App. Session replay will capture mouse movements, click targets, scroll positions, and page navigation, Session replays capture mouse movements, click targets, scroll positions, and page navigation. If we store a session using session replay, we will remove all personal information, text inputs, passwords, and sensitive form fields. We also do not log keystrokes.</li>
+</ul>
+<p><em>Third-Party Information Collection</em></p>
 <p>When you use the App or its content, certain third parties may use automatic information collection technologies to collect information about you or your device. These third parties may include:</p>
 <ul>
 <li>The loyalty or awards program(s) that you connect to the App;</li>
+</ul>
+<ul>
 <li>Any services or other applications you connect to the App;</li>
-<li>Financial technology platforms that we use to securely connect your bank or card accounts to the App, such as Plaid;</li>
+</ul>
+<ul>
+<li>Any financial technology platforms that we use to securely connect your bank or card accounts to our App;</li>
+</ul>
+<ul>
 <li>Your mobile device manufacturer;</li>
+</ul>
+<ul>
 <li>Your mobile service provider.</li>
 </ul>
-<p>These third parties may use tracking technologies to collect information about you when you use this App. The information they collect may be associated with your personal information, or they may collect information, including personal information, about your online activities over time and across different websites, apps, and other online services.</p>
-<p>We do not control these third parties' tracking technologies or how they may be used. If you have any questions about an advertisement or other targeted content, you should contact the responsible provider directly. For information about how you can opt out of receiving targeted advertising from many providers, see <em>Choices About How We Use and Disclose Your Information</em>.</p>
-<hr>
-<h3>How We Use Your Information</h3>
-<p>We use information that we collect about you or that you provide to us, including any personal information, to:</p>
+<p>These third parties may use tracking technologies to collect information about you when you use this app. The information they collect may be associated with your personal information or they may collect information, including personal information, about your online activities over time and across different websites, apps, and other online services websites. They may use this information to provide you with interest-based (behavioral) advertising or other targeted content.</p>
+<p>We do not control these third parties' tracking technologies or how they may be used. If you have any questions about an advertisement or other targeted content, you should contact the responsible provider directly. For information about how you can opt out of receiving targeted advertising from many providers, see [Choices About How We Use and Disclose Your Information](#a102108).</p>
+<h2>How We Use Your Information</h2>
+<p>We may use information that we collect about you or that you provide to us, including any personal information, to:</p>
 <ul>
 <li>Provide you with the App and its contents, and any other information, products, or services that you request from us.</li>
-<li>Verify loyalty and purchase activity and deliver rewards and offers.</li>
+</ul>
+<ul>
 <li>Fulfill any other purpose for which you provide it.</li>
+</ul>
+<ul>
 <li>Give you notices about your account.</li>
+</ul>
+<ul>
 <li>Carry out our obligations and enforce our rights arising from any contracts entered into between you and us.</li>
-<li>Notify you when App updates are available, and of changes to any products or services we offer or provide through it.</li>
-<li>Improve the App and our services, including through aggregated and de-identified analytics.</li>
+</ul>
+<ul>
+<li>Notify you when App updates are available, and of changes to any products or services we offer or provide though it.</li>
+</ul>
+<ul>
+<li>Provide you loyalty rewards, promotions, and access to other rewards in connection with our App or businesses that have partnered with us to provide rewards, incentives or promotions.</li>
+</ul>
+<ul>
+<li>To infer information about you, such as your preferences and shopping behavior.</li>
 </ul>
 <p>The usage information we collect helps us to improve our App and to deliver a better and more personalized experience by enabling us to:</p>
 <ul>
 <li>Estimate our audience size and usage patterns.</li>
+</ul>
+<ul>
 <li>Store information about your preferences, allowing us to customize our App according to your individual interests.</li>
+</ul>
+<ul>
+<li>Speed up your searches.</li>
+</ul>
+<ul>
 <li>Recognize you when you use the App.</li>
 </ul>
-<p>We may use location information we collect to present you with opportunities and offers from partner organizations where those opportunities or offers are in relative close proximity to your current location.</p>
-<p>We may also use your information to contact you about our own and third parties' goods and services that may be of interest to you. If you do not want us to use your information in this way, adjust your user preferences in your account profile or contact us at <strong>privacy@perkalate.com</strong>. For more information, see <em>Choices About How We Use and Disclose Your Information</em>.</p>
-<hr>
-<h3>Disclosure of Your Information</h3>
-<p>We may disclose aggregated information about our users, and information that does not identify any individual or device, without restriction.</p>
+<p>We may use location information we collect to present you with opportunities and offers from partner organizations where those opportunities or offers are in relative close proximity to your current location</p>
+<p>We may also use your information to contact you about our own and third parties' goods and services that may be of interest to you. If you do not want us to use your information in this way, adjust your user preferences in your account profile. For more information, see <em>Choices About How We Use and Disclose Your Information</em>.</p>
+<h2>Disclosure of Your Information</h2>
+<p>We may disclose aggregated information about our users, and information that does not identify any individual or device without restriction.</p>
 <p>In addition, we may disclose personal information that we collect or you provide:</p>
 <ul>
 <li>To our subsidiaries and affiliates.</li>
-<li>To contractors, service providers, and other third parties we use to support our business and who are bound by contractual obligations to keep personal information confidential and use it only for the purposes for which we disclose it to them. Our current service providers include, at minimum: Amazon Web Services (hosting), Supabase (database), Cloudflare and AWS CloudFront (network delivery), Vercel (waitlist), Qorrelate (observability), Resend (transactional email), Plaid (financial account connectivity), and AwardWallet (loyalty data connectivity).</li>
-<li>To a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Perkalate's assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which personal information held by Perkalate about our App users is among the assets transferred.</li>
-<li>To third parties and loyalty programs to market their products or services to you, if you have not opted out of these disclosures. For more information, see <em>Choices About How We Use and Disclose Your Information</em>.</li>
+</ul>
+<ul>
+<li>To contractors, service providers, and other third parties we use to support our business and who are bound by contractual obligations to keep personal information confidential and use it only for the purposes for which we disclose it to them.</li>
+</ul>
+<ul>
+<li>To a buyer or other successor in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Perkalate’s assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which personal information held by Perkalate about our App users is among the assets transferred.</li>
+</ul>
+<ul>
+<li>To third parties and loyalty programs to market their products or services to you if you have not opted out of these disclosures. We do not “sell” or “share” personal information as those terms are defined under applicable state laws. If we were to disclose your personal information to our partners, we would consider this a sale, share or, targeted advertisement and you may opt-out either by adjusting your user preferences in your account profile by checking or unchecking the relevant boxes or by sending us an email stating your request to <a href="mailto:support@perkalate.com">support@perkalate.com</a>. For more information, see <em>Choices About How We Use and Disclose Your Information</em>.</li>
+</ul>
+<ul>
 <li>To fulfill the purpose for which you provide it.</li>
+</ul>
+<ul>
 <li>For any other purpose disclosed by us when you provide the information.</li>
+</ul>
+<ul>
 <li>With your consent.</li>
 </ul>
 <p>We may also disclose your personal information:</p>
 <ul>
 <li>To comply with any court order, law, or legal process, including to respond to any government or regulatory request.</li>
-<li>To enforce our rights arising from any contracts entered into between you and us.</li>
-<li>If we believe disclosure is necessary or appropriate to protect the rights, property, or safety of Perkalate, our customers, or others. This includes exchanging information with other companies and organizations for the purposes of fraud protection.</li>
 </ul>
-<hr>
-<h3>Choices About How We Use and Disclose Your Information</h3>
-<p>We strive to provide you with choices regarding the personal information you provide to us. This section describes mechanisms we provide for you to control certain uses and disclosures of your information.</p>
 <ul>
-<li><strong>Tracking Technologies.</strong> You can set your browser to refuse all or some browser cookies, or to alert you when cookies are being sent. You can choose whether or not to allow the App to collect information through other tracking technologies through the App's settings.</li>
-<li><strong>Location Information.</strong> You can choose whether or not to allow the App to collect and use real-time information about your device's location through your device's privacy settings. If you block the use of location information, some parts of the App may become inaccessible or not function properly.</li>
-<li><strong>Promotional Messages.</strong> If you do not want us to use your contact information to promote our own or third parties' products or services, you can opt out by clicking the unsubscribe link in any marketing email, adjusting your user preferences in your account profile, or emailing us at <strong>privacy@perkalate.com</strong>.</li>
-<li><strong>Targeted Outreach.</strong> If you do not want us to use information that we collect or that you provide to deliver offers and opportunities according to our partners' target-audience preferences, you can opt out by adjusting your user preferences in your account profile or emailing us at <strong>privacy@perkalate.com</strong>.</li>
+<li>To enforce our rights arising from any contracts entered into between you and us.</li>
 </ul>
-<p>We do not control third parties' collection or use of your information to serve interest-based advertising. However, these third parties may provide you with ways to choose not to have your information collected or used in this way. You can opt out of receiving targeted ads from members of the Network Advertising Initiative ("NAI") on the NAI's website.</p>
-<p>Residents in certain states, such as California, may have additional personal information rights and choices. Please see <em>Your State Privacy Rights</em> for more information.</p>
-<hr>
-<h3>Accessing and Correcting Your Personal Information</h3>
+<ul>
+<li>If we believe disclosure is necessary or appropriate to protect the rights, property, or safety of Perkalate our customers, or others. This includes exchanging information with other companies and organizations for the purposes of fraud protection.</li>
+</ul>
+<h2>Choices About How We Use and Disclose Your Information</h2>
+<p>We strive to provide you with choices regarding the personal information you provide to us. This section describes mechanisms we provide for you to control certain uses and disclosures of over your information.</p>
+<ul>
+<li><strong>Tracking Technologies.</strong> You can set your browser to refuse all or some browser cookies, or to alert you when cookies are being sent. You can choose whether or not to allow the App to collect information through other tracking technologies through the App’s setting. If you disable or refuse cookies or block the use of other tracking technologies, some parts of the App may then be inaccessible or not function properly.</li>
+</ul>
+<ul>
+<li><strong>Location Information.</strong> You can choose whether or not to allow the App to collect and use real-time information about your device's location through your device's privacy settings emailing <a href="mailto:support@perkalate.com">support@perkalate.com</a> . If you block the use of location information, some parts of the App may become inaccessible or not function properly.\]</li>
+</ul>
+<ul>
+<li><strong>Promotion by Perkalate.</strong> If you do not want us to use your contact information to promote our own or third parties' products or services, you can opt-out by emailing <a href="mailto:support@perkalate.com">support@perkalate.com</a> You can also always opt-out by logging into the App and adjusting your user preferences in your account profile by checking or unchecking the relevant boxes or by sending us an email stating your request to <a href="mailto:support@perkalate.com">support@perkalate.com</a></li>
+</ul>
+<ul>
+<li><strong>Targeted Outreach by Perkalate.</strong> If you do not want us to use information that we collect or that you provide to us to deliver offers and opportunities according to our partner’s target-audience preferences, you can opt-out by emailing <a href="mailto:support@perkalate.com">support@perkalate.com</a>. You can also always adjust your user preferences in your account profile by checking or unchecking the relevant boxes or by sending us an email stating your request to <a href="mailto:support@perkalate.com">support@perkalate.com</a>.</li>
+</ul>
+<p>You may also disconnect any loyalty or rewards programs, financial accounts, or other third‑party accounts you have connected to the App at any time. Please note that if you limit or remove Perkalate’s ability to access or use this information, you may no longer be eligible for certain rewards or offers that depend on that data. In addition, some features of the App may become unavailable or may not function properly.</p>
+<p>We do not control third parties' collection or use of your information to serve interest-based advertising. However, these third parties may provide you with ways to choose not to have your information collected or used in this way. You can opt out of receiving targeted ads from members of the Network Advertising Initiative ("<strong>NAI</strong>") on the NAI's website.</p>
+<p>Residents in certain states, such as California, may have additional personal information rights and choices. Please see [Your State Privacy Rights](#a820658) for more information.</p>
+<h2>Accessing and Correcting Your Personal Information</h2>
 <p>You can review and change your personal information by logging into the App and visiting your account profile page.</p>
-<p>You may also send us an email at <strong>privacy@perkalate.com</strong> to request access to, correct, or delete any personal information that you have provided to us. We cannot delete your personal information except by also deleting your user account. We may not accommodate a request to change information if we believe the change would violate any law or legal requirement or cause the information to be incorrect.</p>
-<hr>
-<h3>Data Retention &amp; Deletion</h3>
-<p>We retain personal information for no longer than is necessary for the purposes for which it was collected. Our full Data Retention &amp; Deletion Policy is available on request. Upon a verified deletion request, we acknowledge receipt within 10 business days and complete deletion within 45 calendar days, subject to a one-time 45-day extension if the request is complex. As part of deletion, we revoke Plaid access tokens, revoke OAuth tokens, and purge data from primary data stores and backups on the standard backup rotation (30-day maximum).</p>
-<hr>
-<h3>Data Security</h3>
-<p>We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. These measures include AES-256 encryption at rest, TLS 1.2 or higher in transit, role-based access controls, encrypted storage of Plaid and OAuth tokens, and audit logging.</p>
-<p>The safety and security of your information also depends on you. Where we have given you (or where you have chosen) a password or other login information for access to certain parts of the App, you are responsible for keeping that password or login information confidential. We ask you not to share your password with anyone.</p>
-<p>Unfortunately, the transmission of information via the internet and mobile platforms is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted through the App. Any transmission of personal information is at your own risk. We are not responsible for circumvention of any privacy settings or security measures included through the App.</p>
-<hr>
-<h3>Your State Privacy Rights</h3>
+<p>You may also send us an email at <a href="mailto:support@perkalate.com">support@perkalate.com</a> to request access to, correct, or delete any personal information that you have provided to us. We cannot delete your personal information except by also deleting your user account. We may not accommodate a request to change information if we believe the change would violate any law or legal requirement or cause the information to be incorrect.</p>
+<p>Residents in certain states, such as California, may have additional personal information rights and choices. Please see [Your State Privacy Rights](#a820658) for more information.</p>
+<h2>Your State Privacy Rights</h2>
 <p>State consumer privacy laws may provide their residents with additional rights regarding our use of their personal information.</p>
-<p>Many states, including California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Montana, Oregon, Tennessee, Texas, Utah, and Virginia, provide (now or in the future) their state residents with rights to:</p>
+<p>Many states, including California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Montana, Oregon, Tennessee, Texas, Utah, and Virginia provide (now or in the future) their state residents with rights to:</p>
 <ul>
 <li>Confirm whether we process their personal information.</li>
-<li>Access and delete certain personal information.</li>
-<li>Correct inaccuracies in their personal information, taking into account the information's nature and processing purpose (excluding Iowa and Utah).</li>
-<li>Data portability.</li>
-<li>Opt out of personal data processing for targeted advertising (excluding Iowa), sales, or profiling in furtherance of decisions that produce legal or similarly significant effects (excluding Iowa and Utah).</li>
-<li>Either limit (opt out of) or require consent to process sensitive personal data or process personal data of minors under 18, 17, or 16 years old.</li>
 </ul>
-<p>The exact scope of these rights may vary by state. To exercise any of these rights please email us at <strong>privacy@perkalate.com</strong>. To appeal a decision regarding a consumer rights request, reply to our response with the subject line "Appeal" and we will respond within 60 days.</p>
-<p>Nevada provides its residents with a limited right to opt out of certain personal information sales. Residents who wish to exercise this right may submit a request to <strong>privacy@perkalate.com</strong>. We do not currently sell personal information triggering that statute's opt-out requirements.</p>
-<hr>
-<h3>Changes to Our Privacy Policy</h3>
-<p>We may update our privacy policy from time to time. If we make material changes to how we treat our users' personal information, it is our policy to notify you by the email address specified in your account and through a notice on perkalate.com.</p>
+<ul>
+<li>Access and delete certain personal information.</li>
+</ul>
+<ul>
+<li>Correct inaccuracies in their personal information, taking into account the information's nature processing purpose (excluding Iowa and Utah).</li>
+</ul>
+<ul>
+<li>Data portability.</li>
+</ul>
+<ul>
+<li>Opt-out of personal data processing for:</li>
+</ul>
+<ul>
+<li>targeted advertising (excluding Iowa);</li>
+</ul>
+<ul>
+<li>sales; or</li>
+</ul>
+<ul>
+<li>profiling in furtherance of decisions that produce legal or similarly significant effects (excluding Iowa and Utah).</li>
+</ul>
+<ul>
+<li>Either limit (opt-out of) or require consent to process sensitive personal data or process personal data of minors under 18, 17, or 16 years old.</li>
+</ul>
+<p>The exact scope of these rights may vary by state. To exercise any of these rights please email us at <a href="mailto:support@perkalate.com">support@perkalate.com</a>. To appeal a decision regarding a consumer rights request please email <a href="mailto:support@perkalate.com">support@perkalate.com</a></p>
+<p>Nevada provides its residents with a limited right to opt-out of certain personal information sales. Residents who wish to exercise this sale opt-out rights may submit a request to this designated address: <a href="mailto:support@perkalate.com">support@perkalate.com</a>. However, please know we do not currently sell personal information triggering that statute's opt-out requirements.</p>
+<h2>Data Security</h2>
+<p>We have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure.</p>
+<p>The safety and security of your information also depends on you. Where we have given you (or where you have chosen) a password, or other login information, for access to certain parts of our App, you are responsible for keeping this password or, any login information, confidential. We ask you not to share your password with anyone.</p>
+<p>Unfortunately, the transmission of information via the internet and mobile platforms is not completely secure. Although we do our best to protect your personal information, we cannot guarantee the security of your personal information transmitted through our App. Any transmission of personal information is at your own risk. We are not responsible for circumvention of any privacy settings or security measures included through the App.</p>
+<h2>Changes to Our Privacy Policy</h2>
+<p>We may update our privacy policy from time to time. If we make material changes to how we treat our users' personal information, it is our policy to notify you by the email address specified in your account and through a notice on the App's home page.</p>
 <p>The date the privacy policy was last revised is identified at the top of the page. You are responsible for ensuring we have an up-to-date active and deliverable email address for you and for periodically visiting this privacy policy to check for any changes.</p>
-<hr>
-<h3>Contact Information</h3>
+<h2>Contact Information</h2>
 <p>To ask questions or comment about this privacy policy and our privacy practices, contact us at:</p>
-<p><strong>Perkalate Inc.</strong></p>
-<p>Attn: Privacy</p>
-<p>Email: <strong>privacy@perkalate.com</strong></p>
-<p>General support: <strong>support@perkalate.com</strong></p>
-<p>Security reports: <strong>security@perkalate.com</strong></p>
-<p>Los Angeles, California, USA</p>
+<p>Perkalate – Privacy Support</p>
+<p>710 Boccaccio Avenue</p>
+<p>Venice CA 90291</p>
+<p><a href="mailto:support@perkalate.com">support@perkalate.com</a></p>
 
     </main>
-
     <footer class="site-footer">
       <p>© 2026 Perkalate Inc. · <a href="/">Home</a> · <a href="mailto:privacy@perkalate.com">privacy@perkalate.com</a></p>
     </footer>
