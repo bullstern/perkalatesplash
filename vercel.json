@@ -16,7 +16,23 @@
       "destination": "/privacy.html"
     },
     {
-      "source": "/((?!api/|privacy).*)",
+      "source": "/investor-traction",
+      "destination": "/investor-traction.html"
+    },
+    {
+      "source": "/investor-traction/",
+      "destination": "/investor-traction.html"
+    },
+    {
+      "source": "/traction-proof",
+      "destination": "/investor-traction.html"
+    },
+    {
+      "source": "/traction-proof/",
+      "destination": "/investor-traction.html"
+    },
+    {
+      "source": "/((?!api/|privacy|investor-traction|traction-proof|perkalate-traction-proof.txt).*)",
       "destination": "/index.html"
     }
   ]

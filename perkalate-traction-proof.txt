@@ -1,0 +1,94 @@
+PERKALATE TRACTION / PROOF SECTION
+Prepared June 1, 2026
+
+Purpose
+Use this section to make Perkalate feel commercially real, not just conceptually strong.
+
+Core Traction Points
+- 100+ brands expected to be onboarding by the end of June 2026.
+- Active conversations with major sports teams.
+- Working consumer app with account syncing and verified rewards surface.
+- Brand-side campaign infrastructure exists for campaign creation and reward management.
+- POS / Shopify redemption work is underway.
+- Perkalate is moving from product build into live network formation.
+
+Slide 1: Traction
+Headline:
+Perkalate is moving from product build to network formation.
+
+Body:
+Perkalate has crossed the line from a rewards concept into a commercial network that brands can join, test, and use for verified customer rewards.
+
+Proof bullets:
+- 100+ brands expected to be onboarding by end of June 2026, creating the first supply side of the Perkalate rewards network.
+- Working consumer app with account syncing, reward discovery, and a permissioned verification surface.
+- Brand-side campaign infrastructure for creating rewards based on verified customer behavior.
+- POS / Shopify redemption work underway, turning eligibility from a marketing signal into a checkout action.
+
+Speaker note:
+Do not overstate this as signed revenue unless the contracts are signed. The point is commercial pull, onboarding velocity, and a credible path to network liquidity.
+
+Slide 2: Commercial Momentum
+Headline:
+Early demand is coming from brands that need verified behavior, not another points system.
+
+Body:
+Perkalate's wedge is not generic loyalty. It is verified eligibility: brands define the behavior that matters, Perkalate verifies it, and rewards can be claimed and redeemed where commerce happens.
+
+Proof bullets:
+- Small-business onboarding motion: build density quickly with 100+ brands and repeatable reward templates.
+- Sports and venue conversations: major sports teams are exploring Perkalate as a way to connect fan behavior, sponsor value, and commerce redemption.
+- Commerce-first infrastructure: the same system supports DTC, Shopify, local merchants, CPG partnerships, sports, venues, and sponsor-funded rewards.
+- Clear buyer: brands pay to reach verified customers and prove the reward or partner outcome.
+
+Speaker note:
+The sports-team pipeline is powerful because it shows larger enterprise relevance, but the deck should still frame the near-term wedge as repeatable brand onboarding and reward activation.
+
+Slide 3: Why It Matters
+Headline:
+The hard part is not launching a reward. It is proving who should get it.
+
+Body:
+Most rewards tools help brands publish offers. Perkalate gives brands the missing infrastructure layer: permissioned customer data, eligibility verification, redemption, and attribution.
+
+Proof bullets:
+- For brands: launch rewards against verified purchases, loyalty status, account behavior, location signals, and partner eligibility.
+- For customers: claim rewards they were already eligible for without hunting across scattered apps, cards, receipts, and accounts.
+- For partners: prove what happened instead of relying on manual, delayed, or vague attribution.
+
+Speaker note:
+This is the bridge from traction to market size. If 100+ brands can onboard quickly, Perkalate has a credible path to become a rewards-eligibility layer, not just a campaign tool.
+
+Prompt To Improve The Deck
+You are an expert seed-stage fundraising deck strategist.
+
+Improve Perkalate's fundraising deck by adding an investor-ready Traction / Proof section.
+
+Context:
+Perkalate is B2B rewards-eligibility and redemption infrastructure. Brands are the buyer; the consumer app is the permission and verification surface. Perkalate lets brands launch rewards based on verified customer behavior, then lets customers claim and redeem them where commerce actually happens.
+
+Known traction / proof:
+- 100+ brands expected to be onboarding by the end of June 2026.
+- Active conversations with major sports teams.
+- Working consumer app with account syncing and verified rewards surface.
+- Brand-side campaign infrastructure exists for campaign creation and reward management.
+- POS / Shopify redemption work is underway.
+- Perkalate is moving from product build into live network formation.
+
+Goal:
+Create 2-3 polished investor slides that make Perkalate feel commercially validated without overstating anything.
+
+Create:
+1. A Traction slide.
+2. A Pipeline / Commercial Momentum slide.
+3. Optional speaker notes explaining why this proof matters.
+
+Use precise language:
+- Say "100+ brands expected to be onboarding by end of June 2026."
+- Say "active conversations with major sports teams."
+- Do not claim signed contracts, revenue, or closed partnerships unless explicitly provided.
+- Make the buyer clear: brands pay; the consumer app verifies eligibility.
+- Make the wedge clear: verified rewards eligibility and redemption, not another loyalty points database.
+
+Tone:
+Confident, concrete, seed-stage credible, and concise.
