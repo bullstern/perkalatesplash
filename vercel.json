@@ -51,6 +51,130 @@
       "destination": "https://dev.perkalate.com/file.svg"
     },
     {
+      "source": "/icons/:path*",
+      "destination": "https://dev.perkalate.com/icons/:path*"
+    },
+    {
+      "source": "/connect-flow/:path*",
+      "destination": "https://dev.perkalate.com/connect-flow/:path*"
+    },
+    {
+      "source": "/demos/:path*",
+      "destination": "https://dev.perkalate.com/demos/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://dev.perkalate.com/health"
+    },
+    {
+      "source": "/ready",
+      "destination": "https://dev.perkalate.com/ready"
+    },
+    {
+      "source": "/about",
+      "destination": "https://dev.perkalate.com/about"
+    },
+    {
+      "source": "/admin",
+      "destination": "https://dev.perkalate.com/admin"
+    },
+    {
+      "source": "/architecture",
+      "destination": "https://dev.perkalate.com/architecture"
+    },
+    {
+      "source": "/auth",
+      "destination": "https://dev.perkalate.com/auth"
+    },
+    {
+      "source": "/brand",
+      "destination": "https://dev.perkalate.com/brand"
+    },
+    {
+      "source": "/brands",
+      "destination": "https://dev.perkalate.com/brands"
+    },
+    {
+      "source": "/change-password",
+      "destination": "https://dev.perkalate.com/change-password"
+    },
+    {
+      "source": "/checkout-widget",
+      "destination": "https://dev.perkalate.com/checkout-widget"
+    },
+    {
+      "source": "/connect",
+      "destination": "https://dev.perkalate.com/connect"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "https://dev.perkalate.com/dashboard"
+    },
+    {
+      "source": "/discover",
+      "destination": "https://dev.perkalate.com/discover"
+    },
+    {
+      "source": "/docs",
+      "destination": "https://dev.perkalate.com/docs"
+    },
+    {
+      "source": "/help",
+      "destination": "https://dev.perkalate.com/help"
+    },
+    {
+      "source": "/home",
+      "destination": "https://dev.perkalate.com/home"
+    },
+    {
+      "source": "/login",
+      "destination": "https://dev.perkalate.com/login"
+    },
+    {
+      "source": "/notifications",
+      "destination": "https://dev.perkalate.com/notifications"
+    },
+    {
+      "source": "/offers",
+      "destination": "https://dev.perkalate.com/offers"
+    },
+    {
+      "source": "/onboarding",
+      "destination": "https://dev.perkalate.com/onboarding"
+    },
+    {
+      "source": "/profile",
+      "destination": "https://dev.perkalate.com/profile"
+    },
+    {
+      "source": "/register",
+      "destination": "https://dev.perkalate.com/register"
+    },
+    {
+      "source": "/rewards",
+      "destination": "https://dev.perkalate.com/rewards"
+    },
+    {
+      "source": "/settings",
+      "destination": "https://dev.perkalate.com/settings"
+    },
+    {
+      "source": "/signin",
+      "destination": "https://dev.perkalate.com/signin"
+    },
+    {
+      "source": "/signup",
+      "destination": "https://dev.perkalate.com/signup"
+    },
+    {
+      "source": "/terms",
+      "destination": "https://dev.perkalate.com/terms"
+    },
+    {
+      "source": "/wallet",
+      "destination": "https://dev.perkalate.com/wallet"
+    },
+    {
       "source": "/about/:path*",
       "destination": "https://dev.perkalate.com/about/:path*"
     },
