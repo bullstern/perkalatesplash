@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Perkalate — Every reward, one place.</title>
   <meta name="description" content="Perkalate connects all your loyalty programs — airlines, coffee, groceries, hotels, and more. One app. Every point. Join the waitlist.">
+  <meta name="brandfetch-client-id" content="1idMe2lt6y8Bq-sqcV0">
 
   <!-- Open Graph / iMessage / social preview -->
   <meta property="og:type" content="website">
@@ -186,7 +187,10 @@
       display: flex; align-items: center; justify-content: center;
       overflow: hidden;
     }
-    .orbiter img { width: 40px; height: 40px; object-fit: contain; border-radius: 8px; }
+    .orbiter img {
+      box-sizing: border-box; width: 40px; height: 40px; padding: 5px;
+      object-fit: contain; border-radius: 8px; background: #f7f4ff;
+    }
 
     /* True orbit — rotate arm, counter-rotate icon */
     .t1{animation:oCW 11s linear infinite;}
@@ -355,12 +359,15 @@
     }
     .bi {
       width: 44px; height: 44px; border-radius: 12px;
-      background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.18);
+      background: #f7f4ff; border: 1px solid rgba(255,255,255,0.18);
       display: flex; align-items: center; justify-content: center;
       overflow: hidden; flex-shrink: 0;
       box-shadow: 0 6px 16px rgba(0,0,0,0.22);
     }
-    .bi img { width: 30px; height: 30px; object-fit: contain; border-radius: 5px; }
+    .bi img {
+      box-sizing: border-box; width: 36px; height: 36px; padding: 4px;
+      object-fit: contain; border-radius: 7px; background: #f7f4ff;
+    }
 
     /* ── Responsive: ensure it all fits ── */
     @media (max-width: 430px) {
@@ -416,14 +423,14 @@
       </div>
     </div>
 
-    <div class="orbit-track t1"><div class="orbiter"><img src="https://cdn.brandfetch.io/starbucks.com/icon?size=128" alt="" onerror="this.parentElement.innerHTML='☕'"></div></div>
-    <div class="orbit-track t2"><div class="orbiter"><img src="https://cdn.brandfetch.io/delta.com/icon?size=128"     alt="" onerror="this.parentElement.innerHTML='Δ'"></div></div>
-    <div class="orbit-track t3"><div class="orbiter"><img src="https://cdn.brandfetch.io/amazon.com/icon?size=128"    alt="" onerror="this.parentElement.innerHTML='📦'"></div></div>
-    <div class="orbit-track t4"><div class="orbiter"><img src="https://cdn.brandfetch.io/marriott.com/icon?size=128"  alt="" onerror="this.parentElement.innerHTML='🏨'"></div></div>
-    <div class="orbit-track t5"><div class="orbiter"><img src="https://cdn.brandfetch.io/target.com/icon?size=128"    alt="" onerror="this.parentElement.innerHTML='🎯'"></div></div>
-    <div class="orbit-track t6"><div class="orbiter"><img src="https://cdn.brandfetch.io/chase.com/icon?size=128"     alt="" onerror="this.parentElement.innerHTML='💳'"></div></div>
-    <div class="orbit-track t7"><div class="orbiter"><img src="https://cdn.brandfetch.io/sephora.com/icon?size=128"    alt="" onerror="this.parentElement.innerHTML='✈'"></div></div>
-    <div class="orbit-track t8"><div class="orbiter"><img src="https://cdn.brandfetch.io/americanexpress.com/icon?size=128"    alt="" onerror="this.parentElement.innerHTML='H'"></div></div>
+    <div class="orbit-track t1"><div class="orbiter"><img src="/logos/starbucks.com.png" data-brandfetch-domain="starbucks.com" alt="Starbucks"></div></div>
+    <div class="orbit-track t2"><div class="orbiter"><img src="/logos/delta.com.png" data-brandfetch-domain="delta.com" alt="Delta"></div></div>
+    <div class="orbit-track t3"><div class="orbiter"><img src="/logos/amazon.com.png" data-brandfetch-domain="amazon.com" alt="Amazon"></div></div>
+    <div class="orbit-track t4"><div class="orbiter"><img src="/logos/marriott.com.png" data-brandfetch-domain="marriott.com" alt="Marriott"></div></div>
+    <div class="orbit-track t5"><div class="orbiter"><img src="/logos/target.com.png" data-brandfetch-domain="target.com" alt="Target"></div></div>
+    <div class="orbit-track t6"><div class="orbiter"><img src="/logos/chase.com.png" data-brandfetch-domain="chase.com" alt="Chase"></div></div>
+    <div class="orbit-track t7"><div class="orbiter"><img src="/logos/sephora.com.png" data-brandfetch-domain="sephora.com" alt="Sephora"></div></div>
+    <div class="orbit-track t8"><div class="orbiter"><img src="/logos/americanexpress.com.svg" data-brandfetch-domain="americanexpress.com" alt="American Express"></div></div>
   </div>
 
   <!-- Headline + sub -->
@@ -452,35 +459,35 @@
     <div class="brand-rail">
       <div class="brand-track" id="brandTrack">
         <!-- Set 1 -->
-        <div class="bi"><img src="https://cdn.brandfetch.io/nike.com/icon?size=128" alt="Nike"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/united.com/icon?size=128" alt="United Airlines"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/hilton.com/icon?size=128" alt="Hilton"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/walmart.com/icon?size=128" alt="Walmart"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/ulta.com/icon?size=128" alt="Ulta"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/southwest.com/icon?size=128" alt="Southwest"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/lyft.com/icon?size=128" alt="Lyft"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/dunkindonuts.com/icon?size=128" alt="Dunkin"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/cvs.com/icon?size=128" alt="CVS"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/nordstrom.com/icon?size=128" alt="Nordstrom"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/spotify.com/icon?size=128" alt="Spotify"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/costco.com/icon?size=128" alt="Costco"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/adidas.com/icon?size=128" alt="Adidas"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/wholefoodsmarket.com/icon?size=128" alt="Whole Foods"></div>
+        <div class="bi"><img src="/logos/nike.com.png" data-brandfetch-domain="nike.com" alt="Nike"></div>
+        <div class="bi"><img src="/logos/united.com.png" data-brandfetch-domain="united.com" alt="United Airlines"></div>
+        <div class="bi"><img src="/logos/hilton.com.png" data-brandfetch-domain="hilton.com" alt="Hilton"></div>
+        <div class="bi"><img src="/logos/target.com.png" data-brandfetch-domain="target.com" alt="Target"></div>
+        <div class="bi"><img src="/logos/sephora.com.png" data-brandfetch-domain="sephora.com" alt="Sephora"></div>
+        <div class="bi"><img src="/logos/southwest.com.png" data-brandfetch-domain="southwest.com" alt="Southwest"></div>
+        <div class="bi"><img src="/logos/dunkindonuts.com.png" data-brandfetch-domain="dunkindonuts.com" alt="Dunkin"></div>
+        <div class="bi"><img src="/logos/cvs.com.png" data-brandfetch-domain="cvs.com" alt="CVS"></div>
+        <div class="bi"><img src="/logos/nordstrom.com.svg" data-brandfetch-domain="nordstrom.com" alt="Nordstrom"></div>
+        <div class="bi"><img src="/logos/spotify.com.png" data-brandfetch-domain="spotify.com" alt="Spotify"></div>
+        <div class="bi"><img src="/logos/costco.com.png" data-brandfetch-domain="costco.com" alt="Costco"></div>
+        <div class="bi"><img src="/logos/chipotle.com.png" data-brandfetch-domain="chipotle.com" alt="Chipotle"></div>
+        <div class="bi"><img src="/logos/uber.com.png" data-brandfetch-domain="uber.com" alt="Uber"></div>
+        <div class="bi"><img src="/logos/wholefoodsmarket.com.png" data-brandfetch-domain="wholefoodsmarket.com" alt="Whole Foods"></div>
         <!-- Set 2 (duplicate for seamless loop) -->
-        <div class="bi"><img src="https://cdn.brandfetch.io/nike.com/icon?size=128" alt="Nike"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/united.com/icon?size=128" alt="United Airlines"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/hilton.com/icon?size=128" alt="Hilton"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/walmart.com/icon?size=128" alt="Walmart"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/ulta.com/icon?size=128" alt="Ulta"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/southwest.com/icon?size=128" alt="Southwest"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/lyft.com/icon?size=128" alt="Lyft"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/dunkindonuts.com/icon?size=128" alt="Dunkin"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/cvs.com/icon?size=128" alt="CVS"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/nordstrom.com/icon?size=128" alt="Nordstrom"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/spotify.com/icon?size=128" alt="Spotify"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/costco.com/icon?size=128" alt="Costco"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/adidas.com/icon?size=128" alt="Adidas"></div>
-        <div class="bi"><img src="https://cdn.brandfetch.io/wholefoodsmarket.com/icon?size=128" alt="Whole Foods"></div>
+        <div class="bi"><img src="/logos/nike.com.png" data-brandfetch-domain="nike.com" alt="Nike"></div>
+        <div class="bi"><img src="/logos/united.com.png" data-brandfetch-domain="united.com" alt="United Airlines"></div>
+        <div class="bi"><img src="/logos/hilton.com.png" data-brandfetch-domain="hilton.com" alt="Hilton"></div>
+        <div class="bi"><img src="/logos/target.com.png" data-brandfetch-domain="target.com" alt="Target"></div>
+        <div class="bi"><img src="/logos/sephora.com.png" data-brandfetch-domain="sephora.com" alt="Sephora"></div>
+        <div class="bi"><img src="/logos/southwest.com.png" data-brandfetch-domain="southwest.com" alt="Southwest"></div>
+        <div class="bi"><img src="/logos/dunkindonuts.com.png" data-brandfetch-domain="dunkindonuts.com" alt="Dunkin"></div>
+        <div class="bi"><img src="/logos/cvs.com.png" data-brandfetch-domain="cvs.com" alt="CVS"></div>
+        <div class="bi"><img src="/logos/nordstrom.com.svg" data-brandfetch-domain="nordstrom.com" alt="Nordstrom"></div>
+        <div class="bi"><img src="/logos/spotify.com.png" data-brandfetch-domain="spotify.com" alt="Spotify"></div>
+        <div class="bi"><img src="/logos/costco.com.png" data-brandfetch-domain="costco.com" alt="Costco"></div>
+        <div class="bi"><img src="/logos/chipotle.com.png" data-brandfetch-domain="chipotle.com" alt="Chipotle"></div>
+        <div class="bi"><img src="/logos/uber.com.png" data-brandfetch-domain="uber.com" alt="Uber"></div>
+        <div class="bi"><img src="/logos/wholefoodsmarket.com.png" data-brandfetch-domain="wholefoodsmarket.com" alt="Whole Foods"></div>
       </div>
     </div>
   </div>
@@ -488,6 +495,23 @@
 </main>
 
 <script>
+  // Brandfetch Logo API client ids are publishable. Local assets remain the
+  // deterministic fallback if the subscribed CDN cannot serve an icon.
+  const brandfetchClientId = document.querySelector('meta[name="brandfetch-client-id"]').content;
+  document.querySelectorAll('img[data-brandfetch-domain]').forEach((image) => {
+    const fallbackSource = image.getAttribute('src');
+    const domain = image.dataset.brandfetchDomain;
+    image.addEventListener('error', () => {
+      if (fallbackSource && image.getAttribute('src') !== fallbackSource) {
+        image.setAttribute('src', fallbackSource);
+      }
+    }, { once: true });
+    image.setAttribute(
+      'src',
+      `https://cdn.brandfetch.io/${encodeURIComponent(domain)}/h/128/w/128/fallback/404/icon.png?c=${encodeURIComponent(brandfetchClientId)}`,
+    );
+  });
+
   document.getElementById('wlForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const emailInput = this.querySelector('input[type="email"]');
