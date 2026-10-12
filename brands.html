@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perkalate for brands: Get early access</title>
+<meta name="description" content="Reach the right customers with rewards they'll actually use. Free to start. You only pay for the rewards you fund.">
+<meta property="og:title" content="Perkalate for brands">
+<meta property="og:description" content="Reach the right customers with rewards they'll actually use. Free to start. You only pay for the rewards you fund.">
+<meta property="og:image" content="/og-image.png">
+<meta name="color-scheme" content="dark light">
+<!-- HubSpot form for brand signups. Public IDs (not secrets). Empty = signups go only to the /admin brand access queue. -->
+<meta name="pk-hubspot-portal-id" content="247667002">
+<meta name="pk-hubspot-form-guid" content="3b46342c-bda0-4017-982a-16db64d732bc">
+<meta name="pk-hubspot-region" content="na2">
+<link rel="icon" href="/favicon.ico">
+<script>
+  // Dark first: light only when asked for (?theme=light or a saved toggle).
+  (function () {
+    var q = new URLSearchParams(location.search).get('theme');
+    var s = null; try { s = localStorage.getItem('pk-theme'); } catch (e) {}
+    var t = q || s || 'dark';
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --r-sm: 8px; --r: 12px; --r-lg: 18px; --r-xl: 24px;
+  --maxw: 1120px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+html[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#09070F; --bg-elev:#110D1B; --surface:#15111F; --surface-2:#1C1729; --surface-3:#241E35;
+  --border:rgba(255,255,255,.08); --border-strong:rgba(255,255,255,.14);
+  --text:#F5F3FA; --muted:#ABA5BE; --faint:#8A839E;
+  --accent:#8B6CFF; --accent-strong:#9D82FF; --accent-text:#BCA8FF; --accent-soft:rgba(139,108,255,.14); --accent-border:rgba(157,130,255,.45);
+  --grad-a:#A78BFA; --grad-b:#D8CCFF;
+  --btn-bg:#FFFFFF; --btn-fg:#120E1F; --btn-shadow:0 0 0 1px rgba(255,255,255,.1), 0 8px 30px -6px rgba(139,108,255,.55);
+  --glow-1:rgba(110,70,255,.38); --glow-2:rgba(170,90,255,.16);
+  --shadow-lg:0 30px 80px -20px rgba(0,0,0,.7);
+  --grid-line:rgba(255,255,255,.035);
+}
+html[data-theme="light"]{
+  color-scheme: light;
+  --bg:#FBFAFE; --bg-elev:#F4F1FB; --surface:#FFFFFF; --surface-2:#F6F4FB; --surface-3:#EEEAF7;
+  --border:#E6E1F0; --border-strong:#D6CFE6;
+  --text:#15112A; --muted:#565070; --faint:#6A6482;
+  --accent:#6A45F5; --accent-strong:#5B35E8; --accent-text:#5530E0; --accent-soft:rgba(106,69,245,.09); --accent-border:rgba(106,69,245,.4);
+  --grad-a:#5B35E8; --grad-b:#9B6BFF;
+  --btn-bg:#15112A; --btn-fg:#FFFFFF; --btn-shadow:0 1px 0 rgba(255,255,255,.2) inset, 0 10px 30px -10px rgba(91,53,232,.55);
+  --glow-1:rgba(124,92,255,.20); --glow-2:rgba(196,140,255,.14);
+  --shadow-lg:0 30px 70px -25px rgba(40,20,90,.35);
+  --grid-line:rgba(40,20,90,.045);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s var(--ease),color .3s var(--ease)}
+a{color:inherit}
+img,svg{display:block}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent-strong);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--btn-bg);color:var(--btn-fg);padding:8px 14px;border-radius:8px;z-index:100;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.bg-fx{position:absolute;inset:0 0 auto 0;height:1400px;pointer-events:none;z-index:0;overflow:hidden}
+.bg-fx::before{content:"";position:absolute;left:50%;top:-380px;width:1300px;height:900px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow-1),transparent 70%);filter:blur(10px)}
+.bg-fx::after{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 60% 50% at 50% 20%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 20%,#000 30%,transparent 75%)}
+main,header,footer{position:relative;z-index:1}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-bottom-color:var(--border)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.01em}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#8B6CFF,#5B35E8);display:grid;place-items:center;box-shadow:0 0 0 1px rgba(255,255,255,.18) inset,0 6px 18px -6px rgba(139,108,255,.8)}
+.brand-sub{color:var(--muted);font-weight:500}
+.nav-right{display:flex;align-items:center;gap:6px}
+.nav-link{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+.nav-link:hover{color:var(--text);background:var(--surface-2)}
+.icon-btn{width:36px;height:36px;border-radius:10px;border:1px solid var(--border);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--muted);transition:color .15s,border-color .15s}
+.icon-btn:hover{color:var(--text);border-color:var(--border-strong)}
+html[data-theme="dark"] .i-sun{display:none} html[data-theme="light"] .i-moon{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .15s var(--ease),box-shadow .2s,background .2s;white-space:nowrap}
+.btn-primary{background:var(--btn-bg);color:var(--btn-fg);box-shadow:var(--btn-shadow)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-primary[disabled]{opacity:.7;cursor:progress;transform:none}
+.btn-lg{height:52px;padding:0 26px;font-size:16px}
+.btn-sm{height:36px;padding:0 14px;font-size:14px;border-radius:10px}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border-strong);height:52px;padding:0 20px;border-radius:12px}
+.btn-ghost:hover{color:var(--text)}
+.hero{text-align:center;padding:80px 0 48px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;border:1px solid var(--accent-border);background:var(--accent-soft);font-size:13px;color:var(--accent-text);font-weight:600}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.04;letter-spacing:-.04em;font-weight:800;margin:22px auto 0;max-width:20ch;text-wrap:balance}
+.grad{background:linear-gradient(100deg,var(--grad-a),var(--grad-b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:44ch;margin:22px auto 0;line-height:1.5}
+.hero-cta{margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.hero-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.fineprint{font-size:14px;color:var(--faint);display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin:0}
+.fineprint span{display:inline-flex;align-items:center;gap:6px}
+.fineprint svg{color:var(--accent-text)}
+section{scroll-margin-top:80px}
+.sec{padding:40px 0}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-text);margin:0 0 12px}
+.center{text-align:center}
+h2{font-size:clamp(30px,3.6vw,42px);line-height:1.08;letter-spacing:-.03em;font-weight:750;margin:0}
+.sec-lede{color:var(--muted);font-size:17px;max-width:46ch;margin:14px 0 0}
+.center .sec-lede{margin-left:auto;margin-right:auto}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg)}
+html[data-theme="dark"] .card{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01)),var(--surface)}
+html[data-theme="light"] .card{box-shadow:0 1px 2px rgba(40,20,90,.04),0 12px 32px -18px rgba(40,20,90,.18)}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.paths-sec{padding:8px 0 0}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.path{padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.path h3{font-size:22px;letter-spacing:-.02em;margin:14px 0 8px;font-weight:700}
+.path p{color:var(--muted);margin:0;max-width:48ch}
+.path .pill{align-self:flex-start;font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent-text);border:1px solid var(--accent-border)}
+.path-visual{margin:22px 0 0;padding:12px;border-radius:14px;background:var(--surface-2);border:1px solid var(--border);flex:1}
+.path-actions{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.path-link{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:15px;color:var(--accent-text);text-decoration:none;transition:gap .2s var(--ease)}
+.path-link:hover{gap:10px}
+.path-link.quiet{color:var(--muted);font-weight:500;font-size:14px}
+.path-link.quiet:hover{color:var(--text)}
+.wallet-row{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--border);font-size:14px;font-weight:500}
+.wallet-row + .wallet-row{margin-top:8px}
+.wallet-row .meta{color:var(--faint);font-size:12.5px;margin-left:auto;white-space:nowrap;font-weight:500}
+.wallet-row.you{border-color:var(--accent-border);box-shadow:0 0 0 3px var(--accent-soft)}
+.wallet-row.you .meta{color:var(--accent-text);font-weight:600}
+.lg{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff;flex:none;letter-spacing:-.02em}
+.lgimg{width:28px;height:28px;border-radius:8px;background:#fff;object-fit:contain;padding:3px;flex:none}
+.checks{display:grid;gap:8px;list-style:none}
+.checks li{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--border);font-size:14px;font-weight:500;min-height:48px}
+.checks .ok{width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent-text);display:grid;place-items:center;flex:none}
+.showcase{padding:64px 0 16px}
+.show-head{text-align:center;margin-bottom:36px}
+.stage{position:relative;width:100%}
+.stage-inner{position:absolute;left:50%;top:0;width:1120px;height:690px;transform:translateX(-50%);transform-origin:top center}
+.laptop{position:absolute;left:0;top:0;width:900px}
+.laptop-lid{background:#1A1722;border-radius:18px 18px 6px 6px;padding:14px;box-shadow:var(--shadow-lg),0 0 0 1px rgba(255,255,255,.08) inset}
+.laptop-screen{aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#FFFFFF;display:flex;position:relative}
+.laptop-base{height:16px;margin:0 -44px;background:linear-gradient(#3A3546,#211D2B);border-radius:2px 2px 14px 14px;position:relative}
+.laptop-base::after{content:"";position:absolute;left:50%;top:0;width:140px;height:6px;transform:translateX(-50%);background:#14111B;border-radius:0 0 8px 8px}
+.phone{position:absolute;right:0;top:96px;width:282px;height:584px;border-radius:46px;background:#0E0C14;padding:10px;box-shadow:var(--shadow-lg),0 0 0 1.5px #3A3546,0 0 0 1px rgba(255,255,255,.12) inset}
+.phone-screen{width:100%;height:100%;border-radius:37px;overflow:hidden;background:#100D18;color:#F5F3FA;position:relative;display:flex;flex-direction:column}
+.island{position:absolute;left:50%;top:9px;transform:translateX(-50%);width:88px;height:26px;border-radius:20px;background:#000;z-index:3}
+.status{display:flex;justify-content:space-between;align-items:center;padding:13px 24px 0;font-size:12px;font-weight:600;height:40px;flex:none}
+.status i{display:inline-block;width:22px;height:10px;border-radius:3px;border:1.5px solid #fff;position:relative;opacity:.9}
+.status i::after{content:"";position:absolute;inset:1.5px 4px 1.5px 1.5px;background:#fff;border-radius:1px}
+.p-tabs{display:flex;justify-content:space-around;padding:10px 6px 22px;border-top:1px solid rgba(255,255,255,.07);background:#0C0A13;font-size:9.5px;color:#8B85A0;flex:none}
+.p-tabs span{display:flex;flex-direction:column;align-items:center;gap:3px;transition:color .25s}
+.p-tabs span.on{color:#fff}
+.p-tabs svg{width:16px;height:16px}
+.stack{display:grid;flex:1;min-height:0;min-width:0}
+.screen{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .3s var(--ease),transform .4s var(--ease),visibility 0s linear .3s;min-height:0;overflow:hidden}
+.screen.active{opacity:1;visibility:visible;transform:none;transition:opacity .45s var(--ease) .12s,transform .5s var(--ease) .12s,visibility 0s}
+.d-shot{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.p-body{padding:6px 16px 12px}
+.p-h{font-size:22px;font-weight:700;letter-spacing:-.02em;margin:4px 0 12px}
+.p-lbl{display:flex;justify-content:space-between;font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9A93B0;margin-bottom:8px}
+.p-lbl em{font-style:normal;color:#B8A4FF}
+.acc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.acc{background:#1B1726;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px}
+.acc .lgimg{width:26px;height:26px;border-radius:7px}
+.acc b{display:block;font-size:11.5px;margin-top:8px}
+.acc small{font-size:9.5px;color:#4ADE80;display:flex;align-items:center;gap:4px}
+.acc small::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.acc small.wait{color:#FBBF24}
+.acc.add{display:grid;place-items:center;border-style:dashed;border-color:rgba(255,255,255,.18);color:#ABA5BE;font-size:11px;text-align:center}
+.tgl{display:flex;align-items:center;justify-content:space-between;background:#1B1726;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:10px 12px;font-size:11.5px;margin-bottom:8px}
+.tgl small{display:block;color:#9A93B0;font-size:9.5px}
+.sw{width:32px;height:19px;border-radius:12px;background:#3A3448;position:relative;flex:none}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:#fff}
+.sw.on{background:#8B6CFF}.sw.on::after{left:15px}
+.p-note{font-size:10px;color:#ABA5BE;text-align:center;margin-top:10px}
+.offer{background:#1B1726;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:10px 11px;display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:11.5px}
+.offer small{display:block;color:#9A93B0;font-size:9.5px}
+.offer.hl{border-color:rgba(157,130,255,.6);background:linear-gradient(180deg,#2A2140,#1B1726);display:block}
+.offer.hl .top{display:flex;align-items:center;gap:10px}
+.offer.hl .new{margin-left:auto;font-size:9px;font-weight:700;background:#8B6CFF;color:#fff;padding:2px 6px;border-radius:5px}
+.why{font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:#9A93B0;font-weight:700;margin:10px 0 6px}
+.mchip{display:inline-block;font-size:9.5px;padding:3px 7px;border-radius:6px;background:rgba(255,255,255,.07);margin:0 4px 4px 0}
+.pass{background:linear-gradient(160deg,#7B5CFF,#4B2BD0);border-radius:18px;padding:16px;text-align:center;box-shadow:0 18px 40px -16px rgba(123,92,255,.8)}
+.pass .ph{display:flex;align-items:center;gap:8px;text-align:left;font-size:11.5px;font-weight:600}
+.pass .ph small{display:block;opacity:.8;font-size:9.5px;font-weight:400}
+.pass .big{font-size:28px;font-weight:800;letter-spacing:-.03em;margin:12px 0 2px}
+.qr{width:132px;height:132px;margin:12px auto 8px;background:#fff;border-radius:12px;padding:10px;display:grid;grid-template-columns:repeat(21,1fr)}
+.qr i{background:#120E1F}
+.qr i.o{background:transparent}
+.pass .hint{font-size:10px;opacity:.9}
+.p-foot{font-size:10px;color:#ABA5BE;text-align:center;margin-top:12px}
+.stepper{max-width:760px;margin:0 auto;padding-top:32px}
+.step-caption{display:flex;align-items:center;justify-content:center;gap:12px;min-height:48px;text-align:left}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;flex:none;box-shadow:0 0 0 5px var(--accent-soft)}
+.step-caption b{display:block;font-size:17px;letter-spacing:-.01em;line-height:1.3}
+.step-caption div > span{display:block;color:var(--muted);font-size:14px;max-width:60ch}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.tab{background:none;border:0;padding:0 0 4px;cursor:pointer;text-align:left;color:var(--faint);font-size:14px;font-weight:600;transition:color .2s}
+.tab .track{display:block;height:3px;border-radius:3px;background:var(--border-strong);margin-bottom:10px;overflow:hidden}
+.tab .fill{display:block;height:100%;width:0;background:var(--accent)}
+.tab[aria-selected="true"]{color:var(--text)}
+.tab[aria-selected="true"] .fill{width:100%}
+.tab.done .fill{width:100%;opacity:.45}
+.tab:hover{color:var(--text)}
+.stepper.playing .tab[aria-selected="true"] .fill{width:0;animation:fill var(--dur,5.5s) linear forwards}
+@keyframes fill{to{width:100%}}
+.logos{padding:56px 0 32px}
+.logos-label{text-align:center;font-size:14px;color:var(--faint);margin:0 0 20px;font-weight:500}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mq-track{display:flex;gap:12px;width:max-content;animation:mq 46s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(calc(-50% - 6px))}}
+.prog{display:flex;align-items:center;gap:10px;padding:7px 16px 7px 7px;border-radius:999px;border:1px solid var(--border);background:var(--surface);font-weight:600;font-size:15px;white-space:nowrap;letter-spacing:-.01em}
+.prog .lgimg{border-radius:50%;width:30px;height:30px}
+.split{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:center}
+.aud{padding:22px}
+.aud-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.aud-head b{font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:10px;border:1px solid var(--border);background:var(--surface-2);font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .18s var(--ease)}
+.chip svg{width:15px;height:15px;opacity:.85}
+.chip:hover{border-color:var(--border-strong);color:var(--text)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent-border);color:var(--text);font-weight:600}
+.chip[aria-pressed="true"] svg{color:var(--accent-text);opacity:1}
+.aud-foot{border-top:1px solid var(--border);margin-top:20px;padding-top:18px}
+.aud-foot .lbl{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.aud-foot .lbl b{color:var(--text)}
+.ameter{height:8px;border-radius:6px;background:var(--surface-3);margin-top:10px;overflow:hidden}
+.ameter i{display:block;height:100%;background:linear-gradient(90deg,var(--grad-b),var(--accent));border-radius:6px;transition:width .4s var(--ease)}
+.aud-desc{font-size:13.5px;color:var(--faint);margin:10px 0 0;min-height:21px}
+.privacy-pts{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:10px}
+.privacy-pts li{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:15px}
+.privacy-pts svg{color:var(--accent-text);flex:none}
+.co-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px;position:relative}
+.co{padding:22px;position:relative;display:flex;flex-direction:column;min-height:210px}
+.co + .co::before{content:"";position:absolute;left:-29px;top:50%;width:28px;height:1px;background:var(--border-strong)}
+.co + .co::after{content:"";position:absolute;left:-19px;top:calc(50% - 4px);width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.co-ic{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent-text);display:grid;place-items:center;border:1px solid var(--accent-border)}
+.co h3{font-size:17px;margin:16px 0 4px;letter-spacing:-.01em}
+.co p{margin:0;color:var(--muted);font-size:14.5px}
+.co-vis{margin-top:auto;padding-top:18px}
+.receipt{display:grid;gap:6px;padding:10px 12px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border);font-size:13px}
+.receipt div{display:flex;justify-content:space-between;color:var(--muted)}
+.receipt .applied{color:var(--accent-text);font-weight:600}
+.receipt .total{border-top:1px dashed var(--border-strong);padding-top:6px;color:var(--text);font-weight:700}
+.minibars{display:flex;align-items:flex-end;gap:8px;height:82px}
+.minibars i{flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,var(--accent-strong),color-mix(in srgb,var(--accent) 40%,transparent))}
+.scan{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:var(--surface-2);border:1px solid var(--border);font-size:13.5px;font-weight:500}
+.scan .mini-qr{width:56px;height:56px;border-radius:6px;background:#fff;padding:5px;display:grid;grid-template-columns:repeat(7,1fr);gap:1px;border:1px solid var(--border);flex:none}
+.scan .mini-qr i{background:#120E1F;border-radius:1px}.scan .mini-qr i.o{background:transparent}
+.scan small{display:block;color:var(--faint);font-size:12.5px;font-weight:400}
+.faq{max-width:780px;margin:28px auto 0;display:grid;gap:10px}
+.faq details{padding:0 20px;border-radius:14px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;font-weight:600;font-size:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;font-weight:400;color:var(--accent-text);flex:none;transition:transform .2s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+.access{padding:48px 0 32px}
+.access-card{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;padding:44px;border-radius:var(--r-xl);position:relative;overflow:hidden}
+.access-card::before{content:"";position:absolute;left:-120px;top:-160px;width:560px;height:440px;background:radial-gradient(closest-side,var(--glow-1),transparent);pointer-events:none}
+.access-card > *{position:relative}
+.access h2{font-size:clamp(32px,3.6vw,44px)}
+.olist{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:14px}
+.olist li{display:flex;gap:12px;align-items:center;font-weight:600;font-size:15.5px}
+.olist .n{width:26px;height:26px;border-radius:50%;border:1px solid var(--accent-border);color:var(--accent-text);background:var(--accent-soft);display:grid;place-items:center;font-size:12.5px;font-weight:700;flex:none}
+.techweek{margin-top:28px;display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;border:1px solid var(--accent-border);background:var(--accent-soft);font-size:15px}
+.techweek .ic{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;flex:none}
+.techweek b{display:block;line-height:1.35}
+.techweek span{color:var(--muted);font-size:13.5px}
+.guide-teaser{margin-top:14px;display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:var(--surface-2);font-size:14px;color:var(--muted)}
+.guide-teaser .ic{width:34px;height:34px;border-radius:10px;background:var(--accent-soft);color:var(--accent-text);display:grid;place-items:center;flex:none;border:1px solid var(--accent-border)}
+.guide-teaser b{display:block;color:var(--text);font-size:15px;line-height:1.35}
+.form-progress{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.form-progress i{height:3px;border-radius:3px;background:var(--border-strong);transition:background .3s}
+.form-progress i.on{background:var(--accent)}
+.form-step-lbl{font-size:13px;color:var(--faint);margin:0 0 18px;font-weight:500}
+.field{display:grid;gap:7px;margin-bottom:16px}
+.field label,.legend{font-size:14px;font-weight:600;padding:0}
+.opt{color:var(--faint);font-weight:500}
+.input{height:48px;border-radius:12px;border:1px solid var(--border-strong);background:var(--bg);padding:0 14px;font-size:16px;transition:border-color .15s,box-shadow .15s;width:100%;appearance:none;-webkit-appearance:none}
+html[data-theme="dark"] .input{background:rgba(0,0,0,.28)}
+.input::placeholder{color:var(--faint);opacity:1}
+.input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.input[aria-invalid="true"]{border-color:#EF4444}
+select.input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%238A839E' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+html[data-theme="dark"] select.input option{background:#15111F}
+.err{font-size:13px;color:#DC2626}
+.err:empty{display:none}
+html[data-theme="dark"] .err{color:#FCA5A5}
+.form-err{margin:0 0 12px;padding:10px 12px;border-radius:10px;border:1px solid rgba(239,68,68,.4);background:rgba(239,68,68,.08)}
+.form-err:empty{display:none}
+.form-err a{color:inherit;font-weight:600}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.seg label{position:relative;cursor:pointer}
+.seg input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.seg span{display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border-radius:12px;border:1px solid var(--border-strong);font-weight:600;font-size:15px;color:var(--muted);transition:all .15s}
+.seg input:checked + span{border-color:var(--accent);background:var(--accent-soft);color:var(--text);box-shadow:0 0 0 1px var(--accent) inset}
+.seg input:focus-visible + span{outline:2px solid var(--accent-strong);outline-offset:2px}
+.seg-hint{font-size:13px;color:var(--faint);margin:8px 0 0;min-height:20px}
+fieldset{border:0;padding:0;margin:0 0 16px;min-width:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.actions{display:flex;gap:10px;margin-top:4px}
+.actions .btn-primary{flex:1;height:52px;font-size:16px}
+[hidden]{display:none!important}
+.thanks{text-align:center;padding:28px 8px}
+.thanks:focus{outline:none}
+.thanks .big-check{width:60px;height:60px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--accent-border);color:var(--accent-text);display:grid;place-items:center;margin:0 auto 18px}
+.thanks h3{font-size:26px;letter-spacing:-.02em;margin:0 0 8px}
+.thanks p{color:var(--muted);margin:0 auto;max-width:38ch}
+.guides{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.guide{padding:22px;display:flex;flex-direction:column;gap:8px}
+.guide .tag{color:var(--accent-text)}
+.guide h3{font-size:17px;line-height:1.3;letter-spacing:-.01em;margin:4px 0 0}
+.guide p{margin:0;color:var(--muted);font-size:14.5px;flex:1}
+.guide .path-link{margin-top:6px;font-size:14.5px;min-height:44px}
+@media (max-width:900px){.guides{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.guides{grid-template-columns:1fr}}
+.downloads{display:grid;gap:10px;margin:22px auto 0;max-width:400px;text-align:left}
+.dl{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid var(--accent-border);background:var(--accent-soft);text-decoration:none;font-weight:600;font-size:15px;line-height:1.3}
+.dl small{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+.dl .ic{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center;flex:none}
+.dl:hover{border-color:var(--accent)}
+.form-foot{font-size:12.5px;color:var(--faint);margin:14px 0 0;text-align:center}
+footer{padding:28px 0 36px;text-align:center;color:var(--faint);font-size:13px;border-top:1px solid var(--border);margin-top:32px}
+footer p{margin:0 0 8px}
+footer a{color:var(--muted);text-underline-offset:3px}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (max-width:900px){
+  .split{grid-template-columns:1fr;gap:28px}
+  .access-card{grid-template-columns:1fr;gap:32px;padding:32px}
+  .co-grid{grid-template-columns:1fr;gap:20px}
+  .co + .co::before{left:50%;top:-21px;width:1px;height:20px}
+  .co + .co::after{left:calc(50% - 4px);top:-15px}
+  .co{min-height:0}
+}
+@media (max-width:760px){
+  .paths{grid-template-columns:1fr}
+  .stage{height:auto!important;display:flex;justify-content:center}
+  .stage-inner{position:relative;left:auto;width:282px;height:584px;transform:none!important}
+  .laptop{display:none}
+  .phone{position:relative;top:0;right:auto}
+  .nav .nav-link{display:none}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .hero{padding:48px 0 36px}
+  .brand-sub{display:none}
+  .path{padding:22px}
+  .path h3{font-size:20px}
+  .tab{font-size:12.5px}
+  .step-caption{min-height:84px}
+  .step-caption b{font-size:15.5px}
+  .step-caption div > span{font-size:13px}
+  .two{grid-template-columns:1fr;gap:0}
+  .access-card{padding:24px 18px}
+  .sec{padding:36px 0}
+  .showcase{padding-top:48px}
+  .logos{padding-top:40px}
+  .faq details{padding:0 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .mq-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;padding:0 24px}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bg-fx" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></g></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5L3 8z"/></symbol>
+    <symbol id="i-hourglass" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9"/></symbol>
+    <symbol id="i-cake" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 21h16v-8a2 2 0 00-2-2H6a2 2 0 00-2 2v8zM4 16c2 1.5 4 1.5 6 0s4-1.5 6 0 3 1 4 0M12 11V7"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17 2l3 3-3 3M4 11V9a4 4 0 014-4h12M7 22l-3-3 3-3M20 13v2a4 4 0 01-4 4H4"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 8h14l-1 13H6L5 8zM9 8V6a3 3 0 016 0v2"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM17 20h4v-3"/></g></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 9l2-5h14l2 5M3 9h18M3 9a3 3 0 006 0 3 3 0 006 0 3 3 0 006 0M5 12v9h14v-9M10 21v-5h4v5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 4v16h16M8 16v-4M12 16V8M16 16v-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9z"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></g></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></g></symbol>
+    <symbol id="i-mega" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 10v4h4l6 4V6L7 10H3zM17 8a5 5 0 010 8"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></g></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></g></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 3h12v18l-3-2-3 2-3-2-3 2V3zM9 8h6M9 12h6"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Perkalate for brands, home">
+      <span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#fff" d="M7 3h6.5a6.5 6.5 0 010 13H11v5H7V3zm4 4v5h2.5a2.5 2.5 0 000-5H11z"/></svg></span>
+      <span>Perkalate <span class="brand-sub">for brands</span></span>
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="#how">How it works</a>
+      <a class="nav-link" href="#guides">Guides</a>
+      <a class="nav-link" href="#faq">FAQ</a>
+      <a class="nav-link" href="/brand/login">Sign in</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch color theme" title="Toggle light and dark mode">
+        <svg class="i-moon" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20 14.5A8 8 0 019.5 4a8 8 0 1010.5 10.5z"/></svg>
+        <svg class="i-sun" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="#access">Get early access</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap">
+      <span class="eyebrow rv">Perkalate for brands</span>
+      <h1 class="rv">Reach <span class="grad">the right customers</span> with rewards they'll actually use.</h1>
+      <p class="lede rv">Perkalate members connect the loyalty accounts they already have. You send rewards based on what people really do, and you only pay for the rewards you fund.</p>
+      <div class="hero-cta rv">
+        <div class="hero-btns">
+          <a class="btn btn-primary btn-lg" href="#access">Get early access <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#how">See how it works <svg width="16" height="16" aria-hidden="true"><use href="#i-down"/></svg></a>
+        </div>
+        <p class="fineprint">
+          <span><svg width="15" height="15" aria-hidden="true"><use href="#i-check"/></svg>Free to start.</span>
+          <span><svg width="15" height="15" aria-hidden="true"><use href="#i-check"/></svg>100+ brands.</span>
+          <span><svg width="15" height="15" aria-hidden="true"><use href="#i-check"/></svg>You only pay for the rewards you fund.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="paths-sec" aria-labelledby="paths-h">
+    <p class="kicker center" id="paths-h">Two ways to start</p>
+    <div class="wrap paths">
+      <article class="card path rv">
+        <span class="pill">Have a loyalty program?</span>
+        <h3>Get seen where members already look.</h3>
+        <p>Your rewards sit right next to Amex, Delta and Marriott in members' wallets, so they get seen and used more. Keep the program you've built. Perkalate puts it in front of verified customers who don't know you yet.</p>
+        <div class="path-visual" role="img" aria-label="Sample wallet: Amex, Delta and Marriott, with your brand's new reward alongside">
+          <div class="wallet-row"><img class="lgimg" src="/logos/amex.png" alt="" loading="lazy">Amex<span class="meta">3 offers</span></div>
+          <div class="wallet-row"><img class="lgimg" src="/logos/delta.png" alt="" loading="lazy">Delta SkyMiles<span class="meta">Gold Medallion</span></div>
+          <div class="wallet-row"><img class="lgimg" src="/logos/marriott.png" alt="" loading="lazy">Marriott Bonvoy<span class="meta">41,200 pts</span></div>
+          <div class="wallet-row you"><span class="lg" style="background:linear-gradient(135deg,#8B6CFF,#5B35E8)">YB</span>Your brand<span class="meta">New reward</span></div>
+        </div>
+        <div class="path-actions">
+          <a class="path-link" href="#access" data-intent="yes">Get early access <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="path-link quiet" href="#access" data-intent="yes">Read: For brands with a loyalty program <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card path rv">
+        <span class="pill">No loyalty program?</span>
+        <h3>Start one without building anything.</h3>
+        <p>Perkalate is the easiest way to start a loyalty program. Launch rewards in minutes, with no app to build and no new hardware, and reach verified customers based on what they actually do.</p>
+        <ul class="path-visual checks">
+          <li><span class="ok"><svg width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg></span>Launch rewards in minutes</li>
+          <li><span class="ok"><svg width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg></span>No app to build</li>
+          <li><span class="ok"><svg width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg></span>No new hardware</li>
+          <li><span class="ok"><svg width="12" height="12" aria-hidden="true"><use href="#i-check"/></svg></span>Target verified customers by what they do</li>
+        </ul>
+        <div class="path-actions">
+          <a class="path-link" href="#access" data-intent="no">Get early access <svg width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="path-link quiet" href="#access" data-intent="no">Free guide: Launch a loyalty program in a day <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="showcase" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="show-head rv">
+        <h2 id="how-h">How it works</h2>
+        <p class="sec-lede" style="margin-left:auto;margin-right:auto">From a connected account to your counter, in four steps.</p>
+      </div>
+      <div class="stage rv" id="stage" aria-hidden="true">
+        <div class="stage-inner" id="stageInner">
+          <div class="laptop">
+            <div class="laptop-lid">
+              <div class="laptop-screen">
+                <div class="stack">
+                  <img class="screen d-shot" data-screen="0" src="/brand-dashboard/overview.webp" alt="Perkalate brand dashboard overview with sample data" width="1744" height="1090" loading="lazy" decoding="async">
+                  <img class="screen d-shot" data-screen="1" src="/brand-dashboard/audience.webp" alt="Perkalate campaign builder, Define audience step, with sample data" width="1744" height="1090" loading="lazy" decoding="async">
+                  <img class="screen d-shot" data-screen="2" src="/brand-dashboard/reward.webp" alt="Perkalate campaign builder, Design reward step, with sample data" width="1744" height="1090" loading="lazy" decoding="async">
+                  <img class="screen d-shot" data-screen="3" src="/brand-dashboard/analytics.webp" alt="Perkalate brand analytics with sample data" width="1744" height="1090" loading="lazy" decoding="async">
+                </div>
+              </div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
+
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="island"></div>
+              <div class="status"><span>9:41</span><i></i></div>
+              <div class="stack">
+                <div class="screen p-body" data-screen="0">
+                  <div class="p-h">Connect</div>
+                  <div class="p-lbl"><span>Your accounts</span><em>Syncing</em></div>
+                  <div class="acc-grid">
+                    <div class="acc"><img class="lgimg" src="/logos/sephora.png" alt=""><b>Sephora</b><small>Synced</small></div>
+                    <div class="acc"><img class="lgimg" src="/logos/starbucks.com.png" alt=""><b>Starbucks</b><small>Synced</small></div>
+                    <div class="acc"><img class="lgimg" src="/logos/hilton.png" alt=""><b>Hilton</b><small>Synced</small></div>
+                    <div class="acc"><img class="lgimg" src="/logos/delta.png" alt=""><b>Delta</b><small>Synced</small></div>
+                    <div class="acc"><img class="lgimg" src="/logos/marriott.png" alt=""><b>Marriott</b><small class="wait">Syncing</small></div>
+                    <div class="acc"><img class="lgimg" src="/logos/chipotle.com.png" alt=""><b>Chipotle</b><small>Synced</small></div>
+                    <div class="acc"><img class="lgimg" src="/logos/amex.png" alt=""><b>Amex</b><small>Synced</small></div>
+                    <div class="acc add">+ Add a program</div>
+                  </div>
+                </div>
+                <div class="screen p-body" data-screen="1">
+                  <div class="p-h">Sharing</div>
+                  <div class="p-lbl"><span>You choose what brands can use</span></div>
+                  <div class="tgl"><div>Program memberships<small>e.g. beauty, travel</small></div><span class="sw on"></span></div>
+                  <div class="tgl"><div>Tier &amp; points balance<small>Ranges, never exact</small></div><span class="sw on"></span></div>
+                  <div class="tgl"><div>Birthday month<small>Month only</small></div><span class="sw on"></span></div>
+                  <div class="tgl"><div>Bank-verified spend<small>By category</small></div><span class="sw"></span></div>
+                  <div class="tgl"><div>Visit frequency<small>How often, not where</small></div><span class="sw on"></span></div>
+                  <p class="p-note">Brands only ever see audiences, never you.</p>
+                </div>
+                <div class="screen p-body" data-screen="2">
+                  <div class="p-h">Home</div>
+                  <div class="p-lbl"><span>Matched for you</span><em>Example</em></div>
+                  <div class="offer hl">
+                    <div class="top"><span class="lg" style="background:linear-gradient(135deg,#C9A24B,#8A6A1F)">YB</span><div>Your Brand<small>20% off in your birthday month</small></div><span class="new">New</span></div>
+                    <div class="why">Why you're seeing this</div>
+                    <span class="mchip">Shops your category</span><span class="mchip">Top tier</span><span class="mchip">Birthday this month</span>
+                  </div>
+                  <div class="offer"><img class="lgimg" src="/logos/amex.png" alt=""><div>Amex<small>Spend $50, get $10 back</small></div></div>
+                  <div class="offer"><img class="lgimg" src="/logos/delta.png" alt=""><div>Delta SkyMiles<small>2x miles this weekend</small></div></div>
+                  <div class="offer"><img class="lgimg" src="/logos/marriott.png" alt=""><div>Marriott Bonvoy<small>Bonus points on 2 nights</small></div></div>
+                </div>
+                <div class="screen p-body" data-screen="3">
+                  <div class="p-h">Pass</div>
+                  <div class="pass">
+                    <div class="ph"><span class="lg" style="background:rgba(255,255,255,.2)">YB</span><div>Your Brand<small>Birthday glow</small></div></div>
+                    <div class="big">20% off</div>
+                    <div class="qr" id="qr"></div>
+                    <div class="hint">Show at checkout</div>
+                  </div>
+                  <p class="p-foot">At the counter, or as a code online.</p>
+                </div>
+              </div>
+              <div class="p-tabs">
+                <span data-ptab="2"><svg><use href="#i-home"/></svg>Home</span>
+                <span data-ptab="0"><svg><use href="#i-link"/></svg>Connect</span>
+                <span data-ptab="3"><svg><use href="#i-card"/></svg>Pass</span>
+                <span data-ptab="1"><svg><use href="#i-user"/></svg>Profile</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stepper" id="stepper">
+        <div class="step-caption" aria-live="polite">
+          <span class="step-num" id="stepNum">1</span>
+          <div><b id="stepTitle">Members connect their accounts.</b><span id="stepSub">People link the loyalty programs they already belong to and choose what they share.</span></div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="How it works steps">
+          <button class="tab" type="button" role="tab" aria-selected="true" data-step="0"><span class="track"><span class="fill"></span></span>Connect</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-step="1" tabindex="-1"><span class="track"><span class="fill"></span></span>Target</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-step="2" tabindex="-1"><span class="track"><span class="fill"></span></span>Fund</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-step="3" tabindex="-1"><span class="track"><span class="fill"></span></span>Redeem</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos" aria-labelledby="logos-h">
+    <p class="logos-label" id="logos-h">Members connect programs like these</p>
+    <div class="marquee"><div class="mq-track" id="mq"></div></div>
+  </section>
+
+  <section class="sec" aria-labelledby="target-h">
+    <div class="wrap split">
+      <div class="rv">
+        <p class="kicker">Targeting</p>
+        <h2 id="target-h">Target by what customers actually do.</h2>
+        <p class="sec-lede">Pick the signals that matter to your business. Members choose what they share, and you only ever see audiences.</p>
+        <ul class="privacy-pts">
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#i-shield"/></svg>Opt-in signals, chosen by each member</li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#i-bank"/></svg>Built on permissioned, verified loyalty and spend data</li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#i-target"/></svg>Audience totals only, never individual identities</li>
+        </ul>
+      </div>
+      <div class="card aud rv">
+        <div class="aud-head"><b>New audience</b><span class="tag">Example · tap to try</span></div>
+        <div class="chips" role="group" aria-label="Audience signals">
+          <button class="chip" type="button" aria-pressed="true" data-d="who shop your category"><svg aria-hidden="true"><use href="#i-bag"/></svg>Shops your category</button>
+          <button class="chip" type="button" aria-pressed="true" data-d="in a top tier"><svg aria-hidden="true"><use href="#i-crown"/></svg>Top loyalty tier</button>
+          <button class="chip" type="button" aria-pressed="false" data-d="with points expiring soon"><svg aria-hidden="true"><use href="#i-hourglass"/></svg>Points expiring soon</button>
+          <button class="chip" type="button" aria-pressed="true" data-d="with a birthday this month"><svg aria-hidden="true"><use href="#i-cake"/></svg>Birthday this month</button>
+          <button class="chip" type="button" aria-pressed="false" data-d="who visit often"><svg aria-hidden="true"><use href="#i-repeat"/></svg>Visits often</button>
+          <button class="chip" type="button" aria-pressed="false" data-d="who live near your store"><svg aria-hidden="true"><use href="#i-pin"/></svg>Lives near your store</button>
+        </div>
+        <div class="aud-foot">
+          <div class="lbl"><span>Who you reach</span><b id="audLevel">Precise</b></div>
+          <div class="ameter"><i id="audMeter" style="width:28%"></i></div>
+          <p class="aud-desc" id="audDesc" aria-live="polite">Example: members who shop your category, in a top tier, with a birthday this month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="co-h">
+    <div class="wrap">
+      <div class="rv">
+        <p class="kicker">Redemption</p>
+        <h2 id="co-h">Works at your checkout.</h2>
+        <p class="sec-lede">No new hardware. Members show their Pass, the reward is applied at your register, and every redemption shows up in your dashboard.</p>
+      </div>
+      <div class="co-grid">
+        <article class="card co rv">
+          <span class="co-ic"><svg width="18" height="18" aria-hidden="true"><use href="#i-qr"/></svg></span>
+          <h3>Member shows their Pass.</h3>
+          <p>One scan at the counter, or a code online.</p>
+          <div class="co-vis"><div class="scan"><span class="mini-qr" id="miniQr" aria-hidden="true"></span><div>Your Brand Pass<small>20% off · Sample</small></div></div></div>
+        </article>
+        <article class="card co rv">
+          <span class="co-ic"><svg width="18" height="18" aria-hidden="true"><use href="#i-store"/></svg></span>
+          <h3>Your register applies it.</h3>
+          <p>Uses the checkout you already have.</p>
+          <div class="co-vis"><div class="receipt" aria-hidden="true"><div><span>Subtotal</span><span>$42.00</span></div><div class="applied"><span>Perkalate reward</span><span>-$8.40</span></div><div class="total"><span>Total</span><span>$33.60</span></div></div></div>
+        </article>
+        <article class="card co rv">
+          <span class="co-ic"><svg width="18" height="18" aria-hidden="true"><use href="#i-chart"/></svg></span>
+          <h3>You see every redemption.</h3>
+          <p>Live in your dashboard, by store and channel.</p>
+          <div class="co-vis minibars" aria-hidden="true"><i style="height:34%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:100%"></i></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="guides" aria-labelledby="guides-h">
+    <div class="wrap">
+      <div class="center rv">
+        <p class="kicker">Free guides</p>
+        <h2 id="guides-h">Guides for brands</h2>
+        <p class="sec-lede">Practical reads on loyalty, targeting and rewards. Get early access and they all unlock.</p>
+      </div>
+      <div class="guides">
+        <article class="card guide rv"><span class="tag">Guide · PDF</span><h3>Launch a loyalty program in a day</h3><p>One goal, one audience, one reward. A step-by-step day plan with no app and no hardware.</p><a class="path-link" href="#access" data-guide="launch-a-loyalty-program-in-a-day">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+        <article class="card guide rv"><span class="tag">One-pager · PDF</span><h3>For brands with a loyalty program</h3><p>What Perkalate adds to the program you already run, and three rewards to try first.</p><a class="path-link" href="#access" data-guide="for-brands-with-a-loyalty-program">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+        <article class="card guide rv"><span class="tag">Article · PDF</span><h3>The second-visit playbook</h3><p>Why the second visit matters more than the first, and three ways to earn it.</p><a class="path-link" href="#access" data-guide="second-visit-playbook">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+        <article class="card guide rv"><span class="tag">Article · PDF</span><h3>Stop discounting to everyone</h3><p>How rewarding what customers actually do gets more from every reward dollar.</p><a class="path-link" href="#access" data-guide="stop-discounting-to-everyone">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+        <article class="card guide rv"><span class="tag">Article · PDF</span><h3>Permissioned data: how access to customer data is changing</h3><p>Why the next wave of targeting runs on data customers choose to share.</p><a class="path-link" href="#access" data-guide="permissioned-customer-data">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+        <article class="card guide rv"><span class="tag">Article · PDF</span><h3>Viewed, claimed, redeemed</h3><p>Three numbers that tell you whether a reward is working, and what to change.</p><a class="path-link" href="#access" data-guide="viewed-claimed-redeemed">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="center rv">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-h">Questions brands ask</h2>
+      </div>
+      <div class="faq">
+        <details class="card"><summary>What does it cost?</summary><p>Perkalate is free to start. You only pay for the rewards you fund, and you set the budget.</p></details>
+        <details class="card"><summary>Do I need a loyalty program already?</summary><p>No. If you have one, Perkalate puts your rewards next to Amex, Delta and Marriott in members' wallets, so more people see and use them. If you don't, Perkalate is the easiest way to start one.</p></details>
+        <details class="card"><summary>Do I need to build an app or buy hardware?</summary><p>No. Members use the Perkalate app. You set up rewards in your dashboard, and members redeem with a Pass at the checkout you already have.</p></details>
+        <details class="card"><summary>How fast can I launch?</summary><p>You can launch rewards in minutes once your workspace is set up. Most of the work is picking one audience and one reward.</p></details>
+        <details class="card"><summary>What customer data do I see?</summary><p>Audiences only. Members choose what they share, the data is permissioned and verified, and you see audience totals and results, never individual identities.</p></details>
+        <details class="card"><summary>Who's using Perkalate?</summary><p>100+ brands are already on Perkalate.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="access" id="access" aria-labelledby="access-h">
+    <div class="wrap">
+      <div class="card access-card rv">
+        <div>
+          <h2 id="access-h">Get early access</h2>
+          <p class="sec-lede">Tell us about your brand and we'll set up your workspace.</p>
+          <ol class="olist">
+            <li><span class="n">1</span>We review your brand</li>
+            <li><span class="n">2</span>We set up your workspace</li>
+            <li><span class="n">3</span>You launch your first reward</li>
+          </ol>
+          <div class="techweek">
+            <span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <div><b>At LA Tech Week? Get set up this week.</b><span>Add Los Angeles as your city in step 2.</span></div>
+          </div>
+          <div class="guide-teaser">
+            <span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-file"/></svg></span>
+            <div><b>Free guides: Launch a loyalty program in a day, and more</b>All six unlock when you submit the form.</div>
+          </div>
+        </div>
+        <div>
+          <form id="wl" novalidate aria-labelledby="access-h">
+            <div id="formBody">
+              <div class="form-progress" aria-hidden="true"><i class="on"></i><i id="pg2"></i></div>
+              <p class="form-step-lbl" id="stepLbl">Step 1 of 2 · About your brand</p>
+              <p class="err form-err" id="formErr" role="alert"></p>
+              <div id="fs1">
+                <div class="field">
+                  <label for="email">Work email</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required aria-describedby="emailErr">
+                  <span class="err" id="emailErr"></span>
+                </div>
+                <div class="field">
+                  <label for="brandName">Brand</label>
+                  <input class="input" id="brandName" name="brand" type="text" autocomplete="organization" placeholder="Your brand name" required maxlength="200" aria-describedby="brandErr">
+                  <span class="err" id="brandErr"></span>
+                </div>
+                <div class="actions"><button class="btn btn-primary" type="button" id="next">Continue <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+              </div>
+              <div id="fs2" hidden>
+                <fieldset>
+                  <legend class="legend">Do you have a loyalty program?</legend>
+                  <div class="seg">
+                    <label><input type="radio" name="loyalty" value="yes"><span>Yes</span></label>
+                    <label><input type="radio" name="loyalty" value="no"><span>No</span></label>
+                  </div>
+                  <p class="seg-hint" id="segHint" aria-live="polite">Either way works. We'll tailor your setup.</p>
+                </fieldset>
+                <div class="two">
+                  <div class="field">
+                    <label for="role">Role <span class="opt">(optional)</span></label>
+                    <select class="input" id="role" name="role">
+                      <option value="">Select a role</option>
+                      <option>Founder / Owner</option>
+                      <option>Marketing</option>
+                      <option>Growth / CRM</option>
+                      <option>Operations</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="city">City <span class="opt">(optional)</span></label>
+                    <input class="input" id="city" name="city" type="text" autocomplete="address-level2" placeholder="e.g. Scottsdale" maxlength="100">
+                  </div>
+                </div>
+                <div class="actions">
+                  <button class="btn btn-ghost" type="button" id="back">Back</button>
+                  <button class="btn btn-primary" type="submit" id="submitBtn">Get early access</button>
+                </div>
+              </div>
+              <p class="form-foot">Free to start. You only pay for the rewards you fund.</p>
+              <p class="form-foot">We use HubSpot to follow up. See our <a href="/privacy">Privacy</a> page.</p>
+            </div>
+            <div class="thanks" id="thanks" hidden tabindex="-1" role="status">
+              <div class="big-check"><svg width="26" height="26" aria-hidden="true"><use href="#i-check"/></svg></div>
+              <h3>You're on the list.</h3>
+              <p>Thanks, we'll be in touch to set up your workspace. In the meantime, grab the guide: Launch a loyalty program in a day. All six guides are below.</p>
+              <div class="downloads">
+                <a class="dl" id="dlGuide" href="/brand-guides/launch-a-loyalty-program-in-a-day.pdf" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Launch a loyalty program in a day<small>Free guide · PDF</small></span></a>
+                <a class="dl" id="dlOnePager" href="/brand-guides/for-brands-with-a-loyalty-program.pdf" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>For brands with a loyalty program<small>One-pager · PDF</small></span></a>
+                <a class="dl" href="/brand-guides/second-visit-playbook.pdf" download data-dl="second-visit-playbook"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>The second-visit playbook<small>Article · PDF</small></span></a>
+                <a class="dl" href="/brand-guides/stop-discounting-to-everyone.pdf" download data-dl="stop-discounting-to-everyone"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Stop discounting to everyone<small>Article · PDF</small></span></a>
+                <a class="dl" href="/brand-guides/permissioned-customer-data.pdf" download data-dl="permissioned-customer-data"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Permissioned data: how access to customer data is changing<small>Article · PDF</small></span></a>
+                <a class="dl" href="/brand-guides/viewed-claimed-redeemed.pdf" download data-dl="viewed-claimed-redeemed"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Viewed, claimed, redeemed<small>Article · PDF</small></span></a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Logos are programs Perkalate members can connect. Perkalate is not affiliated with them. Screens show sample data.</p>
+    <p><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </div>
+</footer>
+<script>
+(function(){
+  var root = document.documentElement;
+  var reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var still = new URLSearchParams(location.search).has('still');
+  function $(id){ return document.getElementById(id); }
+
+  /* Attribution: keep utm_* from the landing URL for this visit */
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  var utm = {};
+  try { utm = JSON.parse(sessionStorage.getItem('pk-brands-utm') || '{}') || {}; } catch (e) { utm = {}; }
+  var params = new URLSearchParams(location.search);
+  if (UTM_KEYS.some(function(k){ return params.get(k); })) {
+    utm = {};
+    UTM_KEYS.forEach(function(k){ var v = params.get(k); if (v) utm[k] = v.trim().slice(0, 100); });
+    try { sessionStorage.setItem('pk-brands-utm', JSON.stringify(utm)); } catch (e) {}
+  }
+  window.__pkBrandsUtm = utm;
+
+  /* Theme */
+  var tt = $('themeToggle');
+  function syncThemeLabel(){ tt.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'); }
+  syncThemeLabel();
+  tt.addEventListener('click', function(){
+    var t = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = t; try { localStorage.setItem('pk-theme', t); } catch(e){}
+    syncThemeLabel();
+  });
+
+  var nav = $('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+
+  /* Device stage scaling */
+  var stage = $('stage'), inner = $('stageInner');
+  function fit(){
+    if (innerWidth <= 760){ inner.style.transform = ''; stage.style.height = ''; return; }
+    var s = Math.min(1, (stage.clientWidth || 1120) / 1120);
+    inner.style.transform = 'translateX(-50%) scale(' + s + ')';
+    stage.style.height = (690 * s) + 'px';
+  }
+  fit(); addEventListener('resize', fit);
+
+  /* QR codes (decorative) */
+  function qrHTML(n, seed, finders){
+    var out = '';
+    function rnd(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+    function finder(x, y, cx, cy){ var dx = x - cx, dy = y - cy; if (dx < 0 || dy < 0 || dx > 6 || dy > 6) return null; return dx === 0 || dy === 0 || dx === 6 || dy === 6 || (dx > 1 && dx < 5 && dy > 1 && dy < 5); }
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++){
+      var v = null;
+      if (finders){ v = finder(x,y,0,0); if (v === null) v = finder(x,y,n-7,0); if (v === null) v = finder(x,y,0,n-7); }
+      var quiet = finders && ((x < 8 && y < 8) || (x > n-9 && y < 8) || (x < 8 && y > n-9));
+      var on = v !== null ? v : (!quiet && rnd() > .5);
+      out += '<i' + (on ? '' : ' class="o"') + '></i>';
+    }
+    return out;
+  }
+  $('qr').innerHTML = qrHTML(21, 7, true);
+  $('miniQr').innerHTML = qrHTML(7, 11, false);
+
+  /* Stepper */
+  var steps = [
+    ['Members connect their accounts.', 'People link the loyalty programs they already belong to and choose what they share.'],
+    ['You pick an audience.', 'Combine signals like category, loyalty tier, birthday month or visit frequency. You see audience totals, never individuals.'],
+    ['You fund a reward.', 'Set the offer and the budget. It lands in matched members’ Perkalate wallets.'],
+    ['They redeem at checkout.', 'Members show a Pass at your counter or online, and every redemption shows up in your dashboard.']
+  ];
+  var stepper = $('stepper');
+  var tabs = [].slice.call(document.querySelectorAll('.tab'));
+  var screens = [].slice.call(document.querySelectorAll('[data-screen]'));
+  var pTabs = [].slice.call(document.querySelectorAll('[data-ptab]'));
+  var cur = 0, timer = null, DUR = 6000, paused = still, visible = false;
+  function show(i, focus){
+    cur = i;
+    tabs.forEach(function(t, k){
+      t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; t.classList.toggle('done', k < i);
+      var f = t.querySelector('.fill'); f.style.animation = 'none'; void f.offsetWidth; f.style.animation = '';
+    });
+    screens.forEach(function(s){ s.classList.toggle('active', +s.dataset.screen === i); });
+    pTabs.forEach(function(n){ n.classList.toggle('on', +n.dataset.ptab === i); });
+    $('stepNum').textContent = i + 1;
+    $('stepTitle').textContent = steps[i][0];
+    $('stepSub').textContent = steps[i][1];
+    if (focus) tabs[i].focus();
+    schedule();
+  }
+  function schedule(){
+    clearTimeout(timer);
+    if (reduce || paused || !visible) { stepper.classList.remove('playing'); return; }
+    stepper.style.setProperty('--dur', DUR + 'ms');
+    stepper.classList.add('playing');
+    timer = setTimeout(function(){ show((cur + 1) % 4); }, DUR);
+  }
+  tabs.forEach(function(t, k){
+    t.addEventListener('click', function(){ paused = true; show(k); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){ e.preventDefault(); paused = true; show((cur + (e.key === 'ArrowRight' ? 1 : 3)) % 4, true); }
+    });
+  });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; schedule(); }); }, {threshold:.3}).observe($('how'));
+  }
+  show(0);
+
+  /* Marquee: real program marks (not affiliated; see footer) */
+  var progs = [['Sephora','sephora.png'],['Starbucks','starbucks.com.png'],['Hilton Honors','hilton.png'],['Delta SkyMiles','delta.png'],['Marriott Bonvoy','marriott.png'],['Chipotle','chipotle.com.png'],['United MileagePlus','united.png'],['Ulta Beauty','ulta.com.png'],['Amex','amex.png'],['CVS ExtraCare','cvs.com.png'],['Southwest','southwest.com.png'],['Wayfair','wayfair.com.png']];
+  var one = progs.map(function(p){ return '<span class="prog"><img class="lgimg" src="/logos/' + p[1] + '" alt="" loading="lazy">' + p[0] + '</span>'; }).join('');
+  $('mq').innerHTML = '<span style="display:contents">' + one + '</span><span style="display:contents" aria-hidden="true">' + one + '</span>';
+
+  /* Audience chips */
+  var chips = [].slice.call(document.querySelectorAll('.chip'));
+  function updAud(){
+    var on = chips.filter(function(c){ return c.getAttribute('aria-pressed') === 'true'; });
+    var n = on.length;
+    $('audLevel').textContent = n === 0 ? 'Everyone' : n === 1 ? 'Broad' : n === 2 ? 'Focused' : n <= 4 ? 'Precise' : 'Laser-focused';
+    $('audMeter').style.width = [100,62,42,28,18,12,10][n] + '%';
+    var d = on.map(function(c){ return c.dataset.d; });
+    $('audDesc').textContent = n === 0 ? 'Example: all connected members near your stores.' : 'Example: members ' + d.join(', ') + '.';
+  }
+  chips.forEach(function(c){ c.addEventListener('click', function(){ c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true')); updAud(); }); });
+
+  /* Path links preselect the loyalty answer; guide cards remember which guide was wanted */
+  var intent = null, requestedGuide = '';
+  [].forEach.call(document.querySelectorAll('[data-guide]'), function(a){
+    a.addEventListener('click', function(){ requestedGuide = a.getAttribute('data-guide'); });
+  });
+  [].forEach.call(document.querySelectorAll('[data-intent]'), function(a){
+    a.addEventListener('click', function(){ intent = a.getAttribute('data-intent'); });
+  });
+
+  /* Two-step form -> brand access request queue (/admin) */
+  var ENDPOINT = '/api/v1/brand-auth/access-requests';
+  var form = $('wl'), email = $('email'), brand = $('brandName'), hint = $('segHint'), formErr = $('formErr'), submitBtn = $('submitBtn');
+  function setErr(el, id, msg){ $(id).textContent = msg; el.setAttribute('aria-invalid', msg ? 'true' : 'false'); }
+  function goStep(n){
+    $('fs1').hidden = n !== 1; $('fs2').hidden = n !== 2;
+    $('pg2').classList.toggle('on', n === 2);
+    $('stepLbl').textContent = n === 1 ? 'Step 1 of 2 · About your brand' : 'Step 2 of 2 · A bit more';
+    formErr.textContent = '';
+  }
+  $('next').addEventListener('click', function(){
+    var ok = true;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setErr(email, 'emailErr', 'Please enter a work email.'); ok = false; } else setErr(email, 'emailErr', '');
+    if (brand.value.trim().length < 2) { setErr(brand, 'brandErr', 'Please add your brand name.'); ok = false; } else setErr(brand, 'brandErr', '');
+    if (!ok) { (email.getAttribute('aria-invalid') === 'true' ? email : brand).focus(); return; }
+    goStep(2);
+    var pre = intent && form.querySelector('input[name=loyalty][value=' + intent + ']');
+    if (pre && !form.querySelector('input[name=loyalty]:checked')) { pre.checked = true; pre.dispatchEvent(new Event('change', {bubbles:true})); }
+    (form.querySelector('input[name=loyalty]:checked') || form.querySelector('input[name=loyalty]')).focus();
+  });
+  [email, brand].forEach(function(el){ el.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); $('next').click(); } }); });
+  $('back').addEventListener('click', function(){ goStep(1); email.focus(); });
+  [].forEach.call(form.querySelectorAll('input[name=loyalty]'), function(r){
+    r.addEventListener('change', function(){
+      hint.style.color = '';
+      hint.textContent = r.value === 'yes' ? 'Great. Your rewards will sit next to the programs members already use.' : 'No problem. We’ll help you launch rewards in minutes.';
+    });
+  });
+
+  function buildPayload(loyalty){
+    var addr = email.value.trim().toLowerCase();
+    var local = (addr.split('@')[0] || 'Brand').replace(/[^A-Za-z0-9._-]/g, '').slice(0, 100) || 'Brand';
+    var lines = ['Joined from the /brands page.', 'Has a loyalty program: ' + (loyalty === 'yes' ? 'Yes' : 'No')];
+    var role = $('role').value, city = $('city').value.trim();
+    if (role) lines.push('Role: ' + role);
+    if (city) lines.push('City: ' + city.slice(0, 100));
+    UTM_KEYS.forEach(function(k){ if (utm[k]) lines.push(k + ': ' + utm[k]); });
+    return {
+      // The form asks for no name; the operator sets their own when they accept the invite.
+      first_name: local,
+      last_name: '(via /brands)',
+      email: addr,
+      brand_name: brand.value.trim().slice(0, 200),
+      use_case: lines.join('\n')
+    };
+  }
+  window.__pkBrandsPayload = buildPayload;
+
+  /* HubSpot form (optional): set the pk-hubspot-* meta tags to switch it on */
+  function meta(name){ var m = document.querySelector('meta[name="' + name + '"]'); return m ? (m.getAttribute('content') || '').trim() : ''; }
+  var HS = { portal: meta('pk-hubspot-portal-id'), form: meta('pk-hubspot-form-guid'), region: meta('pk-hubspot-region') || 'na1' };
+  if (!/^(na1|na2|eu1)$/.test(HS.region)) HS.region = 'na1';
+  HS.on = /^\d+$/.test(HS.portal) && /^[0-9a-f-]{36}$/i.test(HS.form);
+  // HubSpot's tracking script (and its cookies) loads only once someone starts the form, never on page view.
+  function loadHubspotTracking(){
+    if (!HS.on || document.getElementById('hs-script-loader')) return;
+    var hs = document.createElement('script');
+    hs.async = true; hs.defer = true; hs.id = 'hs-script-loader';
+    hs.src = 'https://' + (HS.region === 'na1' ? 'js.hs-scripts.com' : 'js-' + HS.region + '.hs-scripts.com') + '/' + HS.portal + '.js';
+    document.head.appendChild(hs);
+  }
+  form.addEventListener('focusin', loadHubspotTracking);
+  form.addEventListener('submit', loadHubspotTracking);
+  function hubspotPayload(loyalty){
+    var fields = [
+      ['email', email.value.trim().toLowerCase()],
+      ['company', brand.value.trim().slice(0, 200)],
+      ['has_loyalty_program', loyalty === 'yes' ? 'Yes' : 'No'],
+      ['jobtitle', $('role').value],
+      ['city', $('city').value.trim().slice(0, 100)],
+      ['requested_guide', requestedGuide]
+    ];
+    UTM_KEYS.forEach(function(k){ fields.push([k, utm[k] || '']); });
+    var hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1];
+    var context = { pageUri: location.href.split('#')[0], pageName: document.title };
+    if (hutk) context.hutk = hutk;
+    return {
+      fields: fields.filter(function(f){ return f[1]; }).map(function(f){ return { objectTypeId: '0-1', name: f[0], value: f[1] }; }),
+      context: context
+    };
+  }
+  function postHubspot(loyalty){
+    if (!HS.on) return Promise.resolve(false);
+    var host = HS.region === 'eu1' ? 'https://api-eu1.hsforms.com' : 'https://api.hsforms.com';
+    // Never let a slow HubSpot hold the form: give up after a few seconds and count it as not taken.
+    var ctrl = typeof AbortController === 'function' ? new AbortController() : null;
+    var timer;
+    var timeout = new Promise(function(resolve){
+      timer = setTimeout(function(){ if (ctrl) ctrl.abort(); resolve(false); }, window.__pkHubspotTimeoutMs || 4500);
+    });
+    var sent = fetch(host + '/submissions/v3/integration/submit/' + HS.portal + '/' + HS.form, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(hubspotPayload(loyalty)),
+      signal: ctrl ? ctrl.signal : undefined
+    }).then(function(res){ return res.ok; }, function(){ return false; });
+    return Promise.race([sent, timeout]).then(function(ok){ clearTimeout(timer); return ok; });
+  }
+  window.__pkBrandsHubspot = function(){ return HS; };
+  window.__pkBrandsHubspotPayload = hubspotPayload;
+
+  function errorMessage(status, body){
+    var code = body && body.error && body.error.code;
+    if (code === 'BRAND_OPERATOR_EXISTS') return 'A brand login already exists for this email. <a href="/brand/login">Sign in</a>.';
+    if (status === 422) return 'Please check your email and brand name, then try again.';
+    if (status === 429) return 'Too many tries. Please wait a minute and try again.';
+    return 'Something went wrong. Please try again.';
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var l = form.querySelector('input[name=loyalty]:checked');
+    if (!l){ hint.textContent = 'Choose Yes or No to continue.'; hint.style.color = 'var(--accent-text)'; form.querySelector('input[name=loyalty]').focus(); return; }
+    formErr.textContent = '';
+    submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+    // Our admin queue always gets the signup; HubSpot also does when configured. Either landing counts.
+    var queued = fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(buildPayload(l.value)) })
+      .then(function(res){
+        if (res.ok) return null;
+        return res.json().catch(function(){ return null; }).then(function(body){ return { status: res.status, body: body }; });
+      }, function(){ return { status: 0, body: null }; });
+    Promise.all([queued, postHubspot(l.value)])
+      .then(function(r){
+        var queueErr = r[0], inHubspot = r[1];
+        if (queueErr) {
+          // Only an outage (network or 5xx) is covered by HubSpot taking the signup; any rejection is shown.
+          var outage = queueErr.status === 0 || queueErr.status >= 500;
+          if (!outage || !inHubspot) throw queueErr;
+        }
+        $('formBody').hidden = true;
+        var th = $('thanks'); th.hidden = false; th.focus();
+      })
+      .catch(function(err){
+        formErr.innerHTML = errorMessage(err && err.status, err && err.body);
+      })
+      .then(function(){ submitBtn.disabled = false; submitBtn.textContent = 'Get early access'; });
+  });
+
+  /* Reveal on scroll */
+  var rv = [].slice.call(document.querySelectorAll('.rv'));
+  if (reduce || still || !('IntersectionObserver' in window)) rv.forEach(function(el){ el.classList.add('in'); });
+  else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(el){ io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
