@@ -3,10 +3,21 @@ import hashlib
 import json
 import re
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "vercel.json").read_text())
+
+
+class FormParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.forms = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "form":
+            self.forms.append(dict(attrs))
 
 
 def destination(path):
@@ -75,6 +86,22 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertNotIn("f166a53d-7e49-4209-961a-74af4f7d38fe", html)
         for asset in re.findall(r'["\'](/brand-(?:dashboard|guides)/[^"\']+)["\']', html):
             self.assertTrue((ROOT / asset.lstrip("/")).is_file(), asset)
+
+    def test_signup_is_excluded_from_the_extra_collected_form(self):
+        parser = FormParser()
+        parser.feed((ROOT / "brands.html").read_text())
+        self.assertEqual(len(parser.forms), 1)
+        self.assertEqual(parser.forms[0].get("id"), "wl")
+        self.assertEqual(parser.forms[0].get("data-hs-do-not-collect"), "true")
+
+    def test_direct_submission_and_every_other_page_byte_are_preserved(self):
+        page = (ROOT / "brands.html").read_bytes()
+        marker = b' data-hs-do-not-collect="true"'
+        self.assertEqual(page.count(marker), 1)
+        # The production page from PR4, with only the new form marker removed.
+        # This protects both submission handlers, attribution, tracking and UX.
+        self.assertEqual(hashlib.sha256(page.replace(marker, b"")).hexdigest(),
+                         "588218bdb1fbb431b504c07d979f05f43c66b4ff5a9249668fcf992944ce2aa0")
 
 
 if __name__ == "__main__":

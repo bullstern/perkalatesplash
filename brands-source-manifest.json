@@ -2,7 +2,7 @@
   "repository": "Perkalate/perkalate-production",
   "source": "a9209d8998f52d92393d9e07611a20ded58a9903",
   "files": {
-    "brands.html": "588218bdb1fbb431b504c07d979f05f43c66b4ff5a9249668fcf992944ce2aa0",
+    "brands.html": "0d8910f94d774228f89379d4500e604b2d7e2f031269c1928125005820b2c665",
     "brand-dashboard/analytics.webp": "093197bf5d7378add3a406ac76a7e0cb3de55f93b6508cae24cde6848d5de02a",
     "brand-dashboard/audience.webp": "03f6b22cbf637aeb1aa40475b41c2971817f2eede27a7869c7ddb54cec182c73",
     "brand-dashboard/overview.webp": "bfa58dc306469942f84771f76d416cfac8b24d44df078d3f2638247b6c08e065",
@@ -13,5 +13,7 @@
     "brand-guides/second-visit-playbook.pdf": "19e2ea2d9c8f33a9487298d0bc8b33723b3e3de4bc76d9dbdc2c33e2cc058858",
     "brand-guides/stop-discounting-to-everyone.pdf": "e0faee2d97bc9316271695a6829e4fbea0af5f5fef6f008194618e0dd31a0dda",
     "brand-guides/viewed-claimed-redeemed.pdf": "e7f67dd3273894d6eb183028f34ba05c537714954e64f69e274c6403e67fdf3a"
-  }
+  },
+  "page_source": "a710c5f173b4fd4e8cb4ff36a9ae99bb6451dd9c",
+  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/804"
 }
