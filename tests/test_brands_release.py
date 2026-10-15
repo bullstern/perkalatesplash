@@ -20,6 +20,21 @@ class FormParser(HTMLParser):
             self.forms.append(dict(attrs))
 
 
+class PolicyTextParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.parts = []
+
+    def handle_data(self, data):
+        self.parts.append(data)
+
+
+def policy_text(value):
+    parser = PolicyTextParser()
+    parser.feed(value)
+    return " ".join(" ".join(parser.parts).split())
+
+
 def destination(path):
     for rule in CONFIG["rewrites"]:
         pattern = rule["source"].replace(":path*", "(.*)")
@@ -35,6 +50,36 @@ def destination(path):
 
 
 class BrandsReleaseTests(unittest.TestCase):
+    def test_public_privacy_date_matches_the_approved_location_update(self):
+        self.assertTrue("Last modified: October 15, 2026" in
+                        policy_text((ROOT / "privacy.html").read_text()),
+                        "Public policy date must match the approved location update")
+
+    def test_public_location_disclosures_match_the_approved_wording(self):
+        page = (ROOT / "privacy.html").read_text()
+        passages = re.findall(r"<li>\s*<strong>Location Information\.</strong>.*?</li>",
+                              page, re.S)
+        passages += re.findall(r"<p>\s*We (?:may use|use) location information.*?</p>",
+                               page, re.S)
+        self.assertEqual(len(passages), 3)
+        actual = sorted(hashlib.sha256(policy_text(p).encode()).hexdigest()
+                        for p in passages)
+        # Exact Tom-approved paragraphs in the reviewed bb02c85a native policy.
+        approved = sorted([
+            "d761aa25049fcc89addc17a08d9e4443ddf0486f6a57ae6bd6159f87fb68be2d",
+            "4a82258c755f3afa51a76656eb8afdbea6271f2e846325b80f570935d330fe15",
+            "f1f7e1655570362a556dddce792b34984894d75e3979b17e8c38a66c7ac98ecc",
+        ])
+        self.assertEqual(actual, approved)
+        self.assertNotIn("No location information is stored or retained.", page)
+
+    def test_location_update_preserves_the_existing_gmail_supplement(self):
+        page = (ROOT / "privacy.html").read_text()
+        aside = re.search(r'<aside\b[^>]*id="gmail".*?</aside>', page, re.S)
+        self.assertIsNotNone(aside)
+        self.assertEqual(hashlib.sha256(aside.group().encode()).hexdigest(),
+                         "91bf16ad4d107d2f395f0db382156dbf001fd0edf41680046dbf75c2ae0a426e")
+
     def test_brands_routes_use_reviewed_static_page(self):
         for path in ("/brands", "/brands/", "/brands.html"):
             self.assertEqual(destination(path), "/brands.html")
