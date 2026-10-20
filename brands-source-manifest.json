@@ -1,8 +1,8 @@
 {
   "repository": "Perkalate/perkalate-production",
-  "source": "a9209d8998f52d92393d9e07611a20ded58a9903",
+  "source": "3faec871647ae66916db2f712d52284a98eec788",
   "files": {
-    "brands.html": "0d8910f94d774228f89379d4500e604b2d7e2f031269c1928125005820b2c665",
+    "brands.html": "4599ee3f63983ea844d12fe507b3b21855e06cd4dad0525317fbd8deb14c7e0f",
     "brand-dashboard/analytics.webp": "093197bf5d7378add3a406ac76a7e0cb3de55f93b6508cae24cde6848d5de02a",
     "brand-dashboard/audience.webp": "03f6b22cbf637aeb1aa40475b41c2971817f2eede27a7869c7ddb54cec182c73",
     "brand-dashboard/overview.webp": "bfa58dc306469942f84771f76d416cfac8b24d44df078d3f2638247b6c08e065",
@@ -12,8 +12,24 @@
     "brand-guides/permissioned-customer-data.pdf": "b34a64eeb39a71e6e06141d61f6ba57eab99e0b4dde2f3e8a2d381946cb05401",
     "brand-guides/second-visit-playbook.pdf": "19e2ea2d9c8f33a9487298d0bc8b33723b3e3de4bc76d9dbdc2c33e2cc058858",
     "brand-guides/stop-discounting-to-everyone.pdf": "e0faee2d97bc9316271695a6829e4fbea0af5f5fef6f008194618e0dd31a0dda",
-    "brand-guides/viewed-claimed-redeemed.pdf": "e7f67dd3273894d6eb183028f34ba05c537714954e64f69e274c6403e67fdf3a"
+    "brand-guides/viewed-claimed-redeemed.pdf": "e7f67dd3273894d6eb183028f34ba05c537714954e64f69e274c6403e67fdf3a",
+    "brands-media/app-home.webp": "98be904c7db624d37994db9700ab52cbbd1a1e02649bc666caeea3318f773388",
+    "brands-media/app-map.webp": "6890766d57fc2d836013dee6ab5b8c848d8f9c42c477c7d9d5eabfc4d9329672",
+    "brands-media/app-pass.webp": "9371070efb459fe7af2279e914915557f76e3850d80809cccf8e1c6c7ddf06d2",
+    "brands-media/logo-alaska.png": "03abe8688d8fd71510eb9da59cf0778714b38841de529ddaf16abddaba1ac01e",
+    "brands-media/logo-amc.png": "3cf7c805bd247f4fa3a95e138da13f4702f3feec117808fc17f27dd5c36d7af4",
+    "brands-media/logo-amex.png": "d799c634339ad8061e0b3f963b77e3e21c4a56b33f1581b478c2fb65b632e00c",
+    "brands-media/logo-chase.png": "3a698f8e0865dd37ad056bfca2b260a1c83116c98dbb9c70b248419c7e0773a3",
+    "brands-media/logo-cvs.png": "0885a516ede0629b6b5ac619633feb777c31a665e1e4712d7afc7943bb00d9eb",
+    "brands-media/logo-delta.png": "60a3b315f84a264ed4325fd812a56e2b9948b52d596b533aec3aaf4d959b62ff",
+    "brands-media/logo-hilton.png": "493d38046223378084608611dc96cf99869fbbc6b9976cae1757b468d108ab48",
+    "brands-media/logo-jetblue.png": "afc5ef63403091fe0c69c164ad797d61c188f188e4352df0ec2485bbb3968366",
+    "brands-media/logo-nordstrom.png": "7c9255868dc2e14a7ab80d748f8591da72bf364ed136a8a99ecf224017d0b977",
+    "brands-media/logo-opentable.png": "f11c3392b2a1976394e79573b3238acd21565e65ac06214acf8af48ef8bad5ac",
+    "brands-media/logo-rei.png": "dbf4599572a5b62acfeefc1205918c31c92ec84c2bc37f89c6de6133674f9ccb",
+    "brands-media/logo-sephora.png": "bb540981e0f65f9206bc7f560b3f00a0ec27887754e6846188be19db6a486c23",
+    "brands-media/logo-ulta.png": "4037f6c56ea26643cb9c905b277fa76d1430e768f0a1349c670c30c8ea58e3f6"
   },
-  "page_source": "a710c5f173b4fd4e8cb4ff36a9ae99bb6451dd9c",
-  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/804"
+  "page_source": "70b87ae147305572eca31561eadc6e6aa1d1a335",
+  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/845"
 }

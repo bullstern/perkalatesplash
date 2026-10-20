@@ -93,6 +93,21 @@ class BrandsReleaseTests(unittest.TestCase):
             self.assertEqual(data[8:12], b"WEBP")
         self.assertEqual(len(list((ROOT / "brand-dashboard").glob("*.webp"))), 4)
 
+    def test_redesign_media_escape_homepage_fallback(self):
+        assets = list((ROOT / "brands-media").glob("*"))
+        self.assertEqual(len(assets), 16)
+        self.assertEqual(sum(asset.suffix == ".webp" for asset in assets), 3)
+        self.assertEqual(sum(asset.suffix == ".png" for asset in assets), 13)
+        for asset in assets:
+            path = "/" + str(asset.relative_to(ROOT))
+            self.assertEqual(destination(path), path)
+            data = asset.read_bytes()
+            if asset.suffix == ".webp":
+                self.assertEqual(data[:4], b"RIFF")
+                self.assertEqual(data[8:12], b"WEBP")
+            else:
+                self.assertTrue(data.startswith(b"\x89PNG\r\n\x1a\n"))
+
     def test_six_guide_pdfs_escape_homepage_fallback(self):
         guides = list((ROOT / "brand-guides").glob("*.pdf"))
         self.assertEqual(len(guides), 6)
@@ -120,7 +135,16 @@ class BrandsReleaseTests(unittest.TestCase):
 
     def test_copy_matches_reviewed_source_manifest(self):
         manifest = json.loads((ROOT / "brands-source-manifest.json").read_text())
-        self.assertEqual(len(manifest["files"]), 11)
+        self.assertEqual(manifest["source"],
+                         "3faec871647ae66916db2f712d52284a98eec788")
+        self.assertEqual(manifest["page_source"],
+                         "70b87ae147305572eca31561eadc6e6aa1d1a335")
+        expected = {"brands.html"}
+        for folder in ("brands-media", "brand-dashboard", "brand-guides"):
+            expected.update(str(path.relative_to(ROOT))
+                            for path in (ROOT / folder).glob("*"))
+        self.assertEqual(set(manifest["files"]), expected)
+        self.assertEqual(len(expected), 27)
         for name, digest in manifest["files"].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest)
 
@@ -129,7 +153,7 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertIn('content="247667002"', html)
         self.assertIn('content="3b46342c-bda0-4017-982a-16db64d732bc"', html)
         self.assertNotIn("f166a53d-7e49-4209-961a-74af4f7d38fe", html)
-        for asset in re.findall(r'["\'](/brand-(?:dashboard|guides)/[^"\']+)["\']', html):
+        for asset in re.findall(r'["\'](/(?:brands-media|brand-dashboard|brand-guides)/[^"\']+)["\']', html):
             self.assertTrue((ROOT / asset.lstrip("/")).is_file(), asset)
 
     def test_signup_is_excluded_from_the_extra_collected_form(self):
@@ -139,14 +163,26 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertEqual(parser.forms[0].get("id"), "wl")
         self.assertEqual(parser.forms[0].get("data-hs-do-not-collect"), "true")
 
-    def test_direct_submission_and_every_other_page_byte_are_preserved(self):
+    def test_page_is_the_exact_reviewed_a_plus_source(self):
         page = (ROOT / "brands.html").read_bytes()
         marker = b' data-hs-do-not-collect="true"'
         self.assertEqual(page.count(marker), 1)
-        # The production page from PR4, with only the new form marker removed.
-        # This protects both submission handlers, attribution, tracking and UX.
-        self.assertEqual(hashlib.sha256(page.replace(marker, b"")).hexdigest(),
-                         "588218bdb1fbb431b504c07d979f05f43c66b4ff5a9249668fcf992944ce2aa0")
+        # Exact page from twice-reviewed PR845 head 70b87ae1, unchanged in 3faec871.
+        self.assertEqual(hashlib.sha256(page).hexdigest(),
+                         "4599ee3f63983ea844d12fe507b3b21855e06cd4dad0525317fbd8deb14c7e0f")
+
+    def test_original_form_and_submission_handlers_are_preserved(self):
+        page = (ROOT / "brands.html").read_text()
+        form = re.search(r'<form id="wl".*?</form>', page, re.S)
+        self.assertIsNotNone(form)
+        self.assertEqual(hashlib.sha256(form.group().encode()).hexdigest(),
+                         "44c20d271bc0fc48a375da29273ed181aebbb8ae9480a793492b087e1c931e8e")
+        # Independent baseline from current public main, covering both admin queue
+        # and HubSpot handlers, errors, outage fallback and download handoff.
+        start = page.index("  /* Two-step form")
+        end = page.index("  /* Page interactions", start)
+        self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
+                         "6f1cc7f7466c215237b261cf97fa65e224405775f4a8ae5491e48f80f391f135")
 
 
 if __name__ == "__main__":
