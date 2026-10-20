@@ -1,8 +1,8 @@
 {
   "repository": "Perkalate/perkalate-production",
-  "source": "3faec871647ae66916db2f712d52284a98eec788",
+  "source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
   "files": {
-    "brands.html": "4599ee3f63983ea844d12fe507b3b21855e06cd4dad0525317fbd8deb14c7e0f",
+    "brands.html": "fa96d3f955715d5fec765e1842605afc67b2d4bbf6f1191a8a9d3573d289ed44",
     "brand-dashboard/analytics.webp": "093197bf5d7378add3a406ac76a7e0cb3de55f93b6508cae24cde6848d5de02a",
     "brand-dashboard/audience.webp": "03f6b22cbf637aeb1aa40475b41c2971817f2eede27a7869c7ddb54cec182c73",
     "brand-dashboard/overview.webp": "bfa58dc306469942f84771f76d416cfac8b24d44df078d3f2638247b6c08e065",
@@ -28,8 +28,9 @@
     "brands-media/logo-opentable.png": "f11c3392b2a1976394e79573b3238acd21565e65ac06214acf8af48ef8bad5ac",
     "brands-media/logo-rei.png": "dbf4599572a5b62acfeefc1205918c31c92ec84c2bc37f89c6de6133674f9ccb",
     "brands-media/logo-sephora.png": "bb540981e0f65f9206bc7f560b3f00a0ec27887754e6846188be19db6a486c23",
-    "brands-media/logo-ulta.png": "4037f6c56ea26643cb9c905b277fa76d1430e768f0a1349c670c30c8ea58e3f6"
+    "brands-media/logo-ulta.png": "4037f6c56ea26643cb9c905b277fa76d1430e768f0a1349c670c30c8ea58e3f6",
+    "brands-media/og-brands-v1.png": "a9f7a8a35da4d2460913e49bdbf24cc41b598551d63a3db5e043d9bd81d5bc38"
   },
-  "page_source": "70b87ae147305572eca31561eadc6e6aa1d1a335",
-  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/845"
+  "page_source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
+  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/853"
 }
