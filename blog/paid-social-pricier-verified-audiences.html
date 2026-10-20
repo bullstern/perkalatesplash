@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paid social is getting pricier. Verified audiences are the alternative. | Perkalate</title>
+<meta name="description" content="Meta's price per ad rose 12% year over year and median CPMs climbed 13%. Here's why verified audiences are a better place for the next dollar.">
+<meta property="og:title" content="Paid social is getting pricier. Verified audiences are the alternative.">
+<meta property="og:description" content="Meta's price per ad rose 12% year over year and median CPMs climbed 13%. Here's why verified audiences are a better place for the next dollar.">
+<meta property="og:image" content="/og-image.png">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico">
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search).get('theme');
+    var s = null; try { s = localStorage.getItem('pk-theme'); } catch (e) {}
+    var t = q || s || 'dark';
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.blog-post{max-width:780px;margin:0 auto;padding:80px 24px 64px}
+.blog-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:32px;transition:color .2s}
+.blog-back:hover{color:var(--text)}
+.blog-title{font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin:0 0 24px}
+.blog-content{font-size:17px;line-height:1.7;color:var(--text)}
+.blog-content h2{font-size:28px;margin:48px 0 16px;font-weight:700;letter-spacing:-.02em}
+.blog-content h3{font-size:22px;margin:32px 0 12px;font-weight:600;letter-spacing:-.01em}
+.blog-content p{margin:0 0 20px}
+.blog-content a{color:var(--accent-text);text-decoration:none;border-bottom:1px solid var(--accent-border);transition:border-color .2s}
+.blog-content a:hover{border-color:var(--accent-text)}
+.blog-content strong{font-weight:600;color:var(--text)}
+.blog-content blockquote{margin:32px 0;padding:20px 24px;border-left:3px solid var(--accent-border);background:var(--surface);border-radius:0 12px 12px 0;color:var(--muted);font-size:15px}
+.gate-wall{margin:48px 0;padding:40px 32px;border-radius:18px;background:var(--surface);border:1px solid var(--border)}
+.gate-wall.unlocked{display:none}
+.gate-title{font-size:24px;font-weight:700;margin:0 0 12px;text-align:center}
+.gate-subtitle{color:var(--muted);text-align:center;margin:0 0 32px;font-size:16px}
+.gate-form{max-width:480px;margin:0 auto}
+.form-section{margin-bottom:32px}
+.form-section-title{font-size:15px;font-weight:600;margin:0 0 16px;color:var(--text)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
+.field .opt{color:var(--faint);font-weight:500}
+.field input,.field select{width:100%;height:48px;border-radius:12px;border:1px solid var(--border-strong);background:var(--bg);padding:0 14px;font-size:16px;transition:border-color .15s,box-shadow .15s;appearance:none}
+html[data-theme="dark"] .field input,html[data-theme="dark"] .field select{background:rgba(0,0,0,.28)}
+.field input::placeholder{color:var(--faint)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%238A839E' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+html[data-theme="dark"] .field select option{background:#15111F}
+.gate-submit{width:100%;height:52px;border:0;border-radius:12px;font-weight:600;font-size:16px;background:var(--btn-bg);color:var(--btn-fg);box-shadow:var(--btn-shadow);cursor:pointer;transition:transform .15s}
+.gate-submit:hover{transform:translateY(-1px)}
+.gate-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.gate-error{margin:16px 0 0;padding:12px 16px;border-radius:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.4);color:#DC2626;font-size:14px;display:none}
+html[data-theme="dark"] .gate-error{color:#FCA5A5}
+.gate-error.show{display:block}
+.gated-content{display:none}
+.gated-content.unlocked{display:block}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="wrap">
+<a href="/" class="brand">
+<div class="brand-mark">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L14 5v6l-6 4-6-4V5l6-4z" fill="#fff" fill-opacity=".85"/></svg>
+</div>
+<span>Perkalate <span class="brand-sub">for brands</span></span>
+</a>
+<div class="nav-right">
+<button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+<svg class="i-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="4"/><path d="M9 1v2m0 10v2M1 9h2m10 0h2m-2.05-5.95l-1.41 1.41M5.46 11.54l-1.41 1.41m9.9 0l-1.41-1.41M5.46 4.46L4.05 3.05"/></svg>
+<svg class="i-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 1.05a7 7 0 107.95 7.95A7 7 0 009 1.05z"/></svg>
+</button>
+</div>
+</div>
+</nav>
+
+<main class="blog-post">
+<a href="/brands#blog" class="blog-back">
+<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14L4 8l6-6"/></svg>
+Back to blog
+</a>
+
+<h1 class="blog-title">Paid social is getting pricier. Verified audiences are the alternative.</h1>
+
+<div class="blog-content">
+<h1>Paid social is getting pricier. Verified audiences are the alternative.</h1>
+<p>If your Meta bill felt heavier this year, you're not imagining it. The numbers from the platform itself and from the people who measure it for thousands of ecommerce brands all point the same way: reaching people on paid social costs more than it did a year ago, and the conversion side hasn't kept up.</p>
+<p>I'm not here to tell anyone to turn off Meta. It's still where most ecommerce brands find customers. I want to make the case that the next dollar you'd add there might work harder somewhere you can see exactly who you're paying to reach.</p>
+<h2>What the numbers say</h2>
+<p>Start with Meta's own disclosure. In its second quarter 2026 results, Meta reported that average price per ad across its apps rose 12% year over year, while ad impressions grew 14% (<a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx" target="_blank" rel="noopener">Meta</a>). That's a blended global number, not your account, but it tells you which way the auction is moving.</p>
+<p>For a closer look at ecommerce brands specifically, Triple Whale's <a href="https://www.triplewhale.com/blog/facebook-ads-benchmarks" target="_blank" rel="noopener">Meta ads benchmarks</a> cover more than 40,000 brands from August 2025 to July 2026. Compared with the year before:</p>
+<p>- Median CPM rose 13.24%, from $13.30 to $15.06.
+- Median cost per acquisition rose 3.14% to $38.99.
+- Median conversion rate fell 4.73% to 1.53%.
+- 16 of 17 industries saw CPMs rise.</p>
+<p>The brands in that dataset put 66.88% of their total ad budget on Meta. When that much of the budget sits in one auction and the auction gets more expensive, it's worth asking what the alternative is.</p>
+
+</div>
+
+
+<div class="gate-wall" id="gate">
+<h2 class="gate-title">Continue reading</h2>
+<p class="gate-subtitle">Answer a few quick questions to unlock the full article.</p>
+
+<form class="gate-form" id="gate-form">
+<div class="form-section">
+<div class="field">
+<label for="firstname">First name</label>
+<input type="text" id="firstname" name="firstname" required>
+</div>
+<div class="field">
+<label for="lastname">Last name</label>
+<input type="text" id="lastname" name="lastname" required>
+</div>
+<div class="field">
+<label for="email">Work email</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="field">
+<label for="company">Company</label>
+<input type="text" id="company" name="company" required>
+</div>
+</div>
+
+<div class="form-section">
+<div class="form-section-title">Help us understand your needs</div>
+<div class="field">
+<label for="role">What's your role?</label>
+<select id="role" name="perkalate_role_level" required>
+<option value="">Select...</option>
+<option value="founder_ceo">Founder / CEO</option>
+<option value="vp_head">VP / Head of marketing, CRM, loyalty</option>
+<option value="director_manager">Director / Manager</option>
+<option value="individual_contributor">Individual contributor</option>
+<option value="agency_other">Agency / Other</option>
+</select>
+</div>
+
+<div class="field">
+<label for="revenue">Annual online revenue</label>
+<select id="revenue" name="perkalate_online_revenue_band" required>
+<option value="">Select...</option>
+<option value="under_1m">Under $1M</option>
+<option value="1m_5m">$1M-$5M</option>
+<option value="5m_20m">$5M-$20M</option>
+<option value="20m_100m">$20M-$100M</option>
+<option value="100m_plus">$100M+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="orders">Monthly orders</label>
+<select id="orders" name="perkalate_monthly_orders_band" required>
+<option value="">Select...</option>
+<option value="under_500">Under 500</option>
+<option value="500_2000">500-2,000</option>
+<option value="2000_10000">2,000-10,000</option>
+<option value="10000_plus">10,000+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="timeline">When would you want to launch rewards?</label>
+<select id="timeline" name="perkalate_launch_timeline" required>
+<option value="">Select...</option>
+<option value="within_30_days">Within 30 days</option>
+<option value="1_3_months">1-3 months</option>
+<option value="3_6_months">3-6 months</option>
+<option value="just_researching">Just researching</option>
+</select>
+</div>
+
+<div class="field">
+<label for="budget">Monthly rewards budget</label>
+<select id="budget" name="perkalate_rewards_budget_band" required>
+<option value="">Select...</option>
+<option value="under_1k">Under $1K</option>
+<option value="1k_5k">$1K-$5K</option>
+<option value="5k_20k">$5K-$20K</option>
+<option value="20k_plus">$20K+</option>
+</select>
+</div>
+</div>
+
+<button type="submit" class="gate-submit">Continue reading</button>
+<div class="gate-error" id="gate-error"></div>
+</form>
+</div>
+
+<div class="gated-content" id="gated-content">
+
+<blockquote><strong>Gated asset outline: standard gate</strong></blockquote>
+>
+<blockquote>- The form unlocks the rest of this article. No separate download.</blockquote>
+<h2>It's worse in the categories LA brands live in</h2>
+<p>The averages hide a lot. In Triple Whale's data, Health & Wellness has the highest median CPM in the set at $21.80, after an 18.96% increase. Beauty's median cost per acquisition is $39.31, up 6.06%, and its conversion rate fell 10.45%. Health & Wellness conversion fell 13.99% (<a href="https://www.triplewhale.com/blog/facebook-ads-benchmarks" target="_blank" rel="noopener">Triple Whale</a>).</p>
+<p>Beauty, wellness and fashion are a big part of what gets built and sold out of LA. Those are exactly the categories where paying for attention got more expensive and where that attention converted less often.</p>
+<p>Triple Whale's own read is worth quoting: "the cost of awareness on Meta is rising, and strategies that depend on cheap reach alone are under increasing pressure."</p>
+<h2>Why paying for reach is the hard part</h2>
+<p>The way paid social works, you pay to show ads, and the platform decides who sees them based on what it knows and what it predicts. That can work well. But you're paying for the impression whether or not the person was ever a real prospect.</p>
+<p>When CPMs rise and conversion rates slip, you're paying more per impression and getting fewer customers out of each one. Clicks didn't disappear: Triple Whale found median CTR actually rose 15.97%. People are still interested. The gap is between interest and purchase.</p>
+<h2>What a verified audience changes</h2>
+<p>A verified audience flips the order. Instead of paying to reach a broad pool and hoping the right people convert, you define who should get your offer first, using signals that have already been checked.</p>
+<p>On Perkalate, those signals are loyalty membership or tier plus merchant, category or card spend in the last 90 days. Brands fund rewards that reach shoppers who match. And you pay only for the rewards you fund. It's free to start.</p>
+<p>That means a few practical differences:</p>
+<p><strong>You know who you're paying for.</strong> An LA wellness brand can fund rewards for lululemon members at Collective Plus or Pinnacle whose cards also show fitness studio spend in the last 90 days. That's a group you can describe, which also makes it a group you can learn from.</p>
+<p><strong>You're paying for rewards, not impressions.</strong> What you fund is a reward a verified shopper receives. That's the same mechanic loyalty programs use, and Antavo's 2026 report found 92.7% of loyalty program owners see a positive return on it (<a href="https://antavo.com/news/antavo-gclr-2026-report/" target="_blank" rel="noopener">Antavo</a>).</p>
+<p><strong>You can start small and compare honestly.</strong> Fund a small test against one stacked segment. Then put your cost per new customer next to what you're paying on paid social. If it doesn't hold up, you've learned something without a big commitment.</p>
+<h2>How I'd split the next dollar</h2>
+<p>I'd keep paid social for what it's good at: broad reach, creative testing and retargeting people who already visited. Then I'd carve out a test budget for verified audiences and run it like any other channel test.</p>
+<p>1. <strong>Pick one segment.</strong> Two or three signals. For a beauty brand, Ulta Diamond members whose cards show beauty category spend in the last 90 days.
+2. <strong>Fund one reward.</strong> Make it worth having. Antavo found 49.1% of consumers are let down when rewards take too long to earn (<a href="https://antavo.com/blog/global-customer-loyalty-report-2026/" target="_blank" rel="noopener">Antavo</a>), so make it immediate.
+3. <strong>Decide what good looks like before you start.</strong> A cost per new customer you'd be happy with, and a repeat rate you'd want to see at 60 and 90 days.
+4. <strong>Compare it with your paid social numbers.</strong> Use your own account data, not industry medians.
+5. <strong>Scale what works.</strong> If the verified segment beats your paid social cost per acquisition, shift more there. If it doesn't, change the segment or the reward and try again.</p>
+<h2>The bigger point</h2>
+<p>Paid social costs went up because a lot of brands are bidding for the same attention. That's not going to reverse because one brand wants it to. What you can control is where you put your next test dollar and how well you know who it reaches.</p>
+<p>If you'd like to try a verified audience next to your paid social spend, join the brand waitlist at <a href="https://perkalate.com/brands" target="_blank" rel="noopener">perkalate.com/brands</a>.</p>
+</div>
+
+</main>
+
+<script src="/script.js"></script>
+<script>
+// Gate form logic
+(function() {
+  const hasGate = true;
+  if (!hasGate) return;
+
+  const gate = document.getElementById('gate');
+  const gatedContent = document.getElementById('gated-content');
+  const form = document.getElementById('gate-form');
+  const errorDiv = document.getElementById('gate-error');
+
+  // Check if already unlocked
+  try {
+    if (localStorage.getItem('pk-blog-unlocked') === 'true') {
+      gate.classList.add('unlocked');
+      gatedContent.classList.add('unlocked');
+    }
+  } catch (e) {}
+
+  // Scoring logic per plan.md
+  function calculateScore(formData) {
+    let score = 0;
+    const email = formData.get('email');
+    
+    // Check for competitor/agency/student domains (-50)
+    const blockedDomains = ['competitor.com', 'agency.com', '.edu'];
+    const emailLower = email.toLowerCase();
+    if (blockedDomains.some(d => emailLower.includes(d))) {
+      score -= 50;
+    }
+
+    // Role scoring
+    const roleScores = {
+      'founder_ceo': 20,
+      'vp_head': 20,
+      'director_manager': 12,
+      'individual_contributor': 5,
+      'agency_other': 0
+    };
+    score += roleScores[formData.get('perkalate_role_level')] || 0;
+
+    // Revenue scoring
+    const revenueScores = {
+      'under_1m': 2,
+      '1m_5m': 8,
+      '5m_20m': 15,
+      '20m_100m': 20,
+      '100m_plus': 20
+    };
+    score += revenueScores[formData.get('perkalate_online_revenue_band')] || 0;
+
+    // Orders scoring
+    const orderScores = {
+      'under_500': 2,
+      '500_2000': 8,
+      '2000_10000': 15,
+      '10000_plus': 20
+    };
+    score += orderScores[formData.get('perkalate_monthly_orders_band')] || 0;
+
+    // Timeline scoring
+    const timelineScores = {
+      'within_30_days': 20,
+      '1_3_months': 15,
+      '3_6_months': 8,
+      'just_researching': 0
+    };
+    score += timelineScores[formData.get('perkalate_launch_timeline')] || 0;
+
+    // Budget scoring
+    const budgetScores = {
+      'under_1k': 2,
+      '1k_5k': 10,
+      '5k_20k': 18,
+      '20k_plus': 20
+    };
+    score += budgetScores[formData.get('perkalate_rewards_budget_band')] || 0;
+
+    return score;
+  }
+
+  function getTier(score) {
+    if (score >= 85) return 'A';
+    if (score >= 60) return 'B';
+    return 'C';
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    errorDiv.classList.remove('show');
+    
+    const submitBtn = form.querySelector('.gate-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    try {
+      const formData = new FormData(form);
+      const score = calculateScore(formData);
+      const tier = getTier(score);
+
+      // Get HubSpot tracking cookie
+      let hutk = '';
+      try {
+        const cookies = document.cookie.split(';');
+        const hutkCookie = cookies.find(c => c.trim().startsWith('hubspotutk='));
+        if (hutkCookie) {
+          hutk = hutkCookie.split('=')[1];
+        }
+      } catch (e) {}
+
+      // Build submission payload
+      const formGuid = '';
+      
+      if (!formGuid) {
+        console.warn('HubSpot form GUID not configured. Unlocking content without submission.');
+        unlockContent();
+        return;
+      }
+
+      const payload = {
+        submittedAt: Date.now(),
+        fields: [
+          { name: 'firstname', value: formData.get('firstname') },
+          { name: 'lastname', value: formData.get('lastname') },
+          { name: 'email', value: formData.get('email') },
+          { name: 'company', value: formData.get('company') },
+          { name: 'perkalate_role_level', value: formData.get('perkalate_role_level') },
+          { name: 'perkalate_online_revenue_band', value: formData.get('perkalate_online_revenue_band') },
+          { name: 'perkalate_monthly_orders_band', value: formData.get('perkalate_monthly_orders_band') },
+          { name: 'perkalate_launch_timeline', value: formData.get('perkalate_launch_timeline') },
+          { name: 'perkalate_rewards_budget_band', value: formData.get('perkalate_rewards_budget_band') },
+          { name: 'perkalate_lead_score', value: score.toString() },
+          { name: 'perkalate_lead_tier', value: tier }
+        ],
+        context: {
+          hutk: hutk,
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+      const response = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/247667002/' + formGuid, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        unlockContent();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      errorDiv.textContent = 'Something went wrong. Please try again or contact support.';
+      errorDiv.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Continue reading';
+    }
+  });
+
+  function unlockContent() {
+    gate.classList.add('unlocked');
+    gatedContent.classList.add('unlocked');
+    try {
+      localStorage.setItem('pk-blog-unlocked', 'true');
+    } catch (e) {}
+    
+    // Scroll to gated content
+    setTimeout(() => {
+      gatedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+})();
+</script>
+</body>
+</html>
