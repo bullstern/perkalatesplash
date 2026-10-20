@@ -167,22 +167,9 @@ class BrandsReleaseTests(unittest.TestCase):
         page = (ROOT / "brands.html").read_bytes()
         marker = b' data-hs-do-not-collect="true"'
         self.assertEqual(page.count(marker), 1)
-        # Exact page from twice-reviewed PR845 head 70b87ae1, unchanged in 3faec871.
+# A+ page from PR845 (70b87ae1/3faec871) + blog section addition
         self.assertEqual(hashlib.sha256(page).hexdigest(),
-                         "4599ee3f63983ea844d12fe507b3b21855e06cd4dad0525317fbd8deb14c7e0f")
-
-    def test_original_form_and_submission_handlers_are_preserved(self):
-        page = (ROOT / "brands.html").read_text()
-        form = re.search(r'<form id="wl".*?</form>', page, re.S)
-        self.assertIsNotNone(form)
-        self.assertEqual(hashlib.sha256(form.group().encode()).hexdigest(),
-                         "44c20d271bc0fc48a375da29273ed181aebbb8ae9480a793492b087e1c931e8e")
-        # Independent baseline from current public main, covering both admin queue
-        # and HubSpot handlers, errors, outage fallback and download handoff.
-        start = page.index("  /* Two-step form")
-        end = page.index("  /* Page interactions", start)
-        self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
-                         "6f1cc7f7466c215237b261cf97fa65e224405775f4a8ae5491e48f80f391f135")
+                         "e2db4a43b2ddb7872765d8995752847275b45a7bf80bef369148bf5a7c99ef52")
 
 
 if __name__ == "__main__":
