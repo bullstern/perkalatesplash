@@ -311,7 +311,7 @@
       "destination": "/investor-traction.html"
     },
     {
-      "source": "/((?!brands.html|brand-dashboard/|brand-guides/|api/|privacy|investor-traction|traction-proof|perkalate-traction-proof.txt).*)",
+      "source": "/((?!brands.html|brands-media/|brand-dashboard/|brand-guides/|api/|privacy|investor-traction|traction-proof|perkalate-traction-proof.txt).*)",
       "destination": "/index.html"
     }
   ]
