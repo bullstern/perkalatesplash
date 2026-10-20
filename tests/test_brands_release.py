@@ -95,9 +95,9 @@ class BrandsReleaseTests(unittest.TestCase):
 
     def test_redesign_media_escape_homepage_fallback(self):
         assets = list((ROOT / "brands-media").glob("*"))
-        self.assertEqual(len(assets), 16)
+        self.assertEqual(len(assets), 17)
         self.assertEqual(sum(asset.suffix == ".webp" for asset in assets), 3)
-        self.assertEqual(sum(asset.suffix == ".png" for asset in assets), 13)
+        self.assertEqual(sum(asset.suffix == ".png" for asset in assets), 14)
         for asset in assets:
             path = "/" + str(asset.relative_to(ROOT))
             self.assertEqual(destination(path), path)
@@ -136,15 +136,15 @@ class BrandsReleaseTests(unittest.TestCase):
     def test_copy_matches_reviewed_source_manifest(self):
         manifest = json.loads((ROOT / "brands-source-manifest.json").read_text())
         self.assertEqual(manifest["source"],
-                         "3faec871647ae66916db2f712d52284a98eec788")
+                         "5d35c45a54acb173ffaa7135dde0c40742df57cc")
         self.assertEqual(manifest["page_source"],
-                         "70b87ae147305572eca31561eadc6e6aa1d1a335")
+                         "5d35c45a54acb173ffaa7135dde0c40742df57cc")
         expected = {"brands.html"}
         for folder in ("brands-media", "brand-dashboard", "brand-guides"):
             expected.update(str(path.relative_to(ROOT))
                             for path in (ROOT / folder).glob("*"))
         self.assertEqual(set(manifest["files"]), expected)
-        self.assertEqual(len(expected), 27)
+        self.assertEqual(len(expected), 28)
         for name, digest in manifest["files"].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest)
 
@@ -167,9 +167,41 @@ class BrandsReleaseTests(unittest.TestCase):
         page = (ROOT / "brands.html").read_bytes()
         marker = b' data-hs-do-not-collect="true"'
         self.assertEqual(page.count(marker), 1)
-        # Exact page from twice-reviewed PR845 head 70b87ae1, unchanged in 3faec871.
+        # Exact page from twice-reviewed PR853 head 5d35c45a: PR845's A+ page with link
+        # preview tags in <head>.
         self.assertEqual(hashlib.sha256(page).hexdigest(),
-                         "4599ee3f63983ea844d12fe507b3b21855e06cd4dad0525317fbd8deb14c7e0f")
+                         "fa96d3f955715d5fec765e1842605afc67b2d4bbf6f1191a8a9d3573d289ed44")
+        # Everything from </head> on is byte-for-byte the A+ page published at 30435d67.
+        self.assertEqual(hashlib.sha256(page[page.index(b"</head>"):]).hexdigest(),
+                         "f054aeb0990e9f5dc638d798d566db858220b25763ab5fea76722512ff5d5aec")
+
+    def test_link_preview_points_at_the_brands_page_and_its_own_image(self):
+        page = (ROOT / "brands.html").read_text()
+        image = "https://perkalate.com/brands-media/og-brands-v1.png"
+        for tag in ('<link rel="canonical" href="https://perkalate.com/brands">',
+                    '<meta property="og:url" content="https://perkalate.com/brands">',
+                    f'<meta property="og:image" content="{image}">',
+                    f'<meta name="twitter:image" content="{image}">',
+                    '<meta property="og:image:width" content="1200">',
+                    '<meta property="og:image:height" content="630">',
+                    '<meta name="twitter:card" content="summary_large_image">'):
+            self.assertEqual(page.count(tag), 1, tag)
+        self.assertNotIn("/og-image.png", page)
+        data = (ROOT / "brands-media" / "og-brands-v1.png").read_bytes()
+        self.assertTrue(data.startswith(b"\x89PNG\r\n\x1a\n"))
+        self.assertEqual((int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")),
+                         (1200, 630))
+        self.assertEqual(destination("/brands-media/og-brands-v1.png"),
+                         "/brands-media/og-brands-v1.png")
+
+    def test_homepage_and_generic_share_image_are_unchanged(self):
+        pins = {
+            "index.html": "ed9f49560afc8fb30f5d334a1182ddf7b56a6b543c81b777537178bfac23a361",
+            "splash.html": "3c8860f857a711c3632ebb13b1d11807fb4532b3cc4b4f79a05d32879cc7d7ea",
+            "og-image.png": "69c96a11a0b5e684780521b9c354f2d69376a308ec4ce18df460c148c2d3a0e6",
+        }
+        for name, digest in pins.items():
+            self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest, name)
 
     def test_original_form_and_submission_handlers_are_preserved(self):
         page = (ROOT / "brands.html").read_text()
