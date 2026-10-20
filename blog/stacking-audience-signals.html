@@ -139,6 +139,11 @@ Back to blog
 </div>
 
 <div class="field">
+<label for="website">Company website</label>
+<input type="url" id="website" name="website" placeholder="https://yourbrand.com" required>
+</div>
+
+<div class="field">
 <label for="revenue">Annual online revenue</label>
 <select id="revenue" name="perkalate_online_revenue_band" required>
 <option value="">Select...</option>
@@ -147,6 +152,17 @@ Back to blog
 <option value="5m_20m">$5M-$20M</option>
 <option value="20m_100m">$20M-$100M</option>
 <option value="100m_plus">$100M+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="loyalty_program">Do you run a loyalty program?</label>
+<select id="loyalty_program" name="has_loyalty_program" required>
+<option value="">Select...</option>
+<option value="yes_platform">Yes, on a platform (Yotpo, LoyaltyLion, Smile, Klaviyo, etc.)</option>
+<option value="yes_custom">Yes, custom built</option>
+<option value="no_planning">No, but planning to launch one</option>
+<option value="no">No</option>
 </select>
 </div>
 
@@ -253,6 +269,7 @@ Back to blog
   function calculateScore(formData) {
     let score = 0;
     const email = formData.get('email');
+    const website = formData.get('website');
     
     // Check for competitor/agency/student domains (-50)
     const blockedDomains = ['competitor.com', 'agency.com', '.edu'];
@@ -261,7 +278,7 @@ Back to blog
       score -= 50;
     }
 
-    // Role scoring
+    // Q1: Role scoring
     const roleScores = {
       'founder_ceo': 20,
       'vp_head': 20,
@@ -271,7 +288,24 @@ Back to blog
     };
     score += roleScores[formData.get('perkalate_role_level')] || 0;
 
-    // Revenue scoring
+    // Q2: Website scoring (5 if present and matches email domain)
+    if (website && website.trim()) {
+      try {
+        const websiteUrl = new URL(website.trim());
+        const websiteDomain = websiteUrl.hostname.replace(/^www./, '');
+        const emailDomain = email.split('@')[1];
+        // Award 5 points if domain matches and not free webmail
+        const freeMailProviders = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com'];
+        if (emailDomain && !freeMailProviders.includes(emailDomain.toLowerCase()) && 
+            websiteDomain.includes(emailDomain)) {
+          score += 5;
+        }
+      } catch (e) {
+        // Invalid URL, no points
+      }
+    }
+
+    // Q3: Revenue scoring
     const revenueScores = {
       'under_1m': 2,
       '1m_5m': 8,
@@ -281,7 +315,16 @@ Back to blog
     };
     score += revenueScores[formData.get('perkalate_online_revenue_band')] || 0;
 
-    // Orders scoring
+    // Q4: Loyalty program scoring
+    const loyaltyScores = {
+      'yes_platform': 15,
+      'yes_custom': 15,
+      'no_planning': 10,
+      'no': 5
+    };
+    score += loyaltyScores[formData.get('has_loyalty_program')] || 0;
+
+    // Q5: Orders scoring
     const orderScores = {
       'under_500': 2,
       '500_2000': 8,
@@ -290,7 +333,7 @@ Back to blog
     };
     score += orderScores[formData.get('perkalate_monthly_orders_band')] || 0;
 
-    // Timeline scoring
+    // Q6: Timeline scoring
     const timelineScores = {
       'within_30_days': 20,
       '1_3_months': 15,
@@ -299,7 +342,7 @@ Back to blog
     };
     score += timelineScores[formData.get('perkalate_launch_timeline')] || 0;
 
-    // Budget scoring
+    // Q7: Budget scoring
     const budgetScores = {
       'under_1k': 2,
       '1k_5k': 10,
@@ -311,7 +354,12 @@ Back to blog
     return score;
   }
 
-  function getTier(score) {
+  function getTier(score, timeline) {
+    // MQL rule: score >= 60 AND timeline != "Just researching"
+    // Just researching caps tier at C regardless of score
+    if (timeline === 'just_researching') {
+      return 'C';
+    }
     if (score >= 85) return 'A';
     if (score >= 60) return 'B';
     return 'C';
@@ -328,7 +376,8 @@ Back to blog
     try {
       const formData = new FormData(form);
       const score = calculateScore(formData);
-      const tier = getTier(score);
+      const timeline = formData.get('perkalate_launch_timeline');
+      const tier = getTier(score, timeline);
 
       // Get HubSpot tracking cookie
       let hutk = '';
@@ -356,8 +405,10 @@ Back to blog
           { name: 'lastname', value: formData.get('lastname') },
           { name: 'email', value: formData.get('email') },
           { name: 'company', value: formData.get('company') },
+          { name: 'website', value: formData.get('website') },
           { name: 'perkalate_role_level', value: formData.get('perkalate_role_level') },
           { name: 'perkalate_online_revenue_band', value: formData.get('perkalate_online_revenue_band') },
+          { name: 'has_loyalty_program', value: formData.get('has_loyalty_program') },
           { name: 'perkalate_monthly_orders_band', value: formData.get('perkalate_monthly_orders_band') },
           { name: 'perkalate_launch_timeline', value: formData.get('perkalate_launch_timeline') },
           { name: 'perkalate_rewards_budget_band', value: formData.get('perkalate_rewards_budget_band') },
