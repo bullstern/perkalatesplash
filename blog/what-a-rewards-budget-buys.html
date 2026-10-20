@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What a rewards budget actually buys a retail brand | Perkalate</title>
+<meta name="description" content="A rewards budget isn't an ad budget with a different name. Here's what it buys a retail brand, how to size it and how to compare it with paid social.">
+<meta property="og:title" content="What a rewards budget actually buys a retail brand">
+<meta property="og:description" content="A rewards budget isn't an ad budget with a different name. Here's what it buys a retail brand, how to size it and how to compare it with paid social.">
+<meta property="og:image" content="/og-image.png">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="/favicon.ico">
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search).get('theme');
+    var s = null; try { s = localStorage.getItem('pk-theme'); } catch (e) {}
+    var t = q || s || 'dark';
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.blog-post{max-width:780px;margin:0 auto;padding:80px 24px 64px}
+.blog-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;margin-bottom:32px;transition:color .2s}
+.blog-back:hover{color:var(--text)}
+.blog-title{font-size:clamp(32px,5vw,48px);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin:0 0 24px}
+.blog-content{font-size:17px;line-height:1.7;color:var(--text)}
+.blog-content h2{font-size:28px;margin:48px 0 16px;font-weight:700;letter-spacing:-.02em}
+.blog-content h3{font-size:22px;margin:32px 0 12px;font-weight:600;letter-spacing:-.01em}
+.blog-content p{margin:0 0 20px}
+.blog-content a{color:var(--accent-text);text-decoration:none;border-bottom:1px solid var(--accent-border);transition:border-color .2s}
+.blog-content a:hover{border-color:var(--accent-text)}
+.blog-content strong{font-weight:600;color:var(--text)}
+.blog-content blockquote{margin:32px 0;padding:20px 24px;border-left:3px solid var(--accent-border);background:var(--surface);border-radius:0 12px 12px 0;color:var(--muted);font-size:15px}
+.gate-wall{margin:48px 0;padding:40px 32px;border-radius:18px;background:var(--surface);border:1px solid var(--border)}
+.gate-wall.unlocked{display:none}
+.gate-title{font-size:24px;font-weight:700;margin:0 0 12px;text-align:center}
+.gate-subtitle{color:var(--muted);text-align:center;margin:0 0 32px;font-size:16px}
+.gate-form{max-width:480px;margin:0 auto}
+.form-section{margin-bottom:32px}
+.form-section-title{font-size:15px;font-weight:600;margin:0 0 16px;color:var(--text)}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}
+.field .opt{color:var(--faint);font-weight:500}
+.field input,.field select{width:100%;height:48px;border-radius:12px;border:1px solid var(--border-strong);background:var(--bg);padding:0 14px;font-size:16px;transition:border-color .15s,box-shadow .15s;appearance:none}
+html[data-theme="dark"] .field input,html[data-theme="dark"] .field select{background:rgba(0,0,0,.28)}
+.field input::placeholder{color:var(--faint)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%238A839E' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+html[data-theme="dark"] .field select option{background:#15111F}
+.gate-submit{width:100%;height:52px;border:0;border-radius:12px;font-weight:600;font-size:16px;background:var(--btn-bg);color:var(--btn-fg);box-shadow:var(--btn-shadow);cursor:pointer;transition:transform .15s}
+.gate-submit:hover{transform:translateY(-1px)}
+.gate-submit:disabled{opacity:.7;cursor:not-allowed;transform:none}
+.gate-error{margin:16px 0 0;padding:12px 16px;border-radius:10px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.4);color:#DC2626;font-size:14px;display:none}
+html[data-theme="dark"] .gate-error{color:#FCA5A5}
+.gate-error.show{display:block}
+.gated-content{display:none}
+.gated-content.unlocked{display:block}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="wrap">
+<a href="/" class="brand">
+<div class="brand-mark">
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L14 5v6l-6 4-6-4V5l6-4z" fill="#fff" fill-opacity=".85"/></svg>
+</div>
+<span>Perkalate <span class="brand-sub">for brands</span></span>
+</a>
+<div class="nav-right">
+<button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+<svg class="i-sun" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="4"/><path d="M9 1v2m0 10v2M1 9h2m10 0h2m-2.05-5.95l-1.41 1.41M5.46 11.54l-1.41 1.41m9.9 0l-1.41-1.41M5.46 4.46L4.05 3.05"/></svg>
+<svg class="i-moon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 1.05a7 7 0 107.95 7.95A7 7 0 009 1.05z"/></svg>
+</button>
+</div>
+</div>
+</nav>
+
+<main class="blog-post">
+<a href="/brands#blog" class="blog-back">
+<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 14L4 8l6-6"/></svg>
+Back to blog
+</a>
+
+<h1 class="blog-title">What a rewards budget actually buys a retail brand</h1>
+
+<div class="blog-content">
+<h1>What a rewards budget actually buys a retail brand</h1>
+<p>When a brand's finance lead first looks at funding rewards, the question is usually some version of: what am I buying? With paid social, the answer is impressions and clicks. With a rewards budget, it's less obvious, and I think that's why a lot of brands either overspend or never start.</p>
+<p>So let me be concrete about what a rewards budget buys, what it doesn't, and how I'd size one for a retail or ecommerce brand.</p>
+<h2>First, how the money moves</h2>
+<p>On Perkalate, brands fund rewards, and those rewards reach shoppers verified by loyalty membership or tier plus merchant, category or card spend in the last 90 days. Brands pay only for the rewards they fund. It's free to start, so there's no platform commitment to justify before you've seen anything.</p>
+<p>That's a different shape from most marketing spend. With an ad, you pay for the chance to be seen. With a funded reward, the budget is the reward itself, aimed at a group of shoppers you defined.</p>
+<h2>What it buys: four things</h2>
+<p><strong>1. A defined audience.</strong> You pick the signals. Two or three of them stacked, such as Sephora Beauty Insiders at VIB or Rouge whose cards also show beauty category spend in the last 90 days. You know who the reward is for before you spend anything.</p>
+<p><strong>2. A reason to buy now.</strong> A new shopper has no reason to try you this week rather than next year. A reward worth having gives them one. Antavo's 2026 consumer data found 70.8% of consumers are motivated by savings and 46.3% see free products or services as a sign of a mature program (<a href="https://antavo.com/news/antavo-gclr-2026-report/" target="_blank" rel="noopener">Antavo</a>).</p>
+<p><strong>3. A first purchase you can measure.</strong> Because you know what you funded and who it was for, you can count the first-time buyers it produced and work out a cost per new customer.</p>
+<p><strong>4. An entry point into your own program.</strong> Once someone buys, your email, SMS and loyalty program take over. That's where the long-term value shows up. At Applied Nutrition, members are worth 215% more in lifetime value than non-members (<a href="https://smile.io/customers/applied-nutrition" target="_blank" rel="noopener">Smile.io</a>).</p>
+
+</div>
+
+
+<div class="gate-wall" id="gate">
+<h2 class="gate-title">Continue reading</h2>
+<p class="gate-subtitle">Answer a few quick questions to unlock the full article.</p>
+
+<form class="gate-form" id="gate-form">
+<div class="form-section">
+<div class="field">
+<label for="firstname">First name</label>
+<input type="text" id="firstname" name="firstname" required>
+</div>
+<div class="field">
+<label for="lastname">Last name</label>
+<input type="text" id="lastname" name="lastname" required>
+</div>
+<div class="field">
+<label for="email">Work email</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="field">
+<label for="company">Company</label>
+<input type="text" id="company" name="company" required>
+</div>
+</div>
+
+<div class="form-section">
+<div class="form-section-title">Help us understand your needs</div>
+<div class="field">
+<label for="role">What's your role?</label>
+<select id="role" name="perkalate_role_level" required>
+<option value="">Select...</option>
+<option value="founder_ceo">Founder / CEO</option>
+<option value="vp_head">VP / Head of marketing, CRM, loyalty</option>
+<option value="director_manager">Director / Manager</option>
+<option value="individual_contributor">Individual contributor</option>
+<option value="agency_other">Agency / Other</option>
+</select>
+</div>
+
+<div class="field">
+<label for="website">Company website</label>
+<input type="url" id="website" name="website" placeholder="https://yourbrand.com" required>
+</div>
+
+<div class="field">
+<label for="revenue">Annual online revenue</label>
+<select id="revenue" name="perkalate_online_revenue_band" required>
+<option value="">Select...</option>
+<option value="under_1m">Under $1M</option>
+<option value="1m_5m">$1M-$5M</option>
+<option value="5m_20m">$5M-$20M</option>
+<option value="20m_100m">$20M-$100M</option>
+<option value="100m_plus">$100M+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="loyalty_program">Do you run a loyalty program?</label>
+<select id="loyalty_program" name="has_loyalty_program" required>
+<option value="">Select...</option>
+<option value="yes_platform">Yes, on a platform (Yotpo, LoyaltyLion, Smile, Klaviyo, etc.)</option>
+<option value="yes_custom">Yes, custom built</option>
+<option value="no_planning">No, but planning to launch one</option>
+<option value="no">No</option>
+</select>
+</div>
+
+<div class="field">
+<label for="orders">Monthly orders</label>
+<select id="orders" name="perkalate_monthly_orders_band" required>
+<option value="">Select...</option>
+<option value="under_500">Under 500</option>
+<option value="500_2000">500-2,000</option>
+<option value="2000_10000">2,000-10,000</option>
+<option value="10000_plus">10,000+</option>
+</select>
+</div>
+
+<div class="field">
+<label for="timeline">When would you want to launch rewards?</label>
+<select id="timeline" name="perkalate_launch_timeline" required>
+<option value="">Select...</option>
+<option value="within_30_days">Within 30 days</option>
+<option value="1_3_months">1-3 months</option>
+<option value="3_6_months">3-6 months</option>
+<option value="just_researching">Just researching</option>
+</select>
+</div>
+
+<div class="field">
+<label for="budget">Monthly rewards budget</label>
+<select id="budget" name="perkalate_rewards_budget_band" required>
+<option value="">Select...</option>
+<option value="under_1k">Under $1K</option>
+<option value="1k_5k">$1K-$5K</option>
+<option value="5k_20k">$5K-$20K</option>
+<option value="20k_plus">$20K+</option>
+</select>
+</div>
+</div>
+
+<button type="submit" class="gate-submit">Continue reading</button>
+<div class="gate-error" id="gate-error"></div>
+</form>
+</div>
+
+<div class="gated-content" id="gated-content">
+
+<blockquote><strong>Gated asset outline: "Rewards budget calculator" (spreadsheet outline)</strong></blockquote>
+>
+<blockquote>- <strong>Inputs tab:</strong> reward value per shopper; number of rewards you're willing to fund in the test; your average order value; your gross margin; your current paid social cost per acquisition (from your own account); your repeat purchase rate at 90 days.</blockquote>
+<blockquote>- <strong>Benchmarks tab (sourced, for context only):</strong> Triple Whale median Meta CPA $38.99, median CPM $15.06, median AOV $73.36 across 40,000+ brands, Aug 2025 to Jul 2026; Antavo average loyalty ROI 5.3x among program owners reporting positive ROI.</blockquote>
+<blockquote>- <strong>Outputs tab:</strong> total test budget = reward value x rewards funded; cost per new customer = total funded / first-time buyers; first-order gross profit = AOV x margin minus reward value; break-even first-purchase count; comparison line against your paid social CPA.</blockquote>
+<blockquote>- <strong>Scenarios tab:</strong> three columns (cautious, expected, strong) where you enter your own assumptions for how many funded rewards turn into first purchases. No default conversion rates are filled in.</blockquote>
+<blockquote>- <strong>Repeat tab:</strong> projected second-order revenue using your own 90-day repeat rate.</blockquote>
+<blockquote>- <strong>Decision box:</strong> scale, adjust the segment, adjust the reward or stop.</blockquote>
+<h2>What it doesn't buy</h2>
+<p>A rewards budget won't buy reach for its own sake. If your goal is to get your logo in front of as many people as possible, paid social and out-of-home are built for that.</p>
+<p>It also won't fix a weak product or a bad first experience. A reward gets someone to try you. Whether they come back is on you.</p>
+<p>And it doesn't make attribution easy. Antavo found 31.6% of loyalty program owners struggle to tell which purchases happened because of the program (<a href="https://antavo.com/blog/global-customer-loyalty-report-2026/" target="_blank" rel="noopener">Antavo</a>). Keep tests clean so you can read them.</p>
+<h2>The comparison that matters</h2>
+<p>The number I'd put a rewards budget against is your own paid social cost per acquisition.</p>
+<p>For context, Triple Whale's benchmarks across more than 40,000 brands put median Meta cost per acquisition at $38.99, up 3.14% year over year, with median CPM up 13.24% to $15.06 (<a href="https://www.triplewhale.com/blog/facebook-ads-benchmarks" target="_blank" rel="noopener">Triple Whale</a>). By category, Beauty's median CPA is $39.31 and Apparel & Accessories is $36.98. Your number may be higher or lower. Use yours.</p>
+<p>Then do the simple math: what does it cost you to get one new customer through a funded reward? If that number is lower than your paid social CPA, and those customers come back at a similar or better rate, the rewards budget is earning its place.</p>
+<h2>How I'd size a first budget</h2>
+<p>Here's the approach I'd take, with no made-up conversion rates.</p>
+<p><strong>Step 1: pick the reward value.</strong> Something a shopper would notice. Look at your average order value and margin and decide what you can afford to give a first-time buyer.</p>
+<p><strong>Step 2: pick how many rewards to fund.</strong> Enough to learn something, small enough that a bad result doesn't hurt. Total budget is reward value times rewards funded.</p>
+<p><strong>Step 3: write down your break-even.</strong> Using your own margin, how many first purchases do you need from that budget to beat your paid social cost per acquisition? That's your target.</p>
+<p><strong>Step 4: run one segment.</strong> Two or three stacked signals. Hold everything else steady.</p>
+<p><strong>Step 5: read the results at 30, 60 and 90 days.</strong> First purchase cost tells you whether it worked. Repeat purchases tell you whether it's worth scaling.</p>
+<h2>Why tight beats broad</h2>
+<p>It's tempting to spread a rewards budget wide to see more activity. I'd do the opposite. Value is concentrated. At Live Bearded, the top 8% of loyalty members generated 90% of revenue with a loyalty discount code over the past 12 months (<a href="https://smile.io/customers/live-bearded" target="_blank" rel="noopener">Smile.io</a>). If your best customers look like that, a tightly stacked segment that finds more people like them is worth more than a broad one that finds a lot of casual browsers.</p>
+<h2>Where the budget comes from</h2>
+<p>Most brands I talk to don't create a new line item. They move a slice of their paid social test budget, or a slice of their promotions budget. Antavo found 59.8% of marketers would shift more budget from short-term promotions into loyalty if they could (<a href="https://antavo.com/news/antavo-gclr-2026-report/" target="_blank" rel="noopener">Antavo</a>). A funded reward for a verified new shopper is a natural place to put some of that.</p>
+<h2>The takeaway</h2>
+<p>A rewards budget buys a defined audience, a reason to buy now, a measurable first purchase and a way into your own program. Size it small, set your break-even in advance and compare it with what you already pay for a customer.</p>
+<p>If you'd like to run that test, join the brand waitlist at <a href="https://perkalate.com/brands" target="_blank" rel="noopener">perkalate.com/brands</a>. It's free to start, and you only pay for the rewards you fund.</p>
+</div>
+
+</main>
+
+<script src="/script.js"></script>
+<script>
+// Gate form logic
+(function() {
+  const hasGate = true;
+  if (!hasGate) return;
+
+  const gate = document.getElementById('gate');
+  const gatedContent = document.getElementById('gated-content');
+  const form = document.getElementById('gate-form');
+  const errorDiv = document.getElementById('gate-error');
+
+  // Check if already unlocked
+  try {
+    if (localStorage.getItem('pk-blog-unlocked') === 'true') {
+      gate.classList.add('unlocked');
+      gatedContent.classList.add('unlocked');
+    }
+  } catch (e) {}
+
+  // Scoring logic per plan.md
+  function calculateScore(formData) {
+    let score = 0;
+    const email = formData.get('email');
+    const website = formData.get('website');
+    
+    // Check for competitor/agency/student domains (-50)
+    const blockedDomains = ['competitor.com', 'agency.com', '.edu'];
+    const emailLower = email.toLowerCase();
+    if (blockedDomains.some(d => emailLower.includes(d))) {
+      score -= 50;
+    }
+
+    // Q1: Role scoring
+    const roleScores = {
+      'founder_ceo': 20,
+      'vp_head': 20,
+      'director_manager': 12,
+      'individual_contributor': 5,
+      'agency_other': 0
+    };
+    score += roleScores[formData.get('perkalate_role_level')] || 0;
+
+    // Q2: Website scoring (5 if present and matches email domain)
+    if (website && website.trim()) {
+      try {
+        const websiteUrl = new URL(website.trim());
+        const websiteDomain = websiteUrl.hostname.replace(/^www./, '');
+        const emailDomain = email.split('@')[1];
+        // Award 5 points if domain matches and not free webmail
+        const freeMailProviders = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com'];
+        if (emailDomain && !freeMailProviders.includes(emailDomain.toLowerCase()) && 
+            websiteDomain.includes(emailDomain)) {
+          score += 5;
+        }
+      } catch (e) {
+        // Invalid URL, no points
+      }
+    }
+
+    // Q3: Revenue scoring
+    const revenueScores = {
+      'under_1m': 2,
+      '1m_5m': 8,
+      '5m_20m': 15,
+      '20m_100m': 20,
+      '100m_plus': 20
+    };
+    score += revenueScores[formData.get('perkalate_online_revenue_band')] || 0;
+
+    // Q4: Loyalty program scoring
+    const loyaltyScores = {
+      'yes_platform': 15,
+      'yes_custom': 15,
+      'no_planning': 10,
+      'no': 5
+    };
+    score += loyaltyScores[formData.get('has_loyalty_program')] || 0;
+
+    // Q5: Orders scoring
+    const orderScores = {
+      'under_500': 2,
+      '500_2000': 8,
+      '2000_10000': 15,
+      '10000_plus': 20
+    };
+    score += orderScores[formData.get('perkalate_monthly_orders_band')] || 0;
+
+    // Q6: Timeline scoring
+    const timelineScores = {
+      'within_30_days': 20,
+      '1_3_months': 15,
+      '3_6_months': 8,
+      'just_researching': 0
+    };
+    score += timelineScores[formData.get('perkalate_launch_timeline')] || 0;
+
+    // Q7: Budget scoring
+    const budgetScores = {
+      'under_1k': 2,
+      '1k_5k': 10,
+      '5k_20k': 18,
+      '20k_plus': 20
+    };
+    score += budgetScores[formData.get('perkalate_rewards_budget_band')] || 0;
+
+    return score;
+  }
+
+  function getTier(score, timeline) {
+    // MQL rule: score >= 60 AND timeline != "Just researching"
+    // Just researching caps tier at C regardless of score
+    if (timeline === 'just_researching') {
+      return 'C';
+    }
+    if (score >= 85) return 'A';
+    if (score >= 60) return 'B';
+    return 'C';
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    errorDiv.classList.remove('show');
+    
+    const submitBtn = form.querySelector('.gate-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    try {
+      const formData = new FormData(form);
+      const score = calculateScore(formData);
+      const timeline = formData.get('perkalate_launch_timeline');
+      const tier = getTier(score, timeline);
+
+      // Get HubSpot tracking cookie
+      let hutk = '';
+      try {
+        const cookies = document.cookie.split(';');
+        const hutkCookie = cookies.find(c => c.trim().startsWith('hubspotutk='));
+        if (hutkCookie) {
+          hutk = hutkCookie.split('=')[1];
+        }
+      } catch (e) {}
+
+      // Build submission payload
+      const formGuid = '';
+      
+      if (!formGuid) {
+        console.warn('HubSpot form GUID not configured. Unlocking content without submission.');
+        unlockContent();
+        return;
+      }
+
+      const payload = {
+        submittedAt: Date.now(),
+        fields: [
+          { name: 'firstname', value: formData.get('firstname') },
+          { name: 'lastname', value: formData.get('lastname') },
+          { name: 'email', value: formData.get('email') },
+          { name: 'company', value: formData.get('company') },
+          { name: 'website', value: formData.get('website') },
+          { name: 'perkalate_role_level', value: formData.get('perkalate_role_level') },
+          { name: 'perkalate_online_revenue_band', value: formData.get('perkalate_online_revenue_band') },
+          { name: 'has_loyalty_program', value: formData.get('has_loyalty_program') },
+          { name: 'perkalate_monthly_orders_band', value: formData.get('perkalate_monthly_orders_band') },
+          { name: 'perkalate_launch_timeline', value: formData.get('perkalate_launch_timeline') },
+          { name: 'perkalate_rewards_budget_band', value: formData.get('perkalate_rewards_budget_band') },
+          { name: 'perkalate_lead_score', value: score.toString() },
+          { name: 'perkalate_lead_tier', value: tier }
+        ],
+        context: {
+          hutk: hutk,
+          pageUri: window.location.href,
+          pageName: document.title
+        }
+      };
+
+      const response = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/247667002/' + formGuid, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        unlockContent();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      errorDiv.textContent = 'Something went wrong. Please try again or contact support.';
+      errorDiv.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Continue reading';
+    }
+  });
+
+  function unlockContent() {
+    gate.classList.add('unlocked');
+    gatedContent.classList.add('unlocked');
+    try {
+      localStorage.setItem('pk-blog-unlocked', 'true');
+    } catch (e) {}
+    
+    // Scroll to gated content
+    setTimeout(() => {
+      gatedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+})();
+</script>
+</body>
+</html>
