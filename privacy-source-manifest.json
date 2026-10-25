@@ -1,0 +1,72 @@
+{
+  "source_repo": "Perkalate/perkalate-production",
+  "source_commit": "e9cc6429a4a310d677e8bee4ade81d39c27d7575",
+  "source_path": "frontend/web/src/app/privacy/page.tsx",
+  "source_sha256": "50db65abf0085e4eec9c9be3eae7a0382c6d07d1f3f7431b34ac4c8db007fd93",
+  "gmail_path": "frontend/shared/gmail-privacy-supplement.json",
+  "gmail_sha256": "829c8c801586b5ad590c23a24e02d5868fd79063da28f38e386117ec568640a8",
+  "policy_text_sha256": "34a3b413f5615c66145673f9f85dfaaa3cd22dc0ef66faca0f406be1b6ab9f1a",
+  "policy_links": [
+    [
+      "https://developers.google.com/terms/api-services-user-data-policy",
+      "Google API Services User Data Policy"
+    ],
+    [
+      "https://myaccount.google.com/connections",
+      "Manage access in your Google Account"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ],
+    [
+      "mailto:support@perkalate.com",
+      "support@perkalate.com"
+    ]
+  ],
+  "unchanged_shell": {
+    "prefix_sha256": "9a925b21e2049acc43a0a37fd5f4353b976f4a2273e8f7fb5c4f5bf6d6980c30",
+    "suffix_sha256": "941cad8f7695661e74b8dfe645fc350c0059ccee2eb205da507a80b54c961547",
+    "baseline_sha256": "32c200453ab2b23bf650eadb947dd285de2633df58faed615ee33273f2751526"
+  }
+}
