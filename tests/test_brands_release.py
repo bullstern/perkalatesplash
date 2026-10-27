@@ -35,6 +35,15 @@ def policy_text(value):
     return " ".join(" ".join(parser.parts).split())
 
 
+
+def approved_baseline(page):
+    """Undo only the approved copy edits before checking preserved source."""
+    changes = json.loads((ROOT / "brands-source-manifest.json").read_text())["copy_overrides"]["replacements"]
+    for change in changes:
+        page = page.replace(change["after"], change["before"])
+    return page
+
+
 def destination(path):
     for rule in CONFIG["rewrites"]:
         pattern = rule["source"].replace(":path*", "(.*)")
@@ -164,7 +173,7 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertEqual(parser.forms[0].get("data-hs-do-not-collect"), "true")
 
     def test_page_is_the_exact_reviewed_a_plus_source(self):
-        page = (ROOT / "brands.html").read_bytes()
+        page = approved_baseline((ROOT / "brands.html").read_text()).encode()
         marker = b' data-hs-do-not-collect="true"'
         self.assertEqual(page.count(marker), 1)
         # Exact page from twice-reviewed PR853 head 5d35c45a: PR845's A+ page with link
@@ -204,7 +213,7 @@ class BrandsReleaseTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest, name)
 
     def test_original_form_and_submission_handlers_are_preserved(self):
-        page = (ROOT / "brands.html").read_text()
+        page = approved_baseline((ROOT / "brands.html").read_text())
         form = re.search(r'<form id="wl".*?</form>', page, re.S)
         self.assertIsNotNone(form)
         self.assertEqual(hashlib.sha256(form.group().encode()).hexdigest(),

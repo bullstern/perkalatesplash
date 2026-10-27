@@ -2,7 +2,7 @@
   "repository": "Perkalate/perkalate-production",
   "source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
   "files": {
-    "brands.html": "fa96d3f955715d5fec765e1842605afc67b2d4bbf6f1191a8a9d3573d289ed44",
+    "brands.html": "0efef92e232b510b756ccd7572d74afc7271e89b7db47d6ab78d2335d1c220a7",
     "brand-dashboard/analytics.webp": "093197bf5d7378add3a406ac76a7e0cb3de55f93b6508cae24cde6848d5de02a",
     "brand-dashboard/audience.webp": "03f6b22cbf637aeb1aa40475b41c2971817f2eede27a7869c7ddb54cec182c73",
     "brand-dashboard/overview.webp": "bfa58dc306469942f84771f76d416cfac8b24d44df078d3f2638247b6c08e065",
@@ -32,5 +32,36 @@
     "brands-media/og-brands-v1.png": "a9f7a8a35da4d2460913e49bdbf24cc41b598551d63a3db5e043d9bd81d5bc38"
   },
   "page_source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
-  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/853"
+  "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/853",
+  "copy_overrides": {
+    "approved_on": "2026-10-27",
+    "baseline_public_commit": "7232e085",
+    "reason": "Tom approved 108 brands and no platform fee with a share of reward funding; rate TBD.",
+    "replacements": [
+      {
+        "before": "Free to start. No app to build, no new hardware.",
+        "after": "No platform fee. No app to build, no new hardware."
+      },
+      {
+        "before": "Perkalate fee to start",
+        "after": "Platform fee"
+      },
+      {
+        "before": "Free to start. You only pay for the rewards you fund.",
+        "after": "No platform fee. You fund rewards redeemed by qualified customers."
+      },
+      {
+        "before": "Perkalate is free to start. You only pay for the rewards you fund, and you set the budget.",
+        "after": "No platform fee. You fund rewards redeemed by qualified customers and set the budget. Perkalate earns a share of reward funding, with the rate agreed before launch."
+      },
+      {
+        "before": "100+ brands are already on Perkalate.",
+        "after": "108 brands are already on Perkalate."
+      },
+      {
+        "before": "Illustration, if every reward is redeemed. You only pay for the rewards you fund.",
+        "after": "Illustrative reward value, if every reward is redeemed. Funding-share terms are agreed before launch."
+      }
+    ]
+  }
 }
