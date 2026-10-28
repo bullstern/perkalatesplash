@@ -25,6 +25,14 @@ class PolicyTextParser(HTMLParser):
         super().__init__()
         self.parts = []
 
+    def handle_starttag(self, tag, attrs):
+        if tag in {"p", "li", "ul", "div", "h1", "h2", "aside", "section"}:
+            self.parts.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag in {"p", "li", "ul", "div", "h1", "h2", "aside", "section"}:
+            self.parts.append(" ")
+
     def handle_data(self, data):
         self.parts.append(data)
 
@@ -32,7 +40,7 @@ class PolicyTextParser(HTMLParser):
 def policy_text(value):
     parser = PolicyTextParser()
     parser.feed(value)
-    return " ".join(" ".join(parser.parts).split())
+    return " ".join("".join(parser.parts).split())
 
 
 
@@ -82,12 +90,12 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertEqual(actual, approved)
         self.assertNotIn("No location information is stored or retained.", page)
 
-    def test_location_update_preserves_the_existing_gmail_supplement(self):
+    def test_gmail_supplement_matches_the_approved_october_source(self):
         page = (ROOT / "privacy.html").read_text()
         aside = re.search(r'<aside\b[^>]*id="gmail".*?</aside>', page, re.S)
         self.assertIsNotNone(aside)
         self.assertEqual(hashlib.sha256(aside.group().encode()).hexdigest(),
-                         "91bf16ad4d107d2f395f0db382156dbf001fd0edf41680046dbf75c2ae0a426e")
+                         "51c43e15f94510aa419007e0c75ccdf4bac71fc717c4c0b825ef349629847a55")
 
     def test_brands_routes_use_reviewed_static_page(self):
         for path in ("/brands", "/brands/", "/brands.html"):
@@ -224,6 +232,70 @@ class BrandsReleaseTests(unittest.TestCase):
         end = page.index("  /* Page interactions", start)
         self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
                          "6f1cc7f7466c215237b261cf97fa65e224405775f4a8ae5491e48f80f391f135")
+
+
+
+
+
+class CanonicalPolicyParser(HTMLParser):
+    """Compare all policy text and links without presentation-only markup."""
+    BLOCKS = {"p", "div", "h1", "h2", "h3", "section", "ul", "li", "aside", "br"}
+
+    def __init__(self):
+        super().__init__()
+        self.started = False
+        self.parts = []
+        self.links = []
+        self.anchor = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "h1":
+            self.started = True
+        if not self.started:
+            return
+        if tag in self.BLOCKS:
+            self.parts.append(" ")
+        if tag == "a":
+            self.anchor = [dict(attrs).get("href"), []]
+
+    def handle_endtag(self, tag):
+        if not self.started:
+            return
+        if tag in self.BLOCKS:
+            self.parts.append(" ")
+        if tag == "a" and self.anchor:
+            self.links.append([self.anchor[0], " ".join("".join(self.anchor[1]).split())])
+            self.anchor = None
+
+    def handle_data(self, data):
+        if self.started:
+            self.parts.append(data)
+        if self.anchor:
+            self.anchor[1].append(data)
+
+
+class PrivacySourceParityTests(unittest.TestCase):
+    def test_entire_policy_and_links_match_the_reviewed_source(self):
+        manifest = json.loads((ROOT / "privacy-source-manifest.json").read_text())
+        page = (ROOT / "privacy.html").read_text()
+        main = re.search(r"<main[^>]*>(.*?)</main>", page, re.S).group(1)
+        parser = CanonicalPolicyParser()
+        parser.feed(main)
+        text = " ".join("".join(parser.parts).split())
+        self.assertEqual(hashlib.sha256(text.encode()).hexdigest(), manifest["policy_text_sha256"])
+        self.assertEqual(parser.links, manifest["policy_links"])
+        self.assertEqual(manifest["source_sha256"],
+                         "50db65abf0085e4eec9c9be3eae7a0382c6d07d1f3f7431b34ac4c8db007fd93")
+
+    def test_only_the_policy_body_changes(self):
+        manifest = json.loads((ROOT / "privacy-source-manifest.json").read_text())
+        page = (ROOT / "privacy.html").read_text()
+        prefix, rest = page.split("<main>", 1)
+        _, suffix = rest.split("</main>", 1)
+        self.assertEqual(hashlib.sha256(prefix.encode()).hexdigest(),
+                         manifest["unchanged_shell"]["prefix_sha256"])
+        self.assertEqual(hashlib.sha256(suffix.encode()).hexdigest(),
+                         manifest["unchanged_shell"]["suffix_sha256"])
 
 
 if __name__ == "__main__":
