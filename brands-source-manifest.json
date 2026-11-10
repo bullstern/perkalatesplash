@@ -2,7 +2,7 @@
   "repository": "Perkalate/perkalate-production",
   "source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
   "files": {
-    "brands.html": "061d8f00a24290a5c19730d0dacbf9c3acd93f5502aad6119d99bbecd239d0fa",
+    "brands.html": "c30d717f786f5f89f2579a8f3f6c1c25a5b0b0ed203950d600cccb4a4f6c9573",
     "brand-dashboard/analytics.webp": "093197bf5d7378add3a406ac76a7e0cb3de55f93b6508cae24cde6848d5de02a",
     "brand-dashboard/audience.webp": "03f6b22cbf637aeb1aa40475b41c2971817f2eede27a7869c7ddb54cec182c73",
     "brand-dashboard/overview.webp": "bfa58dc306469942f84771f76d416cfac8b24d44df078d3f2638247b6c08e065",
@@ -65,7 +65,7 @@
     ]
   },
   "guide_signup_revision": {
-    "baseline_public_commit": "59dd1f590e5fe20fb630d3b66f4e7b6097c40ed6",
-    "scope": "Guide signup layout, download instructions, and form display copy."
+    "baseline_public_commit": "3e6f6b0f9ad8a4dea7be3b1c6946a999be8d44ca",
+    "scope": "Document-specific selection and download, contact fields, and HubSpot attribution."
   }
 }

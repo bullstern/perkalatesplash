@@ -332,6 +332,7 @@ section{padding-block:72px}
 .form-progress i.on{background:#713AF2}
 .form-step-lbl{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#6B6475;margin:0 0 14px}
 .field{display:grid;gap:7px;margin-bottom:14px}
+#guidePicker[hidden]{display:none}
 .field label,.legend{font-size:14px;font-weight:600;padding:0}
 .opt{color:#6B6475;font-weight:500}
 .input{font:400 16px var(--sans);height:50px;padding:0 16px;border-radius:14px;border:1px solid rgba(36,22,63,.16);background:#FAF8F3;color:#241F2D;width:100%;appearance:none}
@@ -524,18 +525,18 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
 <section class="wrap" id="guides" aria-labelledby="guides-h">
   <p class="k">Free guides</p>
   <h2 class="h2 rv" id="guides-h">Guides for brands</h2>
-  <p class="lede">Practical reads on loyalty, targeting and rewards. Fill out the form below to download all six.</p>
-  <div class="guides"><a class="g" href="#access" data-guide="launch-a-loyalty-program-in-a-day"><span class="g-k">Guide · PDF</span><b>Launch a loyalty program in a day</b><span class="g-d">One goal, one audience, one reward. A step-by-step day plan with no app and no hardware.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="for-brands-with-a-loyalty-program"><span class="g-k">One-pager · PDF</span><b>For brands with a loyalty program</b><span class="g-d">What Perkalate adds to the program you already run, and three rewards to try first.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="second-visit-playbook"><span class="g-k">Article · PDF</span><b>The second-visit playbook</b><span class="g-d">Why the second visit matters more than the first, and three ways to earn it.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="stop-discounting-to-everyone"><span class="g-k">Article · PDF</span><b>Stop discounting to everyone</b><span class="g-d">How rewarding what customers actually do gets more from every reward dollar.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="permissioned-customer-data"><span class="g-k">Article · PDF</span><b>Permissioned data: how access to customer data is changing</b><span class="g-d">Why the next wave of targeting runs on data customers choose to share.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="viewed-claimed-redeemed"><span class="g-k">Article · PDF</span><b>Viewed, claimed, redeemed</b><span class="g-d">Three numbers that tell you whether a reward is working, and what to change.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div>
+  <p class="lede">Practical reads on loyalty, targeting and rewards. Choose a guide to download.</p>
+  <div class="guides"><a class="g" href="/brands?guide=launch-a-loyalty-program-in-a-day#access" data-guide="launch-a-loyalty-program-in-a-day"><span class="g-k">Guide · PDF</span><b>Launch a loyalty program in a day</b><span class="g-d">One goal, one audience, one reward. A step-by-step day plan with no app and no hardware.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="/brands?guide=for-brands-with-a-loyalty-program#access" data-guide="for-brands-with-a-loyalty-program"><span class="g-k">One-pager · PDF</span><b>For brands with a loyalty program</b><span class="g-d">What Perkalate adds to the program you already run, and three rewards to try first.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="/brands?guide=second-visit-playbook#access" data-guide="second-visit-playbook"><span class="g-k">Article · PDF</span><b>The second-visit playbook</b><span class="g-d">Why the second visit matters more than the first, and three ways to earn it.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="/brands?guide=stop-discounting-to-everyone#access" data-guide="stop-discounting-to-everyone"><span class="g-k">Article · PDF</span><b>Stop discounting to everyone</b><span class="g-d">How rewarding what customers actually do gets more from every reward dollar.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="/brands?guide=permissioned-customer-data#access" data-guide="permissioned-customer-data"><span class="g-k">Article · PDF</span><b>Permissioned data: how access to customer data is changing</b><span class="g-d">Why the next wave of targeting runs on data customers choose to share.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="/brands?guide=viewed-claimed-redeemed#access" data-guide="viewed-claimed-redeemed"><span class="g-k">Article · PDF</span><b>Viewed, claimed, redeemed</b><span class="g-d">Three numbers that tell you whether a reward is working, and what to change.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div>
 </section>
 
 <section class="wrap" id="access" aria-labelledby="access-h">
   <div class="access">
     <div class="access-copy">
-      <h2 class="h2" id="access-h">Get the free guides</h2>
-      <p class="lede">Six practical PDFs on loyalty, rewards, and bringing customers back.</p>
+      <h2 class="h2" id="access-h">Get a free guide</h2>
+      <p class="lede" id="guideIntro">Choose a PDF on loyalty, rewards, or bringing customers back.</p>
       <ol role="list">
         <li><span aria-hidden="true">1</span> Fill out the short form.</li>
-        <li><span aria-hidden="true">2</span> Download the PDFs on the next screen.</li>
+        <li><span aria-hidden="true">2</span> Download your PDF on the next screen.</li>
       </ol>
     </div>
     <div class="ea-wrap">
@@ -546,19 +547,63 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
               <p class="form-step-lbl" id="stepLbl">Step 1 of 2 · About your brand</p>
               <p class="err form-err" id="formErr" role="alert"></p>
               <div id="fs1">
+                <div class="field" id="guidePicker">
+                  <label for="guide">Guide</label>
+                  <select class="input" id="guide" required aria-describedby="guideErr">
+                    <option value="">Choose a guide</option>
+                    <option value="launch-a-loyalty-program-in-a-day">Launch a loyalty program in a day</option>
+                    <option value="for-brands-with-a-loyalty-program">For brands with a loyalty program</option>
+                    <option value="second-visit-playbook">The second-visit playbook</option>
+                    <option value="stop-discounting-to-everyone">Stop discounting to everyone</option>
+                    <option value="permissioned-customer-data">Permissioned data: how access to customer data is changing</option>
+                    <option value="viewed-claimed-redeemed">Viewed, claimed, redeemed</option>
+                  </select>
+                  <span class="err" id="guideErr"></span>
+                </div>
+                <div class="two">
+                  <div class="field">
+                    <label for="firstName">First name</label>
+                    <input class="input" id="firstName" name="firstname" autocomplete="given-name" required maxlength="100" aria-describedby="firstNameErr">
+                    <span class="err" id="firstNameErr"></span>
+                  </div>
+                  <div class="field">
+                    <label for="lastName">Last name</label>
+                    <input class="input" id="lastName" name="lastname" autocomplete="family-name" required maxlength="100" aria-describedby="lastNameErr">
+                    <span class="err" id="lastNameErr"></span>
+                  </div>
+                </div>
                 <div class="field">
                   <label for="email">Work email</label>
                   <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required aria-describedby="emailErr">
                   <span class="err" id="emailErr"></span>
                 </div>
                 <div class="field">
-                  <label for="brandName">Brand</label>
-                  <input class="input" id="brandName" name="brand" type="text" autocomplete="organization" placeholder="Your brand name" required maxlength="200" aria-describedby="brandErr">
+                  <label for="brandName">Organization</label>
+                  <input class="input" id="brandName" name="brand" type="text" autocomplete="organization" placeholder="Your organization name" required maxlength="200" aria-describedby="brandErr">
                   <span class="err" id="brandErr"></span>
                 </div>
                 <div class="actions"><button class="btn btn-primary" type="button" id="next">Continue <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
               </div>
               <div id="fs2" hidden>
+                <div class="field">
+                  <label for="partnerType">Partner type</label>
+                  <select class="input" id="partnerType" name="perkalate_company_type" required aria-describedby="partnerTypeErr">
+                    <option value="">Select a partner type</option>
+                    <option value="ecommerce">Ecommerce brand</option>
+                    <option value="retail">Retail brand or store</option>
+                    <option value="restaurant">Restaurant or hospitality</option>
+                    <option value="events">Event organizer or venue</option>
+                    <option value="sports">Sports team or league</option>
+                    <option value="fitness">Fitness or wellness</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="err" id="partnerTypeErr"></span>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone number <span class="opt">(optional)</span></label>
+                  <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" maxlength="50" aria-describedby="phoneErr">
+                  <span class="err" id="phoneErr"></span>
+                </div>
                 <fieldset>
                   <legend class="legend">Do you have a loyalty program?</legend>
                   <div class="seg">
@@ -586,22 +631,17 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
                 </div>
                 <div class="actions">
                   <button class="btn btn-ghost" type="button" id="back">Back</button>
-                  <button class="btn btn-primary" type="submit" id="submitBtn">Download guides</button>
+                  <button class="btn btn-primary" type="submit" id="submitBtn">Download guide</button>
                 </div>
               </div>
               <p class="form-foot">We use HubSpot to follow up. See our <a href="/privacy">Privacy</a> page.</p>
             </div>
             <div class="thanks" id="thanks" hidden tabindex="-1" role="status">
               <div class="big-check"><svg width="26" height="26" aria-hidden="true"><use href="#i-check"/></svg></div>
-              <h3>Your guides are ready</h3>
-              <p>Choose any guide below to download the PDF.</p>
+              <h3>Your guide is ready</h3>
+              <p>If your download hasn’t started, use the link below.</p>
               <div class="downloads">
-                <a class="dl" id="dlGuide" href="/brand-guides/launch-a-loyalty-program-in-a-day.pdf" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Launch a loyalty program in a day<small>Free guide · PDF</small></span></a>
-                <a class="dl" id="dlOnePager" href="/brand-guides/for-brands-with-a-loyalty-program.pdf" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>For brands with a loyalty program<small>One-pager · PDF</small></span></a>
-                <a class="dl" href="/brand-guides/second-visit-playbook.pdf" download data-dl="second-visit-playbook"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>The second-visit playbook<small>Article · PDF</small></span></a>
-                <a class="dl" href="/brand-guides/stop-discounting-to-everyone.pdf" download data-dl="stop-discounting-to-everyone"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Stop discounting to everyone<small>Article · PDF</small></span></a>
-                <a class="dl" href="/brand-guides/permissioned-customer-data.pdf" download data-dl="permissioned-customer-data"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Permissioned data: how access to customer data is changing<small>Article · PDF</small></span></a>
-                <a class="dl" href="/brand-guides/viewed-claimed-redeemed.pdf" download data-dl="viewed-claimed-redeemed"><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Viewed, claimed, redeemed<small>Article · PDF</small></span></a>
+                <a class="dl" id="dlGuide" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span id="downloadTitle"></span></a>
               </div>
             </div>
           </form>
@@ -650,11 +690,17 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
   $('heroGo').addEventListener('click', heroGo);
   $('heroEmail').addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); heroGo(); } });
 
-  /* Path links preselect the loyalty answer; guide cards remember which guide was wanted */
-  var intent = null, requestedGuide = '';
-  [].forEach.call(document.querySelectorAll('[data-guide]'), function(a){
-    a.addEventListener('click', function(){ requestedGuide = a.getAttribute('data-guide'); });
-  });
+  var intent = null, guide = $('guide'), partnerType = $('partnerType');
+  // Only the six published slugs in the selector can resolve to a file.
+  function selectGuide(slug){
+    if (!slug) return;
+    guide.value = slug;
+    if (!guide.value) { guide.selectedIndex = 0; return; }
+    $('guidePicker').hidden = true;
+    $('guideIntro').textContent = guide.options[guide.selectedIndex].textContent;
+  }
+  selectGuide(params.get('guide') || params.get('utm_content'));
+
   [].forEach.call(document.querySelectorAll('[data-intent]'), function(a){
     a.addEventListener('click', function(){ intent = a.getAttribute('data-intent'); });
   });
@@ -671,15 +717,20 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
   }
   $('next').addEventListener('click', function(){
     var ok = true;
+    [['guide', 'Choose a guide.'], ['firstName', 'Enter your first name.'], ['lastName', 'Enter your last name.']].forEach(function(field){
+      var input = $(field[0]), missing = !input.value.trim();
+      setErr(input, field[0] + 'Err', missing ? field[1] : '');
+      if (missing) ok = false;
+    });
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { setErr(email, 'emailErr', 'Please enter a work email.'); ok = false; } else setErr(email, 'emailErr', '');
-    if (brand.value.trim().length < 2) { setErr(brand, 'brandErr', 'Please add your brand name.'); ok = false; } else setErr(brand, 'brandErr', '');
-    if (!ok) { (email.getAttribute('aria-invalid') === 'true' ? email : brand).focus(); return; }
+    if (brand.value.trim().length < 2) { setErr(brand, 'brandErr', 'Please enter your organization name.'); ok = false; } else setErr(brand, 'brandErr', '');
+    if (!ok) { $('fs1').querySelector('[aria-invalid="true"]').focus(); return; }
     goStep(2);
     var pre = intent && form.querySelector('input[name=loyalty][value=' + intent + ']');
     if (pre && !form.querySelector('input[name=loyalty]:checked')) { pre.checked = true; pre.dispatchEvent(new Event('change', {bubbles:true})); }
-    (form.querySelector('input[name=loyalty]:checked') || form.querySelector('input[name=loyalty]')).focus();
+    partnerType.focus();
   });
-  [email, brand].forEach(function(el){ el.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); $('next').click(); } }); });
+  [$('firstName'), $('lastName'), email, brand].forEach(function(el){ el.addEventListener('keydown', function(e){ if (e.key === 'Enter'){ e.preventDefault(); $('next').click(); } }); });
   $('back').addEventListener('click', function(){ goStep(1); email.focus(); });
   [].forEach.call(form.querySelectorAll('input[name=loyalty]'), function(r){
     r.addEventListener('change', function(){
@@ -690,18 +741,19 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
 
   function buildPayload(loyalty){
     var addr = email.value.trim().toLowerCase();
-    var local = (addr.split('@')[0] || 'Brand').replace(/[^A-Za-z0-9._-]/g, '').slice(0, 100) || 'Brand';
-    var lines = ['Joined from the /brands page.', 'Has a loyalty program: ' + (loyalty === 'yes' ? 'Yes' : 'No')];
+    var lines = ['Joined from the /brands page.', 'Requested guide: ' + guide.value,
+      'Partner type: ' + partnerType.value, 'Has a loyalty program: ' + (loyalty === 'yes' ? 'Yes' : 'No')];
     var role = $('role').value, city = $('city').value.trim();
     if (role) lines.push('Role: ' + role);
     if (city) lines.push('City: ' + city.slice(0, 100));
     UTM_KEYS.forEach(function(k){ if (utm[k]) lines.push(k + ': ' + utm[k]); });
     return {
-      // The form asks for no name; the operator sets their own when they accept the invite.
-      first_name: local,
-      last_name: '(via /brands)',
+      first_name: $('firstName').value.trim(),
+      last_name: $('lastName').value.trim(),
       email: addr,
       brand_name: brand.value.trim().slice(0, 200),
+      category: partnerType.value,
+      phone: $('phone').value.trim() || null,
       use_case: lines.join('\n')
     };
   }
@@ -729,7 +781,11 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
       ['has_loyalty_program', loyalty === 'yes' ? 'Yes' : 'No'],
       ['jobtitle', $('role').value],
       ['city', $('city').value.trim().slice(0, 100)],
-      ['requested_guide', requestedGuide]
+      ['firstname', $('firstName').value.trim()],
+      ['lastname', $('lastName').value.trim()],
+      ['phone', $('phone').value.trim()],
+      ['perkalate_company_type', partnerType.value],
+      ['requested_guide', guide.value]
     ];
     UTM_KEYS.forEach(function(k){ fields.push([k, utm[k] || '']); });
     var hutk = (document.cookie.match(/(?:^|;\s*)hubspotutk=([^;]+)/) || [])[1];
@@ -758,41 +814,39 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
   window.__pkBrandsHubspot = function(){ return HS; };
   window.__pkBrandsHubspotPayload = hubspotPayload;
 
-  function errorMessage(status, body){
-    var code = body && body.error && body.error.code;
-    if (code === 'BRAND_OPERATOR_EXISTS') return 'A brand login already exists for this email. <a href="/brand/login">Sign in</a>.';
-    if (status === 422) return 'Please check your email and brand name, then try again.';
-    if (status === 429) return 'Too many tries. Please wait a minute and try again.';
-    return 'Something went wrong. Please try again.';
-  }
-
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    if (submitBtn.disabled) return;
+    if (!$('fs1').hidden) { $('next').click(); return; }
+    formErr.textContent = '';
+    setErr(partnerType, 'partnerTypeErr', partnerType.value ? '' : 'Select a partner type.');
+    if (!partnerType.value) { partnerType.focus(); return; }
+    var phone = $('phone'), digits = phone.value.replace(/\D/g, '');
+    var phoneError = phone.value.trim() && (digits.length < 7 || digits.length > 15);
+    setErr(phone, 'phoneErr', phoneError ? 'Enter a valid phone number.' : '');
+    if (phoneError) { phone.focus(); return; }
     var l = form.querySelector('input[name=loyalty]:checked');
     if (!l){ hint.textContent = 'Choose Yes or No to continue.'; hint.style.color = 'var(--accent-text)'; form.querySelector('input[name=loyalty]').focus(); return; }
     formErr.textContent = '';
     submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
-    // Our admin queue always gets the signup; HubSpot also does when configured. Either landing counts.
-    var queued = fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(buildPayload(l.value)) })
-      .then(function(res){
-        if (res.ok) return null;
-        return res.json().catch(function(){ return null; }).then(function(body){ return { status: res.status, body: body }; });
-      }, function(){ return { status: 0, body: null }; });
-    Promise.all([queued, postHubspot(l.value)])
-      .then(function(r){
-        var queueErr = r[0], inHubspot = r[1];
-        if (queueErr) {
-          // Only an outage (network or 5xx) is covered by HubSpot taking the signup; any rejection is shown.
-          var outage = queueErr.status === 0 || queueErr.status >= 500;
-          if (!outage || !inHubspot) throw queueErr;
-        }
+    // A guide request must be recorded in HubSpot before delivery.
+    // Keep the admin queue as a secondary record for the Brands team.
+    var payload = buildPayload(l.value), slug = guide.value, title = guide.options[guide.selectedIndex].textContent;
+    postHubspot(l.value)
+      .then(function(inHubspot){
+        if (!inHubspot) throw new Error('HubSpot could not accept the guide request.');
+        fetch(ENDPOINT, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) }).catch(function(){});
+        var link = $('dlGuide');
+        link.href = '/brand-guides/' + slug + '.pdf';
+        $('downloadTitle').textContent = title;
         $('formBody').hidden = true;
         var th = $('thanks'); th.hidden = false; th.focus();
+        link.click();
       })
-      .catch(function(err){
-        formErr.innerHTML = errorMessage(err && err.status, err && err.body);
+      .catch(function(){
+        formErr.textContent = 'We couldn’t save your request. Please try again.';
       })
-      .then(function(){ submitBtn.disabled = false; submitBtn.textContent = 'Download guides'; });
+      .then(function(){ submitBtn.disabled = false; submitBtn.textContent = 'Download guide'; });
   });
 
   /* Page interactions and motion */
