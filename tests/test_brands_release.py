@@ -36,14 +36,6 @@ def policy_text(value):
 
 
 
-def approved_baseline(page):
-    """Undo only the approved copy edits before checking preserved source."""
-    changes = json.loads((ROOT / "brands-source-manifest.json").read_text())["copy_overrides"]["replacements"]
-    for change in changes:
-        page = page.replace(change["after"], change["before"])
-    return page
-
-
 def destination(path):
     for rule in CONFIG["rewrites"]:
         pattern = rule["source"].replace(":path*", "(.*)")
@@ -216,17 +208,22 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertEqual(parser.forms[0].get("id"), "wl")
         self.assertEqual(parser.forms[0].get("data-hs-do-not-collect"), "true")
 
-    def test_page_is_the_exact_reviewed_a_plus_source(self):
-        page = approved_baseline((ROOT / "brands.html").read_text()).encode()
-        marker = b' data-hs-do-not-collect="true"'
-        self.assertEqual(page.count(marker), 1)
-        # Exact page from twice-reviewed PR853 head 5d35c45a: PR845's A+ page with link
-        # preview tags in <head>.
-        self.assertEqual(hashlib.sha256(page).hexdigest(),
-                         "fa96d3f955715d5fec765e1842605afc67b2d4bbf6f1191a8a9d3573d289ed44")
-        # Everything from </head> on is byte-for-byte the A+ page published at 30435d67.
-        self.assertEqual(hashlib.sha256(page[page.index(b"</head>"):]).hexdigest(),
-                         "f054aeb0990e9f5dc638d798d566db858220b25763ab5fea76722512ff5d5aec")
+    def test_guide_signup_explains_immediate_downloads(self):
+        page = (ROOT / "brands.html").read_text()
+        start = page.index('<section class="wrap" id="access"')
+        signup = page[start:page.index("</section>", start)]
+        self.assertNotIn("LA Tech Week", signup)
+        self.assertNotIn("We review your brand", signup)
+        self.assertIn("Fill out the short form.", signup)
+        self.assertIn("Download the PDFs on the next screen.", signup)
+        self.assertIn('id="submitBtn">Download guides</button>', signup)
+        self.assertIn('id="thanks" hidden', signup)
+        self.assertIn("Your guides are ready", signup)
+        downloads = re.findall(r'href="(/brand-guides/[^"]+\.pdf)" download', signup)
+        self.assertCountEqual(downloads, [
+            f"/brand-guides/{path.name}"
+            for path in (ROOT / "brand-guides").glob("*.pdf")
+        ])
 
     def test_link_preview_points_at_the_brands_page_and_its_own_image(self):
         page = (ROOT / "brands.html").read_text()
@@ -256,18 +253,17 @@ class BrandsReleaseTests(unittest.TestCase):
         for name, digest in pins.items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest, name)
 
-    def test_original_form_and_submission_handlers_are_preserved(self):
-        page = approved_baseline((ROOT / "brands.html").read_text())
-        form = re.search(r'<form id="wl".*?</form>', page, re.S)
-        self.assertIsNotNone(form)
-        self.assertEqual(hashlib.sha256(form.group().encode()).hexdigest(),
-                         "44c20d271bc0fc48a375da29273ed181aebbb8ae9480a793492b087e1c931e8e")
-        # Independent baseline from current public main, covering both admin queue
-        # and HubSpot handlers, errors, outage fallback and download handoff.
-        start = page.index("  /* Two-step form")
-        end = page.index("  /* Page interactions", start)
+    def test_guide_signup_keeps_form_controls_and_submission_logic(self):
+        page = (ROOT / "brands.html").read_text()
+        start = page.index('              <div id="fs1">')
+        end = page.index('                  <p class="seg-hint"', start)
         self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
-                         "6f1cc7f7466c215237b261cf97fa65e224405775f4a8ae5491e48f80f391f135")
+                         "ae5a01be493f5420af2fbb4507f7fb37f98de385f963c0386e239976a5dfae76")
+        # Preserve the production payload, HubSpot post, admin queue, and success criteria.
+        start = page.index("  function buildPayload(")
+        end = page.index("      .then(function(){ submitBtn.disabled = false;", start)
+        self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
+                         "36813fcd22d7d6617e70b426152dee392d09f029b0b4bf4632abf604803ba410")
 
 
 if __name__ == "__main__":

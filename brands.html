@@ -138,11 +138,13 @@ section{padding-block:72px}
 .g b{font-size:19px;letter-spacing:-.02em;line-height:1.2}
 .g-d{font-size:14.5px;color:var(--muted)}
 .g-cta{font-weight:600;font-size:14px;color:var(--accent);margin-top:4px}
-.access{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;padding:56px;border-radius:40px;background:#241F2D;color:#fff}
-.access .lede{color:rgba(255,255,255,.75)}
-.access ol{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:14px}
-.access li{display:flex;gap:14px;align-items:center;font-size:17px}
-.access li i{font:500 13px var(--mono);font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12)}
+#access{scroll-margin-top:64px}
+.access{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(32px,5vw,64px);border-radius:36px;background:radial-gradient(ellipse at 0 0,#3C2A55 0%,#241F2D 62%);color:#fff}
+.access-copy .h2{font-size:clamp(34px,4.7vw,62px)}
+.access-copy .lede{color:#DFD8E9;margin-top:14px;max-width:34ch}
+.access ol{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:12px;max-width:390px}
+.access li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:center;padding:12px 14px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.06);font-size:15px;font-weight:550;line-height:1.35}
+.access li span{font:600 13px var(--mono);width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#E6D9FF;color:#3B2270}
 .faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
 @media (max-width:900px){
  .hero{border-radius:28px}.hero-grid{grid-template-columns:1fr;padding:36px 22px 0}.hero-copy{padding-bottom:0}
@@ -150,7 +152,7 @@ section{padding-block:72px}
  .f1{right:0;top:30px}.f2{left:0;top:110px}.f3{display:none}
  .slot b{font-size:14px}.slot span{font-size:12px}.slot .yb{width:40px;height:40px}
  .paths,.access,.faq{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.guides{grid-template-columns:1fr}
- .access{padding:28px 20px;border-radius:28px}section{padding-block:56px}
+ .access{padding:26px 18px;border-radius:26px}section{padding-block:56px}
  .join{flex-direction:column;border-radius:22px}.join input{padding:12px 14px}
 }
 
@@ -323,9 +325,8 @@ section{padding-block:72px}
 
 .skip{position:absolute;left:12px;top:-60px;background:#fff;color:#241F2D;padding:8px 14px;border-radius:8px;z-index:100;text-decoration:none;font-weight:600}
 .skip:focus{top:12px}
-.ea-wrap{display:grid;gap:8px;padding:28px;border-radius:24px;background:#fff;color:#241F2D;max-width:500px;width:100%;justify-self:end}
-.ea-wrap h3{font-size:28px;font-weight:700}
-.ea-wrap .ea-sub{color:#6B6475;margin-bottom:10px}
+.ea-wrap{padding:28px;border-radius:24px;background:#fff;color:#241F2D;width:100%;box-shadow:0 18px 40px rgba(16,8,29,.22)}
+.ea-wrap h3{font-size:26px;line-height:1.15;font-weight:700;letter-spacing:-.025em;margin:0 0 16px}
 .form-progress{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .form-progress i{height:4px;border-radius:4px;background:#E6E0EF;transition:background .3s}
 .form-progress i.on{background:#713AF2}
@@ -349,7 +350,8 @@ fieldset{border:0;padding:0;margin:0 0 14px;min-width:0}
 .seg span{display:flex;align-items:center;justify-content:center;height:50px;border-radius:14px;border:1px solid rgba(36,22,63,.16);font-weight:600;color:#6B6475;transition:all .15s}
 .seg input:checked + span{border-color:#713AF2;background:rgba(113,58,242,.08);color:#241F2D;box-shadow:0 0 0 1px #713AF2 inset}
 .seg input:focus-visible + span{outline:3px solid #713AF2;outline-offset:2px}
-.seg-hint{font-size:13px;color:#6B6475;margin:8px 0 0;min-height:20px}
+.seg-hint{font-size:13px;color:#6B6475;margin:8px 0 0}
+.seg-hint:empty{margin:0}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .actions{display:flex;gap:10px;margin-top:4px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px var(--sans);height:52px;padding:0 22px;border-radius:999px;border:0;cursor:pointer;text-decoration:none}
@@ -367,15 +369,8 @@ fieldset{border:0;padding:0;margin:0 0 14px;min-width:0}
 .dl{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(113,58,242,.3);background:rgba(113,58,242,.06);text-decoration:none;font-weight:600;font-size:15px;line-height:1.3}
 .dl small{display:block;color:#6B6475;font-weight:500;font-size:12.5px}
 .dl .ic{width:34px;height:34px;border-radius:10px;background:#713AF2;color:#fff;display:grid;place-items:center;flex:none}
-.techweek,.guide-teaser{margin-top:20px;display:flex;gap:12px;align-items:center;padding:14px 16px;border-radius:16px;font-size:14.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
-.techweek .ic,.guide-teaser .ic{width:34px;height:34px;border-radius:10px;background:#713AF2;color:#fff;display:grid;place-items:center;flex:none}
-.techweek b,.guide-teaser b{display:block;line-height:1.35}
-.techweek span,.guide-teaser{color:rgba(255,255,255,.75)}
-.guide-teaser b{color:#fff}
-.guide-teaser+.guide-teaser{margin-top:10px}
-.access .techweek{margin-top:28px}
 .g-cta{display:inline-flex;align-items:center;gap:6px}
-@media (max-width:900px){.ea-wrap{justify-self:stretch;padding:22px 18px;max-width:none}}
+@media (max-width:900px){.ea-wrap{padding:22px 18px}.access ol{margin-top:20px}}
 @media (max-width:520px){.two{grid-template-columns:1fr;gap:0}}
 /* Whole screens: the image box carries the screen's aspect ratio, so nothing is trimmed by the frame padding. */
 .phone{aspect-ratio:auto;height:auto}
@@ -529,28 +524,24 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
 <section class="wrap" id="guides" aria-labelledby="guides-h">
   <p class="k">Free guides</p>
   <h2 class="h2 rv" id="guides-h">Guides for brands</h2>
-  <p class="lede">Practical reads on loyalty, targeting and rewards. Get early access and they all unlock.</p>
+  <p class="lede">Practical reads on loyalty, targeting and rewards. Fill out the form below to download all six.</p>
   <div class="guides"><a class="g" href="#access" data-guide="launch-a-loyalty-program-in-a-day"><span class="g-k">Guide · PDF</span><b>Launch a loyalty program in a day</b><span class="g-d">One goal, one audience, one reward. A step-by-step day plan with no app and no hardware.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="for-brands-with-a-loyalty-program"><span class="g-k">One-pager · PDF</span><b>For brands with a loyalty program</b><span class="g-d">What Perkalate adds to the program you already run, and three rewards to try first.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="second-visit-playbook"><span class="g-k">Article · PDF</span><b>The second-visit playbook</b><span class="g-d">Why the second visit matters more than the first, and three ways to earn it.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="stop-discounting-to-everyone"><span class="g-k">Article · PDF</span><b>Stop discounting to everyone</b><span class="g-d">How rewarding what customers actually do gets more from every reward dollar.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="permissioned-customer-data"><span class="g-k">Article · PDF</span><b>Permissioned data: how access to customer data is changing</b><span class="g-d">Why the next wave of targeting runs on data customers choose to share.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a><a class="g" href="#access" data-guide="viewed-claimed-redeemed"><span class="g-k">Article · PDF</span><b>Viewed, claimed, redeemed</b><span class="g-d">Three numbers that tell you whether a reward is working, and what to change.</span><span class="g-cta">Get it free <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></div>
 </section>
 
 <section class="wrap" id="access" aria-labelledby="access-h">
   <div class="access">
-    <div>
-      <h2 class="h2 rv" id="access-h">Get early access</h2>
-      <p class="lede">Tell us about your brand and we'll set up your workspace.</p>
-      <ol><li><i>1</i>We review your brand</li><li><i>2</i>We set up your workspace</li><li><i>3</i>You launch your first reward</li></ol>
-      <div class="techweek">
-            <span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <div><b>At LA Tech Week? Get set up this week.</b><span>Add Los Angeles as your city in step 2.</span></div>
-          </div>
-      <div class="guide-teaser">
-            <span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-file"/></svg></span>
-            <div><b>Free guides: Launch a loyalty program in a day, and more</b>All six unlock when you submit the form.</div>
-          </div>
+    <div class="access-copy">
+      <h2 class="h2" id="access-h">Get the free guides</h2>
+      <p class="lede">Six practical PDFs on loyalty, rewards, and bringing customers back.</p>
+      <ol role="list">
+        <li><span aria-hidden="true">1</span> Fill out the short form.</li>
+        <li><span aria-hidden="true">2</span> Download the PDFs on the next screen.</li>
+      </ol>
     </div>
-    <div class="ea-wrap"><h3>About your brand</h3><p class="ea-sub">Two quick steps.</p>
-<form id="wl" novalidate aria-labelledby="access-h" data-hs-do-not-collect="true">
+    <div class="ea-wrap">
+          <form id="wl" novalidate aria-labelledby="access-h" data-hs-do-not-collect="true">
             <div id="formBody">
+              <h3>Your details</h3>
               <div class="form-progress" aria-hidden="true"><i class="on"></i><i id="pg2"></i></div>
               <p class="form-step-lbl" id="stepLbl">Step 1 of 2 · About your brand</p>
               <p class="err form-err" id="formErr" role="alert"></p>
@@ -574,7 +565,7 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
                     <label><input type="radio" name="loyalty" value="yes"><span>Yes</span></label>
                     <label><input type="radio" name="loyalty" value="no"><span>No</span></label>
                   </div>
-                  <p class="seg-hint" id="segHint" aria-live="polite">Either way works. We'll tailor your setup.</p>
+                  <p class="seg-hint" id="segHint" aria-live="polite"></p>
                 </fieldset>
                 <div class="two">
                   <div class="field">
@@ -595,16 +586,15 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
                 </div>
                 <div class="actions">
                   <button class="btn btn-ghost" type="button" id="back">Back</button>
-                  <button class="btn btn-primary" type="submit" id="submitBtn">Get early access</button>
+                  <button class="btn btn-primary" type="submit" id="submitBtn">Download guides</button>
                 </div>
               </div>
-              <p class="form-foot">No platform fee. You fund rewards redeemed by qualified customers.</p>
               <p class="form-foot">We use HubSpot to follow up. See our <a href="/privacy">Privacy</a> page.</p>
             </div>
             <div class="thanks" id="thanks" hidden tabindex="-1" role="status">
               <div class="big-check"><svg width="26" height="26" aria-hidden="true"><use href="#i-check"/></svg></div>
-              <h3>You're on the list.</h3>
-              <p>Thanks, we'll be in touch to set up your workspace. In the meantime, grab the guide: Launch a loyalty program in a day. All six guides are below.</p>
+              <h3>Your guides are ready</h3>
+              <p>Choose any guide below to download the PDF.</p>
               <div class="downloads">
                 <a class="dl" id="dlGuide" href="/brand-guides/launch-a-loyalty-program-in-a-day.pdf" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>Launch a loyalty program in a day<small>Free guide · PDF</small></span></a>
                 <a class="dl" id="dlOnePager" href="/brand-guides/for-brands-with-a-loyalty-program.pdf" download><span class="ic"><svg width="17" height="17" aria-hidden="true"><use href="#i-down"/></svg></span><span>For brands with a loyalty program<small>One-pager · PDF</small></span></a>
@@ -694,7 +684,7 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
   [].forEach.call(form.querySelectorAll('input[name=loyalty]'), function(r){
     r.addEventListener('change', function(){
       hint.style.color = '';
-      hint.textContent = r.value === 'yes' ? 'Great. Your rewards will sit next to the programs members already use.' : 'No problem. We’ll help you launch rewards in minutes.';
+      hint.textContent = '';
     });
   });
 
@@ -802,7 +792,7 @@ html.still *,html.still *::before,html.still *::after{animation:none!important;t
       .catch(function(err){
         formErr.innerHTML = errorMessage(err && err.status, err && err.body);
       })
-      .then(function(){ submitBtn.disabled = false; submitBtn.textContent = 'Get early access'; });
+      .then(function(){ submitBtn.disabled = false; submitBtn.textContent = 'Download guides'; });
   });
 
   /* Page interactions and motion */
