@@ -7,6 +7,66 @@
       "source": "/home.html",
       "destination": "/login",
       "permanent": true
+    },
+    {
+      "source": "/brands/guides/why-sponsor-activations-miss-real-fans",
+      "destination": "/brand-guides/viewed-claimed-redeemed.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/matchday-sponsor-rewards-playbook",
+      "destination": "/brand-guides/permissioned-customer-data.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/events-attendee-gap",
+      "destination": "/brand-guides/viewed-claimed-redeemed.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/partner-funded-event-rewards",
+      "destination": "/brand-guides/launch-a-loyalty-program-in-a-day.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/retail-slow-hours-problem",
+      "destination": "/brand-guides/stop-discounting-to-everyone.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/second-visit-playbook-for-retail-stores",
+      "destination": "/brand-guides/second-visit-playbook.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/real-cost-of-off-hours-seats",
+      "destination": "/brand-guides/launch-a-loyalty-program-in-a-day.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/off-hours-playbook-restaurants",
+      "destination": "/brand-guides/second-visit-playbook.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/why-blanket-discount-codes-train-customers-to-wait",
+      "destination": "/brand-guides/stop-discounting-to-everyone.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/second-order-playbook-for-online-brands",
+      "destination": "/brand-guides/permissioned-customer-data.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/fitness-second-visit-problem",
+      "destination": "/brand-guides/second-visit-playbook.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/fill-off-peak-classes-partner-perks",
+      "destination": "/brand-guides/launch-a-loyalty-program-in-a-day.pdf",
+      "permanent": false
     }
   ],
   "rewrites": [

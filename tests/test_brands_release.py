@@ -125,6 +125,36 @@ class BrandsReleaseTests(unittest.TestCase):
             self.assertEqual(destination(path), path)
             self.assertTrue(guide.read_bytes().startswith(b"%PDF-"))
 
+    def test_draft_drip_guide_urls_redirect_to_relevant_live_pdfs(self):
+        expected = {
+            "why-sponsor-activations-miss-real-fans": "viewed-claimed-redeemed",
+            "matchday-sponsor-rewards-playbook": "permissioned-customer-data",
+            "events-attendee-gap": "viewed-claimed-redeemed",
+            "partner-funded-event-rewards": "launch-a-loyalty-program-in-a-day",
+            "retail-slow-hours-problem": "stop-discounting-to-everyone",
+            "second-visit-playbook-for-retail-stores": "second-visit-playbook",
+            "real-cost-of-off-hours-seats": "launch-a-loyalty-program-in-a-day",
+            "off-hours-playbook-restaurants": "second-visit-playbook",
+            "why-blanket-discount-codes-train-customers-to-wait": "stop-discounting-to-everyone",
+            "second-order-playbook-for-online-brands": "permissioned-customer-data",
+            "fitness-second-visit-problem": "second-visit-playbook",
+            "fill-off-peak-classes-partner-perks": "launch-a-loyalty-program-in-a-day",
+        }
+        redirects = [
+            route for route in CONFIG["redirects"]
+            if route["source"].startswith("/brands/guides/")
+        ]
+        self.assertCountEqual(redirects, [
+            {
+                "source": f"/brands/guides/{slug}",
+                "destination": f"/brand-guides/{guide}.pdf",
+                "permanent": False,
+            }
+            for slug, guide in expected.items()
+        ])
+        for guide in set(expected.values()):
+            self.assertTrue((ROOT / "brand-guides" / f"{guide}.pdf").read_bytes().startswith(b"%PDF-"))
+
     def test_admin_queue_still_reaches_dev_api(self):
         self.assertEqual(destination("/api/v1/brand-auth/access-requests"),
                          "https://dev.perkalate.com/api/v1/brand-auth/access-requests")
