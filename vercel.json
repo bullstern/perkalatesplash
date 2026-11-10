@@ -7,6 +7,136 @@
       "source": "/home.html",
       "destination": "/login",
       "permanent": true
+    },
+    {
+      "source": "/brands/guides/why-sponsor-activations-miss-real-fans",
+      "destination": "/brands?utm_content=why-sponsor-activations-miss-real-fans#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/matchday-sponsor-rewards-playbook",
+      "destination": "/brands?utm_content=matchday-sponsor-rewards-playbook#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/events-attendee-gap",
+      "destination": "/brands?utm_content=events-attendee-gap#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/partner-funded-event-rewards",
+      "destination": "/brands?utm_content=partner-funded-event-rewards#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/retail-slow-hours-problem",
+      "destination": "/brands?utm_content=retail-slow-hours-problem#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/second-visit-playbook-for-retail-stores",
+      "destination": "/brands?utm_content=second-visit-playbook-for-retail-stores#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/real-cost-of-off-hours-seats",
+      "destination": "/brands?utm_content=real-cost-of-off-hours-seats#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/off-hours-playbook-restaurants",
+      "destination": "/brands?utm_content=off-hours-playbook-restaurants#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/why-blanket-discount-codes-train-customers-to-wait",
+      "destination": "/brands?utm_content=why-blanket-discount-codes-train-customers-to-wait#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/second-order-playbook-for-online-brands",
+      "destination": "/brands?utm_content=second-order-playbook-for-online-brands#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/fitness-second-visit-problem",
+      "destination": "/brands?utm_content=fitness-second-visit-problem#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/fill-off-peak-classes-partner-perks",
+      "destination": "/brands?utm_content=fill-off-peak-classes-partner-perks#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/measuring-fan-rewards",
+      "destination": "/brands?utm_content=measuring-fan-rewards#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/measure-event-rewards",
+      "destination": "/brands?utm_content=measure-event-rewards#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/measuring-in-store-offers-viewed-claimed-redeemed",
+      "destination": "/brands?utm_content=measuring-in-store-offers-viewed-claimed-redeemed#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/measure-off-hours-rewards",
+      "destination": "/brands?utm_content=measure-off-hours-rewards#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/measuring-targeted-offers-for-online-brands",
+      "destination": "/brands?utm_content=measuring-targeted-offers-for-online-brands#access",
+      "permanent": false
+    },
+    {
+      "source": "/brands/guides/measuring-member-perks-fitness",
+      "destination": "/brands?utm_content=measuring-member-perks-fitness#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/access-beats-discounts-2027-loyalty-changes",
+      "destination": "/brands?utm_content=access-beats-discounts-2027-loyalty-changes#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/beauty-fashion-wellness-stacked-segments",
+      "destination": "/brands?utm_content=beauty-fashion-wellness-stacked-segments#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/loyalty-program-only-talks-to-existing-customers",
+      "destination": "/brands?utm_content=loyalty-program-only-talks-to-existing-customers#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/paid-social-pricier-verified-audiences",
+      "destination": "/brands?utm_content=paid-social-pricier-verified-audiences#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/reach-shoppers-you-dont-have-yet",
+      "destination": "/brands?utm_content=reach-shoppers-you-dont-have-yet#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/stacking-audience-signals",
+      "destination": "/brands?utm_content=stacking-audience-signals#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/what-a-rewards-budget-buys",
+      "destination": "/brands?utm_content=what-a-rewards-budget-buys#access",
+      "permanent": false
+    },
+    {
+      "source": "/blog/who-funds-the-reward",
+      "destination": "/brands?utm_content=who-funds-the-reward#access",
+      "permanent": false
     }
   ],
   "rewrites": [
