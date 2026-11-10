@@ -2,7 +2,7 @@
   "repository": "Perkalate/perkalate-production",
   "source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
   "files": {
-    "brands.html": "c30d717f786f5f89f2579a8f3f6c1c25a5b0b0ed203950d600cccb4a4f6c9573",
+    "brands.html": "c6d8a948e734ec215b830d2c2800092a878c80b5a1fce742654d51ae59fc0c0b",
     "brand-dashboard/analytics.webp": "093197bf5d7378add3a406ac76a7e0cb3de55f93b6508cae24cde6848d5de02a",
     "brand-dashboard/audience.webp": "03f6b22cbf637aeb1aa40475b41c2971817f2eede27a7869c7ddb54cec182c73",
     "brand-dashboard/overview.webp": "bfa58dc306469942f84771f76d416cfac8b24d44df078d3f2638247b6c08e065",
@@ -29,7 +29,33 @@
     "brands-media/logo-rei.png": "dbf4599572a5b62acfeefc1205918c31c92ec84c2bc37f89c6de6133674f9ccb",
     "brands-media/logo-sephora.png": "bb540981e0f65f9206bc7f560b3f00a0ec27887754e6846188be19db6a486c23",
     "brands-media/logo-ulta.png": "4037f6c56ea26643cb9c905b277fa76d1430e768f0a1349c670c30c8ea58e3f6",
-    "brands-media/og-brands-v1.png": "a9f7a8a35da4d2460913e49bdbf24cc41b598551d63a3db5e043d9bd81d5bc38"
+    "brands-media/og-brands-v1.png": "a9f7a8a35da4d2460913e49bdbf24cc41b598551d63a3db5e043d9bd81d5bc38",
+    "brand-guides/why-blanket-discount-codes-train-customers-to-wait.pdf": "fd54b3dffcfc074c1aa5b986e7d5f3682c5537636a66adb6747e79679b47960d",
+    "brand-guides/second-order-playbook-for-online-brands.pdf": "60e6921792f701afc37aadae4829169931e8cd20559f9f45b02f74e7059a662c",
+    "brand-guides/measuring-targeted-offers-for-online-brands.pdf": "c408435f9f190e71b6333e6ba05927b56dbf935cf0535d1e4dc899c79c112338",
+    "brand-guides/retail-slow-hours-problem.pdf": "cda51297ef430a7865868a7c5d52c9da9ea9f1b173ec98d4928d5cadf68bc517",
+    "brand-guides/second-visit-playbook-for-retail-stores.pdf": "6fafa0fae9db97a73b342f9cbcf580cf45d822942299d2fbafc36c3d148d6664",
+    "brand-guides/measuring-in-store-offers-viewed-claimed-redeemed.pdf": "fa73324eb39ccecab645409b668e6dbbb66184211bba8ec291597873b54d10ee",
+    "brand-guides/real-cost-of-off-hours-seats.pdf": "6c0221142f664ce17f08c9e2ae6585d8dc1328e70b83692fcc3b137d39a6360e",
+    "brand-guides/off-hours-playbook-restaurants.pdf": "4150d696eed4677a1ee6ed3d940542d7794595cbc80b9dadc6cfd082c9e2853a",
+    "brand-guides/measure-off-hours-rewards.pdf": "9d82fda464e4511fc0fab333a9f273980e5dc4e612f813a986f2c047ad3447c9",
+    "brand-guides/events-attendee-gap.pdf": "47f08de310d81691ccdf3362dc873fcbfff423b56708b33b619c0829c8906ebf",
+    "brand-guides/partner-funded-event-rewards.pdf": "92bfc4457021aa45ab828a028bdde6985f3255ddf981dd07154257d02b3fb8c7",
+    "brand-guides/measure-event-rewards.pdf": "a99f24b5e096eebe427e115887e58aa2c755dd4554ac69b5a730d9323b042da7",
+    "brand-guides/why-sponsor-activations-miss-real-fans.pdf": "d5f991dcb977a80a175665a62baee4fda381017c83aa8fdd806430d9312cea95",
+    "brand-guides/matchday-sponsor-rewards-playbook.pdf": "6f3d306bb0cd07fce85ab2cbb93c7e72d2c5a3e3eba7247effa549a77b4e239b",
+    "brand-guides/measuring-fan-rewards.pdf": "fd0499faae5fffd5d3f17555f283c13ca902a5d49476dc9ec8d24c15d9dd4875",
+    "brand-guides/fitness-second-visit-problem.pdf": "e6945494e4e35ae1bfe33e46e661544e09cf8669b41c02d6aa9751cf4e29df78",
+    "brand-guides/fill-off-peak-classes-partner-perks.pdf": "5573a3df6bc16c5939f84222a38e29ba65b442bd638211120bd0836db602b50b",
+    "brand-guides/measuring-member-perks-fitness.pdf": "c5ccaff3f5e334034f229456b4e7486614933b7476728d1b035c4d1126e9dcab",
+    "brand-guides/who-funds-the-reward.pdf": "2b772f3c5f52bf3c0a8bbe2dd7786b68aaf1ff79a87873811edbc6551da808a5",
+    "brand-guides/access-beats-discounts-2027-loyalty-changes.pdf": "dca2b8caa8ac25d81d438ec00c19351b64e28cefe7e4b2f397a972c0b5993bdf",
+    "brand-guides/stacking-audience-signals.pdf": "a7566f9d48a2628d35cf3cd9e4feda691cce2c1dde2a66f6c0bfdf57c366b370",
+    "brand-guides/paid-social-pricier-verified-audiences.pdf": "5d7a94812a75267273ac17ae2d4e023800e9942b2ece3265d4e41a3291d492c1",
+    "brand-guides/reach-shoppers-you-dont-have-yet.pdf": "4edd9fb730a2429f10f5849f4063f5f1c5548064e3f88bc9791767730950b66e",
+    "brand-guides/loyalty-program-only-talks-to-existing-customers.pdf": "0a890de6931956c53d4a79f9290979b8cc761f22f5e340b3c8fc65e0fd0ac02c",
+    "brand-guides/what-a-rewards-budget-buys.pdf": "45a7e657233e59f90e32fa6fccc3770b8fca1d92e1b733bb124244f76edd0a4a",
+    "brand-guides/beauty-fashion-wellness-stacked-segments.pdf": "cd14e3f2ab182f28065785f981025091802ea78cf146de7328f457f635a04262"
   },
   "page_source": "5d35c45a54acb173ffaa7135dde0c40742df57cc",
   "page_source_pr": "https://github.com/Perkalate/perkalate-production/pull/853",
@@ -65,7 +91,7 @@
     ]
   },
   "guide_signup_revision": {
-    "baseline_public_commit": "3e6f6b0f9ad8a4dea7be3b1c6946a999be8d44ca",
-    "scope": "Document-specific selection and download, contact fields, and HubSpot attribution."
+    "baseline_public_commit": "7ce3588a9de64741e18df6b1cf8afd9b1c19c606",
+    "scope": "Publish 26 guides and update the existing article links to select their corresponding PDF."
   }
 }

@@ -110,9 +110,9 @@ class BrandsReleaseTests(unittest.TestCase):
             else:
                 self.assertTrue(data.startswith(b"\x89PNG\r\n\x1a\n"))
 
-    def test_six_guide_pdfs_escape_homepage_fallback(self):
+    def test_guide_pdfs_escape_homepage_fallback(self):
         guides = list((ROOT / "brand-guides").glob("*.pdf"))
-        self.assertEqual(len(guides), 6)
+        self.assertEqual(len(guides), 32)
         for guide in guides:
             path = "/" + str(guide.relative_to(ROOT))
             self.assertEqual(destination(path), path)
@@ -158,6 +158,7 @@ class BrandsReleaseTests(unittest.TestCase):
                 params = parse_qs(target.query)
                 self.assertEqual((target.path, target.fragment), ("/brands", "access"))
                 self.assertEqual(params["utm_content"], [route["source"].rsplit("/", 1)[1]])
+                self.assertEqual(params["guide"], params["utm_content"])
                 guide, = params["guide"]
                 self.assertTrue((ROOT / "brand-guides" / f"{guide}.pdf").is_file())
                 self.assertFalse(route["permanent"])
@@ -192,7 +193,7 @@ class BrandsReleaseTests(unittest.TestCase):
             expected.update(str(path.relative_to(ROOT))
                             for path in (ROOT / folder).glob("*"))
         self.assertEqual(set(manifest["files"]), expected)
-        self.assertEqual(len(expected), 28)
+        self.assertEqual(len(expected), 54)
         for name, digest in manifest["files"].items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest)
 
