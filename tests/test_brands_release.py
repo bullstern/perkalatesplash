@@ -5,6 +5,7 @@ import re
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "vercel.json").read_text())
@@ -150,14 +151,16 @@ class BrandsReleaseTests(unittest.TestCase):
             route for route in CONFIG["redirects"]
             if route["source"].startswith(("/brands/guides/", "/blog/"))
         ]
-        self.assertCountEqual(redirects, [
-            {
-                "source": path,
-                "destination": f"/brands?utm_content={path.rsplit('/', 1)[1]}#access",
-                "permanent": False,
-            }
-            for path in paths
-        ])
+        self.assertCountEqual([route["source"] for route in redirects], paths)
+        for route in redirects:
+            with self.subTest(path=route["source"]):
+                target = urlsplit(route["destination"])
+                params = parse_qs(target.query)
+                self.assertEqual((target.path, target.fragment), ("/brands", "access"))
+                self.assertEqual(params["utm_content"], [route["source"].rsplit("/", 1)[1]])
+                guide, = params["guide"]
+                self.assertTrue((ROOT / "brand-guides" / f"{guide}.pdf").is_file())
+                self.assertFalse(route["permanent"])
         page = (ROOT / 'brands.html').read_text()
         self.assertIn('<section class="wrap" id="access"', page)
 
@@ -208,22 +211,21 @@ class BrandsReleaseTests(unittest.TestCase):
         self.assertEqual(parser.forms[0].get("id"), "wl")
         self.assertEqual(parser.forms[0].get("data-hs-do-not-collect"), "true")
 
-    def test_guide_signup_explains_immediate_downloads(self):
+    def test_guide_signup_offers_one_download_and_named_guide_links(self):
         page = (ROOT / "brands.html").read_text()
         start = page.index('<section class="wrap" id="access"')
         signup = page[start:page.index("</section>", start)]
         self.assertNotIn("LA Tech Week", signup)
         self.assertNotIn("We review your brand", signup)
-        self.assertIn("Fill out the short form.", signup)
-        self.assertIn("Download the PDFs on the next screen.", signup)
-        self.assertIn('id="submitBtn">Download guides</button>', signup)
+        self.assertIn("Download your PDF on the next screen.", signup)
+        self.assertIn('id="submitBtn">Download guide</button>', signup)
         self.assertIn('id="thanks" hidden', signup)
-        self.assertIn("Your guides are ready", signup)
-        downloads = re.findall(r'href="(/brand-guides/[^"]+\.pdf)" download', signup)
-        self.assertCountEqual(downloads, [
-            f"/brand-guides/{path.name}"
-            for path in (ROOT / "brand-guides").glob("*.pdf")
-        ])
+        self.assertIn("Your guide is ready", signup)
+        self.assertEqual(len(re.findall(r'<a [^>]* download>', signup)), 1)
+        guides = [path.stem for path in (ROOT / "brand-guides").glob("*.pdf")]
+        for guide in guides:
+            self.assertIn(f'href="/brands?guide={guide}#access"', page)
+            self.assertIn(f'<option value="{guide}">', signup)
 
     def test_link_preview_points_at_the_brands_page_and_its_own_image(self):
         page = (ROOT / "brands.html").read_text()
@@ -253,17 +255,15 @@ class BrandsReleaseTests(unittest.TestCase):
         for name, digest in pins.items():
             self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest, name)
 
-    def test_guide_signup_keeps_form_controls_and_submission_logic(self):
+    def test_guide_signup_sends_contact_and_document_fields_to_hubspot(self):
         page = (ROOT / "brands.html").read_text()
-        start = page.index('              <div id="fs1">')
-        end = page.index('                  <p class="seg-hint"', start)
-        self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
-                         "ae5a01be493f5420af2fbb4507f7fb37f98de385f963c0386e239976a5dfae76")
-        # Preserve the production payload, HubSpot post, admin queue, and success criteria.
-        start = page.index("  function buildPayload(")
-        end = page.index("      .then(function(){ submitBtn.disabled = false;", start)
-        self.assertEqual(hashlib.sha256(page[start:end].encode()).hexdigest(),
-                         "36813fcd22d7d6617e70b426152dee392d09f029b0b4bf4632abf604803ba410")
+        start = page.index("  function hubspotPayload(")
+        end = page.index("  function postHubspot(", start)
+        fields = set(re.findall(r"\['([a-z_]+)',", page[start:end]))
+        self.assertTrue({
+            "firstname", "lastname", "email", "company", "phone",
+            "perkalate_company_type", "requested_guide",
+        }.issubset(fields))
 
 
 if __name__ == "__main__":
